@@ -1,0 +1,80 @@
+{
+	"permissions": [
+		{
+			"decal": "green",
+			"access": ["green","any"]
+		},
+		{
+			"decal": "parkNRide",
+			"access": ["any"]
+		},
+		{
+			"decal": "red1",
+			"access": ["red1","red3","any"]
+		},
+		{
+			"decal": "red3",
+			"access": ["red3","any"]
+		},
+		{
+			"decal": "brown2",
+			"access": ["brown2","any"]
+		},
+		{
+			"decal": "brown3",
+			"access": ["brown3","any"]
+		},
+		{
+			"decal": "pwdStu",
+			"access": ["disabled","orange","blue","green","red1","red3","brown2","brown3","any"]
+		},
+		{
+			"decal": "gold",
+			"access": ["gated","orange","blue","green","red1","red3","brown2","brown3","any"]
+		},
+		{
+			"decal": "silver",
+			"access": ["gated"]
+		},
+		{
+			"decal": "business",
+			"access": ["orange","blue","green","red1","red3","brown2","brown3","any"]
+		},
+		{
+			"decal": "orange",
+			"access": ["orange","green","any"]
+		},
+		{
+			"decal": "blue",
+			"access": ["blue","green","any"]
+		},
+		{
+			"decal": "medRes",
+			"access": ["medRes","orange","green","red1","red3","brown2","brown3","any"]
+		},
+		{
+			"decal": "shands1",
+			"access": ["health"]
+		},
+		{
+			"decal": "shands2",
+			"access": ["health"]
+		},
+		{
+			"decal": "staffComm",
+			"access": ["green","any"]
+		},
+		{
+			"decal": "pwdEmp",
+			"access": ["disabled","orange","blue","green","red1","red3","brown2","brown3","any"]
+		},
+		{
+			"decal": "carpool",
+			"access": ["carpool","orange","blue","green","any"]
+		},
+		{
+			"decal": "scooter",
+			"access": ["scooter"]
+		}
+	]
+}
