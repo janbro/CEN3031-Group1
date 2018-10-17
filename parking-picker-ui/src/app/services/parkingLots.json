@@ -1,0 +1,106 @@
+{
+	"parkingLots": [
+		{
+			"name": ,
+			"coordinates": 
+			{
+				"latitude": ,
+				"longitude":
+			},
+			"genCapacity": ,
+			"currOccupancy": ,
+			"electric": ,
+			"meter": ,
+			"decals": {
+				"one": 
+				{
+					"specCapacity": ,
+					"restrictions": {
+						"startTime": ,
+						"endTime": ,
+						"weekend": ,
+						"allDay": 
+					}
+				},
+				"two": 
+				{
+					"specCapacity": ,
+					"restrictions": {
+						"startTime": ,
+						"endTime": ,
+						"weekend": ,
+						"allDay": 
+					}
+				}
+			}
+        	},
+		{
+			"name": ,
+			"coordinates": 
+			{
+				"latitude": ,
+				"longitude":
+			},
+			"genCapacity": ,
+			"currOccupancy": ,
+			"electric": ,
+			"meter": ,
+			"decals": {
+				"one": 
+				{
+					"specCapacity": ,
+					"restrictions": {
+						"startTime": ,
+						"endTime": ,
+						"weekend": ,
+						"allDay": 
+					}
+				},
+				"two": 
+				{
+					"specCapacity": ,
+					"restrictions": {
+						"startTime": ,
+						"endTime": ,
+						"weekend": ,
+						"allDay": 
+					}
+				}
+			}
+        	},
+		{
+			"name": ,
+			"coordinates": 
+			{
+				"latitude": ,
+				"longitude":
+			},
+			"genCapacity": ,
+			"currOccupancy": ,
+			"electric": ,
+			"meter": ,
+			"decals": {
+				"one": 
+				{
+					"specCapacity": ,
+					"restrictions": {
+						"startTime": ,
+						"endTime": ,
+						"weekend": ,
+						"allDay": 
+					}
+				},
+				"two": 
+				{
+					"specCapacity": ,
+					"restrictions": {
+						"startTime": ,
+						"endTime": ,
+						"weekend": ,
+						"allDay": 
+					}
+				}
+			}
+        	}
+    	]
+}
