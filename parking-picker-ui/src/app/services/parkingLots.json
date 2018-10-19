@@ -1,106 +1,166 @@
 {
-	"parkingLots": [
-		{
-			"name": ,
-			"coordinates": 
-			{
-				"latitude": ,
-				"longitude":
-			},
-			"genCapacity": ,
-			"currOccupancy": ,
-			"electric": ,
-			"meter": ,
-			"decals": {
-				"one": 
-				{
-					"specCapacity": ,
-					"restrictions": {
-						"startTime": ,
-						"endTime": ,
-						"weekend": ,
-						"allDay": 
-					}
-				},
-				"two": 
-				{
-					"specCapacity": ,
-					"restrictions": {
-						"startTime": ,
-						"endTime": ,
-						"weekend": ,
-						"allDay": 
-					}
-				}
-			}
-        	},
-		{
-			"name": ,
-			"coordinates": 
-			{
-				"latitude": ,
-				"longitude":
-			},
-			"genCapacity": ,
-			"currOccupancy": ,
-			"electric": ,
-			"meter": ,
-			"decals": {
-				"one": 
-				{
-					"specCapacity": ,
-					"restrictions": {
-						"startTime": ,
-						"endTime": ,
-						"weekend": ,
-						"allDay": 
-					}
-				},
-				"two": 
-				{
-					"specCapacity": ,
-					"restrictions": {
-						"startTime": ,
-						"endTime": ,
-						"weekend": ,
-						"allDay": 
-					}
-				}
-			}
-        	},
-		{
-			"name": ,
-			"coordinates": 
-			{
-				"latitude": ,
-				"longitude":
-			},
-			"genCapacity": ,
-			"currOccupancy": ,
-			"electric": ,
-			"meter": ,
-			"decals": {
-				"one": 
-				{
-					"specCapacity": ,
-					"restrictions": {
-						"startTime": ,
-						"endTime": ,
-						"weekend": ,
-						"allDay": 
-					}
-				},
-				"two": 
-				{
-					"specCapacity": ,
-					"restrictions": {
-						"startTime": ,
-						"endTime": ,
-						"weekend": ,
-						"allDay": 
-					}
-				}
-			}
-        	}
-    	]
+    "_id": {
+        "$oid": "5bc9fb87fb6fc06027499038"
+    },
+    "parkingLots": [
+        {
+            "name": "Garage 1",
+            "coordinates": {
+                "latitude": 29.641064,
+                "longitude": -82.342439
+            },
+            "genCapacity": 443,
+            "currOccupancy": 0,
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "disabled": {
+                    "specCapacity": 14,
+                    "restrictions": {
+                        "startTime": "00:00",
+                        "endTime": "00:00",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "gated": {
+                    "specCapacity": 412,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Garage 2",
+            "coordinates": {
+                "latitude": 29.638819,
+                "longitude": -82.3464
+            },
+            "genCapacity": 917,
+            "currOccupancy": 0,
+            "electric": true,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "disabled": {
+                    "specCapacity": 4,
+                    "restrictions": {
+                        "startTime": "00:00",
+                        "endTime": "00:00",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "gated": {
+                    "specCapacity": 305,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "any": {
+                    "specCapacity": 604,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Garage 3",
+            "coordinates": {
+                "latitude": 29.638651,
+                "longitude": -82.34761
+            },
+            "genCapacity": 918,
+            "currOccupancy": 0,
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "medRes": {
+                    "specCapacity": 326,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "any": {
+                    "specCapacity": 283,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "gated": {
+                    "specCapacity": 204,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "carpool": {
+                    "specCapacity": 104,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Garage 10",
+            "coordinates": {
+                "latitude": 29.640601,
+                "longitude": -82.342009
+            },
+            "genCapacity": 801,
+            "currOccupancy": 0,
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "disabled": {
+                    "specCapacity": 16,
+                    "restrictions": {
+                        "startTime": "00:00",
+                        "endTime": "00:00",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "any": {
+                    "specCapacity": 665,
+                    "restrictions": {
+                        "startTime": "00:00",
+                        "endTime": "00:00",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        }
+    ]
 }
