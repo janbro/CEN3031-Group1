@@ -1,14 +1,11 @@
 {
-    "_id": {
-        "$oid": "5bc9fb87fb6fc06027499038"
-    },
     "parkingLots": [
         {
             "name": "Animal Research Facility",
-            "coordinates": {
-                "latitude": 29.640557,
-                "longitude": -82.373886
-            },
+            "coordinates": [
+                29.640557,
+                -82.373886
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -16,7 +13,6 @@
             "decals": {
                 "green": {
                     "specCapacity": 31,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -26,7 +22,6 @@
                 },
                 "disabled": {
                     "specCapacity": 1,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -38,10 +33,10 @@
         },
         {
             "name": "Bat House",
-            "coordinates": {
-                "latitude": 29.643261,
-                "longitude": -82.363831
-            },
+            "coordinates": [
+                29.643261,
+                -82.363831
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -49,7 +44,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 16,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -59,7 +53,6 @@
                 },
                 "anyNotPNR": {
                     "specCapacity": 37,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -69,7 +62,6 @@
                 },
                 "disabled": {
                     "specCapacity": 2,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -81,10 +73,10 @@
         },
         {
             "name": "Black Hall",
-            "coordinates": {
-                "latitude": 29.641629,
-                "longitude": -82.346937
-            },
+            "coordinates": [
+                29.641629,
+                -82.346937
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -92,7 +84,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 68,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -102,7 +93,6 @@
                 },
                 "disabled": {
                     "specCapacity": 10,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -112,7 +102,6 @@
                 },
                 "carpool": {
                     "specCapacity": 1,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -124,10 +113,10 @@
         },
         {
             "name": "Bledsoe Drive",
-            "coordinates": {
-                "latitude": 29.639598,
-                "longitude": -82.369476
-            },
+            "coordinates": [
+                29.639598,
+                -82.369476
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -135,7 +124,6 @@
             "decals": {
                 "any": {
                     "specCapacity": 199,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -145,7 +133,6 @@
                 },
                 "disabled": {
                     "specCapacity": 2,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -157,10 +144,10 @@
         },
         {
             "name": "Corry Village",
-            "coordinates": {
-                "latitude": 29.645164,
-                "longitude": -82.361222
-            },
+            "coordinates": [
+                29.645164,
+                -82.361222
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -168,7 +155,6 @@
             "decals": {
                 "brown": {
                     "specCapacity": 173,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -178,7 +164,6 @@
                 },
                 "green": {
                     "specCapacity": 27,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -188,7 +173,6 @@
                 },
                 "brownGreen": {
                     "specCapacity": 66,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -198,7 +182,6 @@
                 },
                 "disabled": {
                     "specCapacity": 5,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -210,10 +193,10 @@
         },
         {
             "name": "Criser Hall",
-            "coordinates": {
-                "latitude": 29.650022,
-                "longitude": -82.341334
-            },
+            "coordinates": [
+                29.650022,
+                -82.341334
+            ],
             "electric": false,
             "meter": true,
             "scooter": false,
@@ -221,7 +204,6 @@
             "decals": {
                 "gated": {
                     "specCapacity": 52,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -231,7 +213,6 @@
                 },
                 "disabled": {
                     "specCapacity": 13,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -243,10 +224,10 @@
         },
         {
             "name": "Cultural Plaza",
-            "coordinates": {
-                "latitude": 29.636424,
-                "longitude": -82.369287
-            },
+            "coordinates": [
+                29.636424,
+                -82.369287
+            ],
             "electric": true,
             "meter": true,
             "scooter": true,
@@ -254,7 +235,6 @@
             "decals": {
                 "any": {
                     "specCapacity": 440,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -264,7 +244,6 @@
                 },
                 "disabled": {
                     "specCapacity": 19,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -274,7 +253,6 @@
                 },
                 "carpool": {
                     "specCapacity": 1,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -284,7 +262,6 @@
                 },
                 "orange": {
                     "specCapacity": 33,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -296,10 +273,10 @@
         },
         {
             "name": "Cypress Hall",
-            "coordinates": {
-                "latitude": 29.645248,
-                "longitude": -82.339563
-            },
+            "coordinates": [
+                29.645248,
+                -82.339563
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -307,7 +284,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 65,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -317,7 +293,6 @@
                 },
                 "disabled": {
                     "specCapacity": 6,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -329,10 +304,10 @@
         },
         {
             "name": "Dental- Disabled",
-            "coordinates": {
-                "latitude": 29.638806,
-                "longitude": -82.345949
-            },
+            "coordinates": [
+                29.638806,
+                -82.345949
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -340,7 +315,6 @@
             "decals": {
                 "disabled": {
                     "specCapacity": 45,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -352,10 +326,10 @@
         },
         {
             "name": "Diamond Village",
-            "coordinates": {
-                "latitude": 29.64344,
-                "longitude": -82.339678
-            },
+            "coordinates": [
+                29.64344,
+                -82.339678
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -363,7 +337,6 @@
             "decals": {
                 "brown": {
                     "specCapacity": 228,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -373,7 +346,6 @@
                 },
                 "disabled": {
                     "specCapacity": 1,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -385,10 +357,10 @@
         },
         {
             "name": "Division of Housing",
-            "coordinates": {
-                "latitude": 29.64367,
-                "longitude": -82.339805
-            },
+            "coordinates": [
+                29.64367,
+                -82.339805
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -396,7 +368,6 @@
             "decals": {
                 "red1": {
                     "specCapacity": 135,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -406,7 +377,6 @@
                 },
                 "orange": {
                     "specCapacity": 41,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -416,7 +386,6 @@
                 },
                 "disabled": {
                     "specCapacity": 4,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -428,10 +397,10 @@
         },
         {
             "name": "East Campus",
-            "coordinates": {
-                "latitude": 29.671186,
-                "longitude": -82.299274
-            },
+            "coordinates": [
+                29.671186,
+                -82.299274
+            ],
             "electric": true,
             "meter": false,
             "scooter": true,
@@ -439,7 +408,6 @@
             "decals": {
                 "any": {
                     "specCapacity": 439,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -449,7 +417,6 @@
                 },
                 "disabled": {
                     "specCapacity": 14,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -461,10 +428,10 @@
         },
         {
             "name": "East Hall",
-            "coordinates": {
-                "latitude": 29.64721,
-                "longitude": -82.349879
-            },
+            "coordinates": [
+                29.64721,
+                -82.349879
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -472,7 +439,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 83,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -482,7 +448,6 @@
                 },
                 "carpool": {
                     "specCapacity": 4,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -494,10 +459,10 @@
         },
         {
             "name": "New Engineering Building",
-            "coordinates": {
-                "latitude": 29.64464,
-                "longitude": -82.348178
-            },
+            "coordinates": [
+                29.64464,
+                -82.348178
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -505,7 +470,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 332,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -515,7 +479,6 @@
                 },
                 "disabled": {
                     "specCapacity": 6,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -527,10 +490,10 @@
         },
         {
             "name": "Entomology & Nematology",
-            "coordinates": {
-                "latitude": 29.634942,
-                "longitude": -82.367213
-            },
+            "coordinates": [
+                29.634942,
+                -82.367213
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -538,7 +501,6 @@
             "decals": {
                 "any": {
                     "specCapacity": 100,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -548,7 +510,6 @@
                 },
                 "orange": {
                     "specCapacity": 30,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -558,7 +519,6 @@
                 },
                 "disabled": {
                     "specCapacity": 3,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -570,10 +530,10 @@
         },
         {
             "name": "Fifield Hall",
-            "coordinates": {
-                "latitude": 29.637891,
-                "longitude": -82.362075
-            },
+            "coordinates": [
+                29.637891,
+                -82.362075
+            ],
             "electric": false,
             "meter": true,
             "scooter": true,
@@ -581,7 +541,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 117,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -591,7 +550,6 @@
                 },
                 "green": {
                     "specCapacity": 129,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -601,7 +559,6 @@
                 },
                 "disabled": {
                     "specCapacity": 6,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -613,10 +570,10 @@
         },
         {
             "name": "Frazier-Rogers Hall",
-            "coordinates": {
-                "latitude": 29.644687,
-                "longitude": -82.346028
-            },
+            "coordinates": [
+                29.644687,
+                -82.346028
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -624,7 +581,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 175,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -634,7 +590,6 @@
                 },
                 "carpool": {
                     "specCapacity": 16,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -644,7 +599,6 @@
                 },
                 "disabled": {
                     "specCapacity": 6,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -656,10 +610,10 @@
         },
         {
             "name": "Fraternity Row",
-            "coordinates": {
-                "latitude": 29.64514,
-                "longitude": -82.356523
-            },
+            "coordinates": [
+                29.64514,
+                -82.356523
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -667,7 +621,6 @@
             "decals": {
                 "anyNotPNR": {
                     "specCapacity": 371,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -677,7 +630,6 @@
                 },
                 "red3": {
                     "specCapacity": 226,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -687,7 +639,6 @@
                 },
                 "red1": {
                     "specCapacity": 21,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -697,7 +648,6 @@
                 },
                 "disabled": {
                     "specCapacity": 3,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -709,10 +659,10 @@
         },
         {
             "name": "Garage 1",
-            "coordinates": {
-                "latitude": 29.641064,
-                "longitude": -82.342439
-            },
+            "coordinates": [
+                29.641064,
+                -82.342439
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -720,7 +670,6 @@
             "decals": {
                 "disabled": {
                     "specCapacity": 14,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "00:00",
                         "endTime": "00:00",
@@ -730,7 +679,6 @@
                 },
                 "gated": {
                     "specCapacity": 412,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -742,10 +690,10 @@
         },
         {
             "name": "Garage 2",
-            "coordinates": {
-                "latitude": 29.638819,
-                "longitude": -82.3464
-            },
+            "coordinates": [
+                29.638819,
+                -82.3464
+            ],
             "electric": true,
             "meter": false,
             "scooter": true,
@@ -753,7 +701,6 @@
             "decals": {
                 "disabled": {
                     "specCapacity": 4,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "00:00",
                         "endTime": "00:00",
@@ -763,7 +710,6 @@
                 },
                 "gated": {
                     "specCapacity": 305,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -773,7 +719,6 @@
                 },
                 "any": {
                     "specCapacity": 604,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -785,10 +730,10 @@
         },
         {
             "name": "Garage 3",
-            "coordinates": {
-                "latitude": 29.638651,
-                "longitude": -82.34761
-            },
+            "coordinates": [
+                29.638651,
+                -82.34761
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -796,7 +741,6 @@
             "decals": {
                 "medRes": {
                     "specCapacity": 326,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -806,7 +750,6 @@
                 },
                 "any": {
                     "specCapacity": 283,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -816,7 +759,6 @@
                 },
                 "gated": {
                     "specCapacity": 204,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -826,7 +768,6 @@
                 },
                 "carpool": {
                     "specCapacity": 104,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -838,10 +779,10 @@
         },
         {
             "name": "Garage 4",
-            "coordinates": {
-                "latitude": 29.645429,
-                "longitude": -82.343324
-            },
+            "coordinates": [
+                29.645429,
+                -82.343324
+            ],
             "electric": true,
             "meter": false,
             "scooter": true,
@@ -849,7 +790,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 652,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -859,7 +799,6 @@
                 },
                 "disabled": {
                     "specCapacity": 1,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "00:00",
                         "endTime": "00:00",
@@ -871,10 +810,10 @@
         },
         {
             "name": "Garage 5",
-            "coordinates": {
-                "latitude": 29.642861,
-                "longitude": -82.350854
-            },
+            "coordinates": [
+                29.642861,
+                -82.350854
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -882,7 +821,6 @@
             "decals": {
                 "red3": {
                     "specCapacity": 1096,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -892,7 +830,6 @@
                 },
                 "red1": {
                     "specCapacity": 37,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -902,7 +839,6 @@
                 },
                 "redGreen": {
                     "specCapacity": 181,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -912,7 +848,6 @@
                 },
                 "disabled": {
                     "specCapacity": 1,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -924,10 +859,10 @@
         },
         {
             "name": "Garage 6",
-            "coordinates": {
-                "latitude": 29.637184,
-                "longitude": -82.342313
-            },
+            "coordinates": [
+                29.637184,
+                -82.342313
+            ],
             "electric": false,
             "meter": true,
             "scooter": true,
@@ -935,7 +870,6 @@
             "decals": {
                 "gated": {
                     "specCapacity": 332,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -945,7 +879,6 @@
                 },
                 "blue": {
                     "specCapacity": 87,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -955,7 +888,6 @@
                 },
                 "carpool": {
                     "specCapacity": 41,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -965,7 +897,6 @@
                 },
                 "disabled": {
                     "specCapacity": 10,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -977,10 +908,10 @@
         },
         {
             "name": "Garage 7",
-            "coordinates": {
-                "latitude": 29.650608,
-                "longitude": -82.351537
-            },
+            "coordinates": [
+                29.650608,
+                -82.351537
+            ],
             "electric": true,
             "meter": false,
             "scooter": true,
@@ -988,7 +919,6 @@
             "decals": {
                 "green": {
                     "specCapacity": 607,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1000,10 +930,10 @@
         },
         {
             "name": "Garage 8",
-            "coordinates": {
-                "latitude": 29.645504,
-                "longitude": -82.337539
-            },
+            "coordinates": [
+                29.645504,
+                -82.337539
+            ],
             "electric": true,
             "meter": false,
             "scooter": true,
@@ -1011,7 +941,6 @@
             "decals": {
                 "red1": {
                     "specCapacity": 119,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1021,7 +950,6 @@
                 },
                 "red3": {
                     "specCapacity": 82,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1031,7 +959,6 @@
                 },
                 "orange": {
                     "specCapacity": 229,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1041,7 +968,6 @@
                 },
                 "disabled": {
                     "specCapacity": 10,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1053,10 +979,10 @@
         },
         {
             "name": "Garage 9",
-            "coordinates": {
-                "latitude": 29.636313,
-                "longitude": -82.349063
-            },
+            "coordinates": [
+                29.636313,
+                -82.349063
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1064,7 +990,6 @@
             "decals": {
                 "blue": {
                     "specCapacity": 1268,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1074,7 +999,6 @@
                 },
                 "green": {
                     "specCapacity": 135,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1084,7 +1008,6 @@
                 },
                 "disabled": {
                     "specCapacity": 15,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1096,10 +1019,10 @@
         },
         {
             "name": "Garage 10",
-            "coordinates": {
-                "latitude": 29.640688,
-                "longitude": -82.341687
-            },
+            "coordinates": [
+                29.640688,
+                -82.341687
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1107,7 +1030,6 @@
             "decals": {
                 "disabled": {
                     "specCapacity": 16,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "00:00",
                         "endTime": "00:00",
@@ -1117,7 +1039,6 @@
                 },
                 "any": {
                     "specCapacity": 665,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "00:00",
                         "endTime": "00:00",
@@ -1129,10 +1050,10 @@
         },
         {
             "name": "Garage 11",
-            "coordinates": {
-                "latitude": 29.636318,
-                "longitude": -82.368438
-            },
+            "coordinates": [
+                29.636318,
+                -82.368438
+            ],
             "electric": true,
             "meter": false,
             "scooter": true,
@@ -1140,7 +1061,6 @@
             "decals": {
                 "any": {
                     "specCapacity": 542,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1150,7 +1070,6 @@
                 },
                 "disabled": {
                     "specCapacity": 14,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1162,10 +1081,10 @@
         },
         {
             "name": "Garage 12",
-            "coordinates": {
-                "latitude": 29.645384,
-                "longitude": -82.348224
-            },
+            "coordinates": [
+                29.645384,
+                -82.348224
+            ],
             "electric": true,
             "meter": false,
             "scooter": true,
@@ -1173,7 +1092,6 @@
             "decals": {
                 "gated": {
                     "specCapacity": 67,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1183,7 +1101,6 @@
                 },
                 "any": {
                     "specCapacity": 118,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1193,7 +1110,6 @@
                 },
                 "disabled": {
                     "specCapacity": 8,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1205,10 +1121,10 @@
         },
         {
             "name": "Garage 13",
-            "coordinates": {
-                "latitude": 29.640438,
-                "longitude": -82.349938
-            },
+            "coordinates": [
+                29.640438,
+                -82.349938
+            ],
             "electric": true,
             "meter": true,
             "scooter": true,
@@ -1216,7 +1132,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 140,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1226,7 +1141,6 @@
                 },
                 "OBMO": {
                     "specCapacity": 633,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1236,7 +1150,6 @@
                 },
                 "disabled": {
                     "specCapacity": 24,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1246,7 +1159,6 @@
                 },
                 "carpool": {
                     "specCapacity": 16,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1256,7 +1168,6 @@
                 },
                 "gated": {
                     "specCapacity": 54,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1268,10 +1179,10 @@
         },
         {
             "name": "Human Resource Services",
-            "coordinates": {
-                "latitude": 29.651746,
-                "longitude": -82.334306
-            },
+            "coordinates": [
+                29.651746,
+                -82.334306
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1279,7 +1190,6 @@
             "decals": {
                 "orangeBlue": {
                     "specCapacity": 148,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1289,7 +1199,6 @@
                 },
                 "carpool": {
                     "specCapacity": 3,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1299,7 +1208,6 @@
                 },
                 "disabled": {
                     "specCapacity": 4,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1311,10 +1219,10 @@
         },
         {
             "name": "Graham Area",
-            "coordinates": {
-                "latitude": 29.645294,
-                "longitude": -82.35174
-            },
+            "coordinates": [
+                29.645294,
+                -82.35174
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1322,7 +1230,6 @@
             "decals": {
                 "red3": {
                     "specCapacity": 333,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1332,7 +1239,6 @@
                 },
                 "red1": {
                     "specCapacity": 78,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1342,7 +1248,6 @@
                 },
                 "disabled": {
                     "specCapacity": 2,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1354,10 +1259,10 @@
         },
         {
             "name": "Hume East",
-            "coordinates": {
-                "latitude": 29.644282,
-                "longitude": -82.350616
-            },
+            "coordinates": [
+                29.644282,
+                -82.350616
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -1365,7 +1270,6 @@
             "decals": {
                 "red1": {
                     "specCapacity": 46,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1375,7 +1279,6 @@
                 },
                 "disabled": {
                     "specCapacity": 3,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1387,10 +1290,10 @@
         },
         {
             "name": "Hume West",
-            "coordinates": {
-                "latitude": 29.644732,
-                "longitude": -82.355441
-            },
+            "coordinates": [
+                29.644732,
+                -82.355441
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -1398,7 +1301,6 @@
             "decals": {
                 "green": {
                     "specCapacity": 42,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1408,7 +1310,6 @@
                 },
                 "disabled": {
                     "specCapacity": 2,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1420,10 +1321,10 @@
         },
         {
             "name": "IFAS Area",
-            "coordinates": {
-                "latitude": 29.638471,
-                "longitude": -82.356302
-            },
+            "coordinates": [
+                29.638471,
+                -82.356302
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1431,7 +1332,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 123,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1441,7 +1341,6 @@
                 },
                 "disabled": {
                     "specCapacity": 7,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1451,7 +1350,6 @@
                 },
                 "green": {
                     "specCapacity": 6,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1463,10 +1361,10 @@
         },
         {
             "name": "IFAS Conferences",
-            "coordinates": {
-                "latitude": 29.638489,
-                "longitude": -82.357718
-            },
+            "coordinates": [
+                29.638489,
+                -82.357718
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -1474,7 +1372,6 @@
             "decals": {
                 "green": {
                     "specCapacity": 90,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1484,7 +1381,6 @@
                 },
                 "any": {
                     "specCapacity": 12,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1494,7 +1390,6 @@
                 },
                 "disabled": {
                     "specCapacity": 1,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1504,7 +1399,6 @@
                 },
                 "orange": {
                     "specCapacity": 7,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1516,10 +1410,10 @@
         },
         {
             "name": "IFAS Facilities",
-            "coordinates": {
-                "latitude": 29.638089,
-                "longitude": -82.355952
-            },
+            "coordinates": [
+                29.638089,
+                -82.355952
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1527,7 +1421,6 @@
             "decals": {
                 "green": {
                     "specCapacity": 47,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1537,7 +1430,6 @@
                 },
                 "disabled": {
                     "specCapacity": 2,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1549,10 +1441,10 @@
         },
         {
             "name": "Infirmary",
-            "coordinates": {
-                "latitude": 29.648995,
-                "longitude": -82.346163
-            },
+            "coordinates": [
+                29.648995,
+                -82.346163
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -1560,7 +1452,6 @@
             "decals": {
                 "gated": {
                     "specCapacity": 28,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1570,7 +1461,6 @@
                 },
                 "disabled": {
                     "specCapacity": 6,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1582,10 +1472,10 @@
         },
         {
             "name": "Inner Road",
-            "coordinates": {
-                "latitude": 29.647344,
-                "longitude": -82.342342
-            },
+            "coordinates": [
+                29.647344,
+                -82.342342
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1593,7 +1483,6 @@
             "decals": {
                 "gated": {
                     "specCapacity": 67,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1603,7 +1492,6 @@
                 },
                 "disabled": {
                     "specCapacity": 12,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1613,7 +1501,6 @@
                 },
                 "orange": {
                     "specCapacity": 19,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1623,7 +1510,6 @@
                 },
                 "carpool": {
                     "specCapacity": 8,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1635,10 +1521,10 @@
         },
         {
             "name": "Jennings Hall",
-            "coordinates": {
-                "latitude": 29.643434,
-                "longitude": -82.342461
-            },
+            "coordinates": [
+                29.643434,
+                -82.342461
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1646,7 +1532,6 @@
             "decals": {
                 "red1": {
                     "specCapacity": 78,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1658,10 +1543,10 @@
         },
         {
             "name": "Keys Residential Complex",
-            "coordinates": {
-                "latitude": 29.647475,
-                "longitude": -82.355003
-            },
+            "coordinates": [
+                29.647475,
+                -82.355003
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1669,7 +1554,6 @@
             "decals": {
                 "red1": {
                     "specCapacity": 190,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1679,7 +1563,6 @@
                 },
                 "disabled": {
                     "specCapacity": 7,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1691,10 +1574,10 @@
         },
         {
             "name": "Lacrosse Stadium",
-            "coordinates": {
-                "latitude": 29.637476,
-                "longitude": -82.365217
-            },
+            "coordinates": [
+                29.637476,
+                -82.365217
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -1702,7 +1585,6 @@
             "decals": {
                 "any": {
                     "specCapacity": 150,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1712,7 +1594,6 @@
                 },
                 "orange": {
                     "specCapacity": 15,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1722,7 +1603,6 @@
                 },
                 "disabled": {
                     "specCapacity": 6,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1734,10 +1614,10 @@
         },
         {
             "name": "Lakeside Residential Complex",
-            "coordinates": {
-                "latitude": 29.642104,
-                "longitude": -82.365426
-            },
+            "coordinates": [
+                29.642104,
+                -82.365426
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1745,7 +1625,6 @@
             "decals": {
                 "red1": {
                     "specCapacity": 231,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1755,7 +1634,6 @@
                 },
                 "disabled": {
                     "specCapacity": 12,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1767,10 +1645,10 @@
         },
         {
             "name": "Large Commuter Lot",
-            "coordinates": {
-                "latitude": 29.642133,
-                "longitude": -82.350693
-            },
+            "coordinates": [
+                29.642133,
+                -82.350693
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -1778,7 +1656,6 @@
             "decals": {
                 "green": {
                     "specCapacity": 1072,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1790,10 +1667,10 @@
         },
         {
             "name": "Levin College of Law",
-            "coordinates": {
-                "latitude": 29.647932,
-                "longitude": -82.359095
-            },
+            "coordinates": [
+                29.647932,
+                -82.359095
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1801,7 +1678,6 @@
             "decals": {
                 "green": {
                     "specCapacity": 403,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1811,7 +1687,6 @@
                 },
                 "orange": {
                     "specCapacity": 116,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1821,7 +1696,6 @@
                 },
                 "disabled": {
                     "specCapacity": 11,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1833,10 +1707,10 @@
         },
         {
             "name": "Livestock Pavilion",
-            "coordinates": {
-                "latitude": 29.634121,
-                "longitude": -82.351433
-            },
+            "coordinates": [
+                29.634121,
+                -82.351433
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -1844,7 +1718,6 @@
             "decals": {
                 "green": {
                     "specCapacity": 122,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1854,7 +1727,6 @@
                 },
                 "any": {
                     "specCapacity": 84,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1864,7 +1736,6 @@
                 },
                 "blue": {
                     "specCapacity": 5,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1874,7 +1745,6 @@
                 },
                 "disabled": {
                     "specCapacity": 1,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1886,10 +1756,10 @@
         },
         {
             "name": "Maguire Village",
-            "coordinates": {
-                "latitude": 29.642101,
-                "longitude": -82.370489
-            },
+            "coordinates": [
+                29.642101,
+                -82.370489
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1897,7 +1767,6 @@
             "decals": {
                 "brown": {
                     "specCapacity": 266,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1907,7 +1776,6 @@
                 },
                 "red3": {
                     "specCapacity": 26,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1917,7 +1785,6 @@
                 },
                 "disabled": {
                     "specCapacity": 6,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1929,10 +1796,10 @@
         },
         {
             "name": "McCarty Drive",
-            "coordinates": {
-                "latitude": 29.645969,
-                "longitude": -82.344613
-            },
+            "coordinates": [
+                29.645969,
+                -82.344613
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1940,7 +1807,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 128,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1950,7 +1816,6 @@
                 },
                 "carpool": {
                     "specCapacity": 9,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1960,7 +1825,6 @@
                 },
                 "disabled": {
                     "specCapacity": 6,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1972,10 +1836,10 @@
         },
         {
             "name": "Meats Lab",
-            "coordinates": {
-                "latitude": 29.630623,
-                "longitude": -82.351001
-            },
+            "coordinates": [
+                29.630623,
+                -82.351001
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -1983,7 +1847,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 131,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -1993,7 +1856,6 @@
                 },
                 "green": {
                     "specCapacity": 21,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2003,7 +1865,6 @@
                 },
                 "any": {
                     "specCapacity": 160,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2013,7 +1874,6 @@
                 },
                 "disabled": {
                     "specCapacity": 5,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2023,7 +1883,6 @@
                 },
                 "carpool": {
                     "specCapacity": 2,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2035,10 +1894,10 @@
         },
         {
             "name": "Medical Plaza",
-            "coordinates": {
-                "latitude": 29.638473,
-                "longitude": -82.349228
-            },
+            "coordinates": [
+                29.638473,
+                -82.349228
+            ],
             "electric": false,
             "meter": true,
             "scooter": true,
@@ -2046,7 +1905,6 @@
             "decals": {
                 "disabled": {
                     "specCapacity": 45,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2056,7 +1914,6 @@
                 },
                 "blue": {
                     "specCapacity": 16,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2068,10 +1925,10 @@
         },
         {
             "name": "Microbiology",
-            "coordinates": {
-                "latitude": 29.640504,
-                "longitude": -82.362498
-            },
+            "coordinates": [
+                29.640504,
+                -82.362498
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -2079,7 +1936,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 72,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2089,7 +1945,6 @@
                 },
                 "disabled": {
                     "specCapacity": 4,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2099,73 +1954,68 @@
                 }
             }
         },
-        {
-            "name": "Murphree Area",
-            "coordinates": {
-                "latitude": 29.65185,
-                "longitude": -82.346388
-            },
-            "electric": false,
-            "meter": false,
-            "scooter": true,
-            "lastUpdate": "00:00",
-            "decals": {
-                "red1": {
-                    "specCapacity": 117,
-                    "currOccupancy": 0,
-                    "restrictions": {
-                        "startTime": "07:30",
-                        "endTime": "16:30",
-                        "weekend": true,
-                        "allDay": true
-                    }
-                },
-                "orange": {
-                    "specCapacity": 49,
-                    "currOccupancy": 0,
-                    "restrictions": {
-                        "startTime": "07:30",
-                        "endTime": "16:30",
-                        "weekend": true,
-                        "allDay": true
-                    }
-                },
-                "disabled": {
-                    "specCapacity": 19,
-                    "currOccupancy": 0,
-                    "restrictions": {
-                        "startTime": "07:30",
-                        "endTime": "16:30",
-                        "weekend": true,
-                        "allDay": true
-                    }
-                },
-                "gated": {
-                    "specCapacity": 57,
-                    "currOccupancy": 0,
-                    "restrictions": {
-                        "startTime": "07:30",
-                        "endTime": "16:30",
-                        "weekend": true,
-                        "allDay": true
-                    }
-                }
+      {
+        "name": "Murphree Area",
+        "coordinates": [
+          29.65185,
+          -82.346388
+        ],
+        "electric": false,
+        "meter": false,
+        "scooter": true,
+        "lastUpdate": "00:00",
+        "decals": {
+          "red1": {
+            "specCapacity": 117,
+            "restrictions": {
+              "startTime": "07:30",
+              "endTime": "16:30",
+              "weekend": true,
+              "allDay": true
             }
-        },
+          },
+          "orange": {
+            "specCapacity": 49,
+            "restrictions": {
+              "startTime": "07:30",
+              "endTime": "16:30",
+              "weekend": true,
+              "allDay": true
+            }
+          },
+          "disabled": {
+            "specCapacity": 19,
+            "restrictions": {
+              "startTime": "07:30",
+              "endTime": "16:30",
+              "weekend": true,
+              "allDay": true
+            }
+          },
+          "gated": {
+            "specCapacity": 57,
+            "restrictions": {
+              "startTime": "07:30",
+              "endTime": "16:30",
+              "weekend": true,
+              "allDay": true
+            }
+          }
+        }
+      },
         {
             "name": "O'Connell Center",
-            "coordinates": {
-                "latitude": 29.650914,
-                "longitude": -82.35
-            },
+            "coordinates": [
+                29.650914,
+                -82.35
+            ],
             "electric": false,
             "meter": true,
             "scooter": false,
             "lastUpdate": "00:00",
             "decals": {
-                "one": {
+                "orange": {
                     "specCapacity": 851,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2175,7 +2025,6 @@
                 },
                 "disabled": {
                     "specCapacity": 31,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2187,10 +2036,10 @@
         },
         {
             "name": "Park-and-Ride 2",
-            "coordinates": {
-                "latitude": 29.637126,
-                "longitude": -82.3767
-            },
+            "coordinates": [
+                29.637126,
+                -82.3767
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -2198,7 +2047,6 @@
             "decals": {
                 "any": {
                     "specCapacity": 138,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2210,10 +2058,10 @@
         },
         {
             "name": "Physical Plant",
-            "coordinates": {
-                "latitude": 29.643217,
-                "longitude": -82.368491
-            },
+            "coordinates": [
+                29.643217,
+                -82.368491
+            ],
             "electric": false,
             "meter": true,
             "scooter": true,
@@ -2221,7 +2069,6 @@
             "decals": {
                 "green": {
                     "specCapacity": 329,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2231,7 +2078,6 @@
                 },
                 "orange": {
                     "specCapacity": 161,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2241,7 +2087,6 @@
                 },
                 "disabled": {
                     "specCapacity": 9,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2251,7 +2096,6 @@
                 },
                 "any": {
                     "specCapacity": 14,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2263,10 +2107,10 @@
         },
         {
             "name": "Pony Field",
-            "coordinates": {
-                "latitude": 29.639019,
-                "longitude": -82.351527
-            },
+            "coordinates": [
+                29.639019,
+                -82.351527
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -2274,7 +2118,6 @@
             "decals": {
                 "medRes": {
                     "specCapacity": 22,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2284,7 +2127,6 @@
                 },
                 "gated": {
                     "specCapacity": 37,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2294,7 +2136,6 @@
                 },
                 "green": {
                     "specCapacity": 42,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2306,10 +2147,10 @@
         },
         {
             "name": "Rhines Hall",
-            "coordinates": {
-                "latitude": 29.647867,
-                "longitude": -82.34871
-            },
+            "coordinates": [
+                29.647867,
+                -82.34871
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -2317,7 +2158,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 63,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2327,7 +2167,6 @@
                 },
                 "disabled": {
                     "specCapacity": 8,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2339,10 +2178,10 @@
         },
         {
             "name": "Sorority Row",
-            "coordinates": {
-                "latitude": 29.643835,
-                "longitude": -82.337177
-            },
+            "coordinates": [
+                29.643835,
+                -82.337177
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -2350,7 +2189,6 @@
             "decals": {
                 "red1": {
                     "specCapacity": 154,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2360,7 +2198,6 @@
                 },
                 "red3": {
                     "specCapacity": 30,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2370,7 +2207,6 @@
                 },
                 "disabled": {
                     "specCapacity": 3,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2382,10 +2218,10 @@
         },
         {
             "name": "SW Recreation Center",
-            "coordinates": {
-                "latitude": 29.637904,
-                "longitude": -82.368061
-            },
+            "coordinates": [
+                29.637904,
+                -82.368061
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -2393,7 +2229,6 @@
             "decals": {
                 "anyNotPNR": {
                     "specCapacity": 85,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2403,7 +2238,6 @@
                 },
                 "disabled": {
                     "specCapacity": 6,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2415,10 +2249,10 @@
         },
         {
             "name": "Sports Medicine",
-            "coordinates": {
-                "latitude": 29.637931,
-                "longitude": -82.374686
-            },
+            "coordinates": [
+                29.637931,
+                -82.374686
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -2426,7 +2260,6 @@
             "decals": {
                 "orangeBlue": {
                     "specCapacity": 179,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2436,7 +2269,6 @@
                 },
                 "any": {
                     "specCapacity": 321,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2446,7 +2278,6 @@
                 },
                 "disabled": {
                     "specCapacity": 26,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2458,10 +2289,10 @@
         },
         {
             "name": "Springs Residential Complex",
-            "coordinates": {
-                "latitude": 29.648745,
-                "longitude": -82.356309
-            },
+            "coordinates": [
+                29.648745,
+                -82.356309
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -2469,7 +2300,6 @@
             "decals": {
                 "red1": {
                     "specCapacity": 58,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2479,7 +2309,6 @@
                 },
                 "disabled": {
                     "specCapacity": 4,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2491,10 +2320,10 @@
         },
         {
             "name": "Surge Area",
-            "coordinates": {
-                "latitude": 29.631479,
-                "longitude": -82.367672
-            },
+            "coordinates": [
+                29.631479,
+                -82.367672
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -2502,7 +2331,6 @@
             "decals": {
                 "any": {
                     "specCapacity": 68,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2512,7 +2340,6 @@
                 },
                 "disabled": {
                     "specCapacity": 2,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2524,10 +2351,10 @@
         },
         {
             "name": "SW 13th Street",
-            "coordinates": {
-                "latitude": 29.651306,
-                "longitude": -82.338698
-            },
+            "coordinates": [
+                29.651306,
+                -82.338698
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -2535,7 +2362,6 @@
             "decals": {
                 "carpool": {
                     "specCapacity": 28,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2547,10 +2373,10 @@
         },
         {
             "name": "Little Hall",
-            "coordinates": {
-                "latitude": 29.649383,
-                "longitude": -82.340378
-            },
+            "coordinates": [
+                29.649383,
+                -82.340378
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -2558,7 +2384,6 @@
             "decals": {
                 "gated": {
                     "specCapacity": 118,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2568,7 +2393,6 @@
                 },
                 "disabled": {
                     "specCapacity": 4,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2580,10 +2404,10 @@
         },
         {
             "name": "Percy Beard Track",
-            "coordinates": {
-                "latitude": 29.648787,
-                "longitude": -82.355536
-            },
+            "coordinates": [
+                29.648787,
+                -82.355536
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -2591,7 +2415,6 @@
             "decals": {
                 "red3": {
                     "specCapacity": 148,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2601,7 +2424,6 @@
                 },
                 "disabled": {
                     "specCapacity": 4,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2613,10 +2435,10 @@
         },
         {
             "name": "Archer Triangle",
-            "coordinates": {
-                "latitude": 29.635837,
-                "longitude": -82.351628
-            },
+            "coordinates": [
+                29.635837,
+                -82.351628
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -2624,7 +2446,6 @@
             "decals": {
                 "blue": {
                     "specCapacity": 170,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2634,7 +2455,6 @@
                 },
                 "any": {
                     "specCapacity": 76,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2646,10 +2466,10 @@
         },
         {
             "name": "University Village",
-            "coordinates": {
-                "latitude": 29.638002,
-                "longitude": -82.370604
-            },
+            "coordinates": [
+                29.638002,
+                -82.370604
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -2657,7 +2477,6 @@
             "decals": {
                 "brown": {
                     "specCapacity": 196,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2667,7 +2486,6 @@
                 },
                 "disabled": {
                     "specCapacity": 5,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2679,10 +2497,10 @@
         },
         {
             "name": "University Police",
-            "coordinates": {
-                "latitude": 29.644612,
-                "longitude": -82.342674
-            },
+            "coordinates": [
+                29.644612,
+                -82.342674
+            ],
             "electric": false,
             "meter": false,
             "scooter": false,
@@ -2690,7 +2508,6 @@
             "decals": {
                 "orange": {
                     "specCapacity": 45,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2700,7 +2517,6 @@
                 },
                 "disabled": {
                     "specCapacity": 3,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2710,7 +2526,6 @@
                 },
                 "any": {
                     "specCapacity": 7,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2722,10 +2537,10 @@
         },
         {
             "name": "Vet Med",
-            "coordinates": {
-                "latitude": 29.634253,
-                "longitude": -82.348629
-            },
+            "coordinates": [
+                29.634253,
+                -82.348629
+            ],
             "electric": true,
             "meter": true,
             "scooter": true,
@@ -2733,7 +2548,6 @@
             "decals": {
                 "green": {
                     "specCapacity": 214,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2743,7 +2557,6 @@
                 },
                 "blue": {
                     "specCapacity": 171,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2753,7 +2566,6 @@
                 },
                 "any": {
                     "specCapacity": 94,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2763,7 +2575,6 @@
                 },
                 "disabled": {
                     "specCapacity": 26,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2773,7 +2584,6 @@
                 },
                 "gated": {
                     "specCapacity": 7,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2783,7 +2593,6 @@
                 },
                 "carpool": {
                     "specCapacity": 4,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2795,10 +2604,10 @@
         },
         {
             "name": "Vet Med- North",
-            "coordinates": {
-                "latitude": 29.63757,
-                "longitude": -82.353474
-            },
+            "coordinates": [
+                29.63757,
+                -82.353474
+            ],
             "electric": true,
             "meter": false,
             "scooter": true,
@@ -2806,7 +2615,6 @@
             "decals": {
                 "orangeBlue": {
                     "specCapacity": 133,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2816,7 +2624,6 @@
                 },
                 "gated": {
                     "specCapacity": 24,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2826,7 +2633,6 @@
                 },
                 "disabled": {
                     "specCapacity": 7,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2838,18 +2644,17 @@
         },
         {
             "name": "Woodlawn Drive",
-            "coordinates": {
-                "latitude": 29.646037,
-                "longitude": -82.355313
-            },
+            "coordinates": [
+                29.646037,
+                -82.355313
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
             "lastUpdate": "00:00",
             "decals": {
-                "red": {
+                "red3": {
                     "specCapacity": 83,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
@@ -2859,7 +2664,6 @@
                 },
                 "disabled": {
                     "specCapacity": 1,
-                    "currOccupancy": 0,
                     "restrictions": {
                         "startTime": "07:30",
                         "endTime": "16:30",
