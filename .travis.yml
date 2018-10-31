@@ -10,4 +10,4 @@ deploy:
   app: parking-picker
   on:
     repo: janbro/CEN3031-Group1
-    branch: master-test
+    branch: master
