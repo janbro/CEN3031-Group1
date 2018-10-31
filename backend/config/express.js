@@ -10,7 +10,7 @@ var __clientdir = './../parking-picker-ui';
 
 module.exports.init = function() {
   //connect to database
-  mongoose.connect(config.db.uri);
+  mongoose.connect(config.db.uri, { useNewUrlParser: true });
 
   //initialize app
   var app = express();
@@ -32,7 +32,7 @@ module.exports.init = function() {
   
 
   /**TODO 
-  Use the listings router for requests to the api */
+  Use the garage router for requests to the api */
   app.use('/api/garages', garagesRouter);
 
   /**TODO 
