@@ -17,26 +17,16 @@ var garageSchema = new Schema({
       "meter": Boolean,
       "scooter": Boolean,
       "lastUpdate": Date,
-      "decals": {
-        "disabled": {
-            "specCapacity": Number,
-            "restrictions": {
-                "startTime": Date,
-                "endTime": Date,
-                "weekend": Boolean,
-                "allDay": Boolean
-            }
-        },
-        "gated": {
-            "specCapacity": Number,
-            "restrictions": {
-                "startTime": Date,
-                "endTime": Date,
-                "weekend": Boolean,
-                "allDay": Boolean
-            }
+      "decals": [{
+        "name": String,
+        "specCapacity": Number,
+        "restrictions": {
+            "startTime": Date,
+            "endTime": Date,
+            "weekend": Boolean,
+            "allDay": Boolean
         }
-      }
+      }]
     }
   }
 );
