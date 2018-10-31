@@ -10,12 +10,14 @@ var garages = require('../controllers/garages.controller.js'),
 router.route('/')
   .get(garages.list);
 
-
 /*
   The ':' specifies a URL parameter. 
  */
 router.route('/:garageId')
   .get(garages.read);
+  // ADMIN ROUTES
+  // .put(garages.update)
+  // .delete(garages.delete);
 
 router.param('garageId', garages.garageByID);
 

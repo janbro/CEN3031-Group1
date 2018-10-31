@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     Garage = require('../models/garages.model.js');
 
 exports.read = function(req, res) {
-  /* send back the listing as json from the request */
+  /* send back the garages as json from the request */
   res.json(req.garage);
 };
 
