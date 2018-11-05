@@ -18,6 +18,29 @@ exports.list = function(req, res) {
   });
 };
 
+exports.listGeoJSON = function(req, res) {
+  Garage.find({}).sort({}).exec((err, docs) =>{
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    }
+    geoJson = [];
+    docs.forEach((ele) => {
+        geoJson.push({
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": ele.coordinates
+            },
+            "properties": {
+                "name": ele.name
+            }
+        });
+    });
+    res.json(geoJson);
+  });
+}
+
 exports.garageByID = function(req, res, next, id) {
   Garage.findById(id).exec(function(err, garage) {
     if(err) {

@@ -3,16 +3,10 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 /* Create your schema */
-var garageSchema = new Schema({
-  "parkingLots": 
+var garageSchema = new Schema(
     {
       "name": String,
-      "coordinates": {
-          "latitude": Number,
-          "longitude": Number
-      },
-      "genCapacity": Number,
-      "currOccupancy": Number,
+      "coordinates": [Number],
       "electric": Boolean,
       "meter": Boolean,
       "scooter": Boolean,
@@ -21,13 +15,14 @@ var garageSchema = new Schema({
         "name": String,
         "specCapacity": Number,
         "restrictions": {
-            "startTime": Date,
-            "endTime": Date,
+            "startTime": String,
+            "endTime": String,
             "weekend": Boolean,
             "allDay": Boolean
         }
       }]
-    }
+  }, {
+    collection: "ParkingLotData"
   }
 );
 

@@ -24,7 +24,7 @@ describe('Garages CRUD tests', function() {
         .end(function(err, res) {
             should.not.exist(err);
             should.exist(res);
-            res.body.should.have.length(2);
+            res.body.should.have.length(72);
             done();
         });
     });
