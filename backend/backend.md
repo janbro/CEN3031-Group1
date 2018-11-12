@@ -10,3 +10,5 @@ To run the server locally, clone the repository and run `npm install` and then `
 GET `/api/garages` - returns all garages in db
 
 GET `/api/garages/:garageId` - returns requested garage
+
+GET `/api/garages/mapbox` - GeoJSON garage data
