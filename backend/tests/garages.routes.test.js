@@ -30,21 +30,33 @@ describe('Garages CRUD tests', function() {
     });
 
     it('should be able to retrieve a single garage', function(done) {
-    Garage.findOne({name: 'Garage 1'}, function(err, garage) {
-        if(err) {
-        console.log(err);
-        } else {
-        agent.get('/api/garages/' + garage._id)
-            .expect(200)
-            .end(function(err, res) {
-                should.not.exist(err);
-                should.exist(res);
-                res.body.name.should.equal('Garage 1');
-                res.body._id.should.equal(garage._id.toString());
-                done();
-            });
-        }
+        Garage.findOne({name: 'Garage 1'}, function(err, garage) {
+            if(err) {
+            console.log(err);
+            } else {
+            agent.get('/api/garages/' + garage._id)
+                .expect(200)
+                .end(function(err, res) {
+                    should.not.exist(err);
+                    should.exist(res);
+                    res.body.name.should.equal('Garage 1');
+                    res.body._id.should.equal(garage._id.toString());
+                    done();
+                });
+            }
+        });
     });
+
+    it('should return geojson FeatureCollection', function(done) {
+        agent.get('/api/garages/mapbox')
+        .expect(200)
+        .end(function(err, res) {
+            should.not.exist(err);
+            should.exist(res);
+            res.body.type.should.equal("FeatureCollection");
+            res.body.features.should.have.length(72);
+            done();
+        });
     });
 
     /* ADMIN TESTS

@@ -24,19 +24,24 @@ exports.listGeoJSON = function(req, res) {
       console.log(err);
       res.status(400).send(err);
     }
-    geoJson = [];
+    geoJson = {
+      "type": "FeatureCollection",
+      "features" : []
+    };
+    features = [];
     docs.forEach((ele) => {
-        geoJson.push({
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": ele.coordinates
-            },
-            "properties": {
-                "name": ele.name
-            }
+        features.push({
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": ele.coordinates.reverse()
+          },
+          "properties": {
+              "name": ele.name
+          }
         });
     });
+    geoJson.features = features;
     res.json(geoJson);
   });
 }
