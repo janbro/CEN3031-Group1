@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 @Injectable()
 export class BackendService {
-mapboxConfigUrl = 'localhost:8080/api/garages/mapbox';
+mapboxConfigUrl = 'http://parking-picker.herokuapp.com/api/garages/mapbox';
   constructor(private http: HttpClient) { }
 
   public getGaragesMapbox() {
@@ -16,3 +16,4 @@ mapboxConfigUrl = 'localhost:8080/api/garages/mapbox';
   public getGarages(decals) {
       return decals;
   }
+}

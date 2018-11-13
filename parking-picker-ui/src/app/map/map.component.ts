@@ -1,8 +1,7 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
-import { MapMouseEvent } from 'mapbox-gl'; 
-import { Backend,BackendService } from '../services/backend.service';
+import { MapMouseEvent } from 'mapbox-gl';
+import { BackendService } from '../services/backend.service';
 import { HttpClient } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 
 @Component({
   selector: 'app-map',
@@ -49,7 +48,6 @@ import { HttpModule } from '@angular/http';
 })
 
 export class MapComponent  {
-  backendService: BackendService;
   points: GeoJSON.FeatureCollection<GeoJSON.Point>;
   // showBackEndService() {
   //   this.backendService.getGaragesMapbox()
@@ -60,12 +58,13 @@ export class MapComponent  {
 
   showPoints() {
     this.backendService.getGaragesMapbox().subscribe(json => {
-      console.log(json);});
+      console.log(json);
+    });
   }
   // points: GeoJSON.FeatureCollection<GeoJSON.Point>;
   selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null;
   cursorStyle: string;
-  constructor(private ChangeDetectorRef: ChangeDetectorRef, private http: HttpClient, backendService: BackendService ) {
+  constructor(private ChangeDetectorRef: ChangeDetectorRef, private http: HttpClient, private backendService: BackendService ) {
     this.showPoints();
 
     
