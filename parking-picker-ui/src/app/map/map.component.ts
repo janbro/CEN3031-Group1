@@ -1,5 +1,9 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { MapMouseEvent } from 'mapbox-gl'; 
+import { Backend,BackendService } from '../services/backend.service';
+import { HttpClient } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -45,61 +49,80 @@ import { MapMouseEvent } from 'mapbox-gl';
 })
 
 export class MapComponent  {
+  backendService: BackendService;
   points: GeoJSON.FeatureCollection<GeoJSON.Point>;
+  // showBackEndService() {
+  //   this.backendService.getGaragesMapbox()
+  //     .subscribe((data: Backend) => this.backendService = {
+  //       mapboxConfigUrl: data['mapboxConfigUrl']
+  //     });
+  // }
+
+  showPoints() {
+    this.backendService.getGaragesMapbox().subscribe(json => {
+      console.log(json);});
+  }
+  // points: GeoJSON.FeatureCollection<GeoJSON.Point>;
   selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null;
   cursorStyle: string;
-  constructor(private ChangeDetectorRef: ChangeDetectorRef) {
-    this.points = {
-            'type': 'FeatureCollection',
-            'features': [{
-              'type': 'Feature',
-              'geometry': {
-                'type': 'Point',
-                'coordinates': [-82.3512, 29.6419]
-              },
-              'properties': {
-                'name': "Gale Lemerand Garage",
-              }
-            }, {
-              'type': 'Feature',
-              'geometry': {
-                'type': 'Point',
-                'coordinates': [-82.3429, 29.6453]
-              },
-              'properties': {
-                'name':'Reitz Union Parking',
-              },
-            }, {
-              'type': 'Feature',
-              'geometry': {
-                'type': 'Point',
-                'coordinates': [-82.3375, 29.6455]
-              },
-              'properties': {
-                'name': 'Newell Garage',
-              }
-            }, {
-              'type': 'Feature',
-              'geometry': {
-                'type': 'Point',
-                'coordinates': [-82.3473, 29.6510]
-              },
-              'properties': {
-                'name':'Murphree Parking',
-              }
-            },
-            {
-              'type':'Feature',
-              'geometry' : {
-                'type':'Point',
-                'coordinates':[-82.355441, 29.644732]
-            },
-            'properties': {
-              'name':'Hume West'
-            }
-           }
-          ]
-          };
+  constructor(private ChangeDetectorRef: ChangeDetectorRef, private http: HttpClient, backendService: BackendService ) {
+    this.showPoints();
+
+    
+    // this.points = backendService.getGaragesMapbox();
+    // console.log(backendService.getGaragesMapbox());
+    // points: GeoJSON.FeatureCollection<GeoJSON.Point>;
+  //   this.points = {
+  //           'type': 'FeatureCollection',
+  //           'features': [{
+  //             'type': 'Feature',
+  //             'geometry': {
+  //               'type': 'Point',
+  //               'coordinates': [-82.3512, 29.6419]
+  //             },
+  //             'properties': {
+  //               'name': "Gale Lemerand Garage",
+  //             }
+  //           }, {
+  //             'type': 'Feature',
+  //             'geometry': {
+  //               'type': 'Point',
+  //               'coordinates': [-82.3429, 29.6453]
+  //             },
+  //             'properties': {
+  //               'name':'Reitz Union Parking',
+  //             },
+  //           }, {
+  //             'type': 'Feature',
+  //             'geometry': {
+  //               'type': 'Point',
+  //               'coordinates': [-82.3375, 29.6455]
+  //             },
+  //             'properties': {
+  //               'name': 'Newell Garage',
+  //             }
+  //           }, {
+  //             'type': 'Feature',
+  //             'geometry': {
+  //               'type': 'Point',
+  //               'coordinates': [-82.3473, 29.6510]
+  //             },
+  //             'properties': {
+  //               'name':'Murphree Parking',
+  //             }
+  //           },
+  //           {
+  //             'type':'Feature',
+  //             'geometry' : {
+  //               'type':'Point',
+  //               'coordinates':[-82.355441, 29.644732]
+  //           },
+  //           'properties': {
+  //             'name':'Hume West'
+  //           }
+  //          }
+  //         ]
+  //         };
    }
 
    onClick(evt: MapMouseEvent) {
