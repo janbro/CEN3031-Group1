@@ -4,7 +4,7 @@ var path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     config = require('./config'),
-    garagesRouter = require('../routes/garages.routes');
+    garagesRouter = require('../routes/garages.routes'),
     decalRouter = require('../routes/decal-permissions.routes');
 
 var __clientdir = './../parking-picker-ui';

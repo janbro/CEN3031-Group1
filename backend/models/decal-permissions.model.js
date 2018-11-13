@@ -10,7 +10,7 @@ var decalPermission = new Schema(
 	"access": [String]
 	}
 ,{
-	collections: 'DecalData'
+	collection: "DecalData"
 }
 );
 
