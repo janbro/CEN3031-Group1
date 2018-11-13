@@ -19,9 +19,9 @@ describe('Garages CRUD tests', function() {
     });
 
     it('should it able to retrieve all garages', function(done) {
-    agent.get('/api/garages')
-        .expect(200)
-        .end(function(err, res) {
+        agent.get('/api/garages')
+                .expect(200)
+                .end(function(err, res) {
             should.not.exist(err);
             should.exist(res);
             res.body.should.have.length(72);
@@ -30,21 +30,21 @@ describe('Garages CRUD tests', function() {
     });
 
     it('should be able to retrieve a single garage', function(done) {
-    Garage.findOne({name: 'Garage 1'}, function(err, garage) {
-        if(err) {
-        console.log(err);
-        } else {
-        agent.get('/api/garages/' + garage._id)
-            .expect(200)
-            .end(function(err, res) {
-                should.not.exist(err);
-                should.exist(res);
-                res.body.name.should.equal('Garage 1');
-                res.body._id.should.equal(garage._id.toString());
-                done();
-            });
-        }
-    });
+        Garage.findOne({name: 'Garage 1'}, function(err, garage) {
+            if(err) {
+            console.log(err);
+            } else {
+            agent.get('/api/garages/' + garage._id)
+                .expect(200)
+                .end(function(err, res) {
+                    should.not.exist(err);
+                    should.exist(res);
+                    res.body.name.should.equal('Garage 1');
+                    res.body._id.should.equal(garage._id.toString());
+                    done();
+                });
+            }
+        });
     });
 
     /* ADMIN TESTS

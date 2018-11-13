@@ -24,13 +24,16 @@ exports.listGeoJSON = function(req, res) {
       console.log(err);
       res.status(400).send(err);
     }
-    geoJson = [];
+    geoJson = {
+      type: "FeatureCollection",
+      features: []
+    };
     docs.forEach((ele) => {
-        geoJson.push({
+        geoJson.features.push({
             "type": "Feature",
             "geometry": {
                 "type": "Point",
-                "coordinates": ele.coordinates
+                "coordinates": ele.coordinates.reverse()
             },
             "properties": {
                 "name": ele.name
