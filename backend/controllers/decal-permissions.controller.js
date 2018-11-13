@@ -22,7 +22,7 @@ exports.decalByName = function(req, res, next, name) {
     if(err) {
       res.status(400).send(err);
     } else {
-      req.decal = decal;
+      req.decal = decal[0];
       next();
     }
   });
