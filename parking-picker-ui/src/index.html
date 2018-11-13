@@ -1,58 +1,16 @@
 <!doctype html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <meta charset="utf-8">
-  <title>ParkingPickerUi</title>
-  <meta charset='utf-8' />
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-
-      #map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-      }
-    </style>
+  <title>UF Parking Picker</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root><div id='map'></div>
-    <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiY2hlbHNlYWNhbmRlbG9yYSIsImEiOiJjam5ieWVpMDcwOTRxM3BvbDlqZGx4YXltIn0.v0C5haf-TS-noMhWkdTTYQ'; // replace this with your access token
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/chelseacandelora/cjnd87y8t1cll2spike161l60', // replace this with your style URL
-      center: [-82.343,29.647],
-      zoom: 14.63
-    });
-    // code from the next step will go here
-map.on('click', function(e) {
-  var features = map.queryRenderedFeatures(e.point, {
-    layers: ['uf-campus-parking'] // replace this with the name of the layer
-  });
-
-  if (!features.length) {
-    return;
-  }
-
-  var feature = features[0];
-
-  var popup = new mapboxgl.Popup({ offset: [0, -15] })
-    .setLngLat(feature.geometry.coordinates)
-    .setHTML('<h3>' + feature.properties.Title + '</h3><p>' + feature.properties.Description1 + '</p>' + '<p>' + feature.properties.Description2 + '</p>' +  '<p>' + feature.properties.Description3 + '</p>')
-    .setLngLat(feature.geometry.coordinates)
-    .addTo(map);
-});
-    </script></app-root>
+  <app-root></app-root>
 </body>
 </html>
