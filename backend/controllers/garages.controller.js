@@ -41,7 +41,6 @@ exports.listGeoJSON = function(req, res) {
             }
         });
     });
-    geoJson.features = features;
     res.json(geoJson);
   });
 }
