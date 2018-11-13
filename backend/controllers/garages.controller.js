@@ -36,7 +36,8 @@ exports.listGeoJSON = function(req, res) {
                 "coordinates": ele.coordinates.reverse()
             },
             "properties": {
-                "name": ele.name
+                "name": ele.name,
+                "capacity": Math.floor(Math.random()*101)
             }
         });
     });
