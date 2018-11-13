@@ -24,7 +24,19 @@ Make your file changes, create commits, implement feature eg.
 
 `git commit -m "[commitdescription]"`
 
-Now, your commit log will probably look something like
+After a commiting, it's probably a good idea to push your changes to the remote repository in case of the unfortunate event your computer bursts into flames and your local changes are unrecoverable.
+
+`git push -u origin [mybranchname]`
+
+Travis CI should run automated tests on the repo once its pushed and you can sleep safely knowing your changes will be saved.
+
+After verifying the tests were succesful and the feature works, make a PR (pull request) on the master branch. Making a PR allows collaborators to review the code before pushing potentially breaking changes in master. Once you create the PR, get someone else to review it and if all tests are passing and the code is approved by a peer, then the branch can be merged.
+
+Once the branch is merged into master, travis-ci will run final tests and push the changes to heroku to auto deploy. Any errors in the testing and auto deployment can be seen at https://github.com/janbro/CEN3031-Group1/deployments. After successfully merging, delete your upstream branch if it hasn't been already
+
+`git push --delete origin [mybranchname]`
+
+Before merging your feature branch into master, your commit log will probably look something like
 
 ```
 commit 65e919a487d85278a5956bceac6d388ef4149a24 (HEAD -> my-feature-implementation, origin/my-feature-implementation)
@@ -64,13 +76,3 @@ where 3 is the number of commits ahead from master, or
 where `[commithash]` is the hash of the commit the master branch is on. You'll be thrown into vim which is where this gets a bit dicey, but all that needs to be done is press `i` to insert into the document, change all the `pick`'s after your first commit from `pick` to `squash`. Git needs a commit to squash into which is why your first commit will stay `pick`. Now comes the vims worst feature, exiting. To exit the editor without saving changes, press `esc` and type `:q!`. To save the changes and continue with the rebase, type `:x` instead. When continuing with the rebase, git will ask you to squash the commit messages as well. Get rid of all lines without a `#` at the beginning and create a single commit message for all commits. After editing and saving the file, `:x`, your commits should now be squashed! No more lengthy commit logs being added to the commit history, features will now be squashed into single commits without losing version controlling within your own feature branch.
 
 When your feature is done and you've squashed (or not) your commits into one, it's now time to push your branch to the remote repository.
-
-`git push -u origin [mybranchname]`
-
-Travis CI should run automated tests on the repo once its pushed.
-
-After verifying the tests were succesful and the feature works, make a PR (pull request) on the master branch. Making a PR allows collaborators to review the code before pushing potentially breaking changes in master. Once you create the PR, get someone else to review it and if all tests are passing and the code is approved by a peer, then the branch can be merged.
-
-Once the branch is merged into master, travis-ci will run final tests and push the changes to heroku to auto deploy. Any errors in the testing and auto deployment can be seen at https://github.com/janbro/CEN3031-Group1/deployments. After successfully merging, delete your upstream branch if it hasn't been already
-
-`git push --delete origin [mybranchname]`
