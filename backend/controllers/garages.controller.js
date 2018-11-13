@@ -37,12 +37,22 @@ exports.listGeoJSON = function(req, res) {
             },
             "properties": {
                 "name": ele.name,
-                "capacity": Math.floor(Math.random()*101)
+                "capacity": Math.floor(Math.random()*101),
+                "color": getRandomColor()
             }
         });
     });
     res.json(geoJson);
   });
+}
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
 
 exports.garageByID = function(req, res, next, id) {
