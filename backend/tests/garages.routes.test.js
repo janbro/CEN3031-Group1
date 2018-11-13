@@ -19,9 +19,9 @@ describe('Garages CRUD tests', function() {
     });
 
     it('should it able to retrieve all garages', function(done) {
-    agent.get('/api/garages')
-        .expect(200)
-        .end(function(err, res) {
+        agent.get('/api/garages')
+                .expect(200)
+                .end(function(err, res) {
             should.not.exist(err);
             should.exist(res);
             res.body.should.have.length(72);

@@ -25,20 +25,20 @@ exports.listGeoJSON = function(req, res) {
       res.status(400).send(err);
     }
     geoJson = {
-      "type": "FeatureCollection",
-      "features" : []
+      type: "FeatureCollection",
+      features: []
     };
-    features = [];
     docs.forEach((ele) => {
-        features.push({
-          "type": "Feature",
-          "geometry": {
-              "type": "Point",
-              "coordinates": ele.coordinates.reverse()
-          },
-          "properties": {
-              "name": ele.name
-          }
+        geoJson.features.push({
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": ele.coordinates.reverse()
+            },
+            "properties": {
+                "name": ele.name,
+                "capacity": Math.floor(Math.random()*101)
+            }
         });
     });
     geoJson.features = features;

@@ -6,6 +6,7 @@ var path = require('path'),
     config = require('./config'),
     garagesRouter = require('../routes/garages.routes'),
     decalRouter = require('../routes/decal-permissions.routes');
+const cors = require('cors');
 
 var __clientdir = './../parking-picker-ui';
 
@@ -15,6 +16,8 @@ module.exports.init = function() {
 
   //initialize app
   var app = express();
+
+  app.use(cors());
 
   //enable request logging for development debugging
   app.use(morgan('dev'));
