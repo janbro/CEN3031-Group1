@@ -8,7 +8,7 @@ var path = require('path'),
     decalRouter = require('../routes/decal-permissions.routes');
 const cors = require('cors');
 
-var __clientdir = './../parking-picker-ui';
+var __clientdir = './../parking-picker-ui/dist/parking-picker-ui/';
 
 module.exports.init = function() {
   //connect to database
@@ -24,17 +24,15 @@ module.exports.init = function() {
 
   //body parsing middleware 
   app.use(bodyParser.json());
-
   
   /**TODO
   Serve static files */
-  app.use('/', express.static(__clientdir));
-
+  app.use('/', express.static(path.resolve(__clientdir)));
+  
   app.get('/', function(req, res) {
     res.sendFile('/index.html');
   });
   
-
   /**TODO 
   Use the garage router for requests to the api */
   app.use('/api/garages', garagesRouter);
