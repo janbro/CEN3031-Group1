@@ -47,6 +47,18 @@ describe('Garages CRUD tests', function() {
         });
     });
 
+    it('should return geojson FeatureCollection', function(done) {
+        agent.get('/api/garages/mapbox')
+        .expect(200)
+        .end(function(err, res) {
+            should.not.exist(err);
+            should.exist(res);
+            res.body.type.should.equal("FeatureCollection");
+            res.body.features.should.have.length(72);
+            done();
+        });
+    });
+
     /* ADMIN TESTS
     it('should be able to save a garage', function(done) {
     var garage = {

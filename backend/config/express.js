@@ -4,7 +4,8 @@ var path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     config = require('./config'),
-    garagesRouter = require('../routes/garages.routes');
+    garagesRouter = require('../routes/garages.routes'),
+    decalRouter = require('../routes/decal-permissions.routes');
 const cors = require('cors');
 
 var __clientdir = './../parking-picker-ui';
@@ -37,6 +38,10 @@ module.exports.init = function() {
   /**TODO 
   Use the garage router for requests to the api */
   app.use('/api/garages', garagesRouter);
+
+/**TODO
+  Use the decal router for requests to the api*/
+  app.use('/api/decals', decalRouter);
 
   /**TODO 
   Go to homepage for all routes not specified */ 
