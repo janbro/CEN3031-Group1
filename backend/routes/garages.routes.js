@@ -15,7 +15,8 @@ router.route('/')
   Returns garage data in geoJSON format. 
   */
 router.route('/mapbox')
-  .get(garages.listGeoJSON);
+  .get(garages.listGeoJSON)
+  .post(garages.getGeoJSONByDecals);
 
 /*
   The ':' specifies a URL parameter. 

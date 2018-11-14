@@ -35,6 +35,41 @@ exports.getGaragesByDecals = function(req, res) {
   });
 };
 
+exports.getGeoJSONByDecals = function(req, res) {
+  Garage.find({}).sort({}).exec((err, docs) =>{
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    }
+    var filteredgarages = docs.filter((garage)=>{
+      return garage.decals.some((decal)=> {
+        if(req.body.decals.includes(decal.name)) {
+          return true;
+        }
+      });
+    });
+    geoJson = {
+      type: "FeatureCollection",
+      features: []
+    };
+    filteredgarages.forEach((ele) => {
+        geoJson.features.push({
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": ele.coordinates.reverse()
+            },
+            "properties": {
+                "name": ele.name,
+                "capacity": Math.floor(Math.random()*101),
+                "color": getRandomColor()
+            }
+        });
+    });
+    res.json(geoJson);
+  });
+};
+
 exports.listGeoJSON = function(req, res) {
   Garage.find({}).sort({}).exec((err, docs) =>{
     if(err) {
