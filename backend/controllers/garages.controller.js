@@ -18,6 +18,23 @@ exports.list = function(req, res) {
   });
 };
 
+exports.getGaragesByDecals = function(req, res) {
+  Garage.find({}).sort({}).exec((err, docs) =>{
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    }
+    var filteredgarages = docs.filter((garage)=>{
+      return garage.decals.some((decal)=> {
+        if(req.body.decals.includes(decal.name)) {
+          return true;
+        }
+      });
+    });
+    res.json(filteredgarages);
+  });
+};
+
 exports.listGeoJSON = function(req, res) {
   Garage.find({}).sort({}).exec((err, docs) =>{
     if(err) {

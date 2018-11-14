@@ -8,7 +8,8 @@ var garages = require('../controllers/garages.controller.js'),
   Take note that it is possible for different controller functions to handle requests to the same route.
  */
 router.route('/')
-  .get(garages.list);
+  .get(garages.list)
+  .post(garages.getGaragesByDecals);
 
 /*
   Returns garage data in geoJSON format. 
