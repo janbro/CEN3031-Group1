@@ -1,0 +1,23 @@
+.example-container {
+  height: 100%;
+}
+.mat-sidenav {
+  padding: 30px;
+  width: 240px;
+}
+
+.blue
+{
+  background-color: rgb(0, 33, 165);
+}
+
+.orange
+{
+  color: rgb(250, 70, 22);
+}
+
+.placeholder
+{
+color: rgb(0, 33, 165);
+}
+

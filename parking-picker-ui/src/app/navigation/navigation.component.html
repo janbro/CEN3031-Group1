@@ -1,0 +1,42 @@
+<mat-toolbar color="primary" class="blue">
+  <mat-toolbar-row>
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" color="warn" class="orange">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <span>Parking Picker</span>
+    <!-- <span><img src="./assets/parkingpicker.png"></span> -->
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #drawer mode="side" opened role="navigation">
+    <mat-nav-list>
+      <mat-form-field color="warn" class="placeholder">
+        <mat-select placeholder="Student" [formControl]="decals" multiple >
+          <mat-option (click) = "updateSettings()" *ngFor="let decal of decalList" [value]="decal.value">{{decal.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field color="warn" class="placeholder">
+        <mat-select placeholder="Faculty & Staff" [formControl]="decals" multiple>
+          <mat-option *ngFor="let decal of decalList1" [value]="decal.value">{{decal.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-map [permissions]='permissions'></app-map>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+<!--<mat-drawer-container class="example-container">
+  <mat-drawer #drawer mode="side" opened>
+    <a mat-list-item routerLink='/first'>First Component</a>
+    <a mat-list-item routerLink='/second'>Second Component</a>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>-->
