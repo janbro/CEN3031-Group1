@@ -1,0 +1,20 @@
+{
+  "name": "parking-picker",
+  "version": "1.0.0",
+  "description": "Parking Picker\r =====\r 1. The real-time parking data provided on this application will be crowd-sourced or established solely with the contributions of users.\r 2. The application interface will consist of an interactive map. Users can select points on the map and read instant information about the selected parking lot. This information will consist of the time of the most recent update, the real-time percentage capacity of the selected parking lot, and the predicted capacity at a time inputted by the user if necessary. Additionally, users can input a landmark name and have the application zoom in on the map to that location while pinpointing the nearby parking lots.\r 3. The application will account for handicap parking spots, decal types, restriction times, and other considerations applicable to the University of Florida parking system. The points on the map can be narrowed if the user chooses to input applicable information that warrants such data selectivity.\r 4. The application will be implemented with the use of the MEAN stack discussed during CEN3031 lectures throughout the Fall 2018 semester. Also, the Mapbox application program interface will facilitate its map capabilities.",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "cd parking-picker-ui && npm install && cd ../backend && npm install && node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janbro/CEN3031-Group1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janbro/CEN3031-Group1/issues"
+  },
+  "homepage": "https://github.com/janbro/CEN3031-Group1#readme"
+}
