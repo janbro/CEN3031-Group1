@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, Input } from '@angular/core';
 import { MapMouseEvent } from 'mapbox-gl';
 import { BackendService } from '../services/backend.service';
 import { HttpClient } from '@angular/common/http';
@@ -23,7 +23,7 @@ import { HttpClient } from '@angular/common/http';
       source="points"
       type="symbol"
       [layout]="{
-        'icon-image': 'car-15',
+        'icon-image': 'circle-15',
         'icon-allow-overlap': true
       }"
       (click)="onClick($event)"
@@ -35,16 +35,12 @@ import { HttpClient } from '@angular/common/http';
       [lngLat]="selectedPoint.geometry.coordinates"
       (close)="selectedPoint = null"
     >
+    <span [ngClass]="'bigtext'" [style.color] = "selectedPoint.properties.color" [innerHTML]="selectedPoint.properties.capacity"></span>
+    <br>
     <span [innerHTML]="selectedPoint.properties.name"></span>
     </mgl-popup>
   </mgl-map>
-  `,
-  styles: [`
-    mgl-map {
-      height: 100vh;
-      width: 100vw;
-    }
-  `]
+  `
 })
 
 export class MapComponent  {
@@ -55,12 +51,26 @@ export class MapComponent  {
   //       mapboxConfigUrl: data['mapboxConfigUrl']
   //     });
   // }
+@Input() permissions;
 
   showPoints() {
-    this.backendService.getGaragesMapbox().subscribe(json => {
-      console.log(json);
+    this.backendService.getGaragesMapbox().subscribe((mapboxData:GeoJSON.FeatureCollection<GeoJSON.Point>) => {
+      this.points = mapboxData;
     });
   }
+
+  ngOnChanges(changes) {
+    if(changes.permissions) {
+      if(changes.permissions.currentValue.length > 0) {
+        this.backendService.getFilteredGaragesMapbox(this.permissions).subscribe((mapboxData:GeoJSON.FeatureCollection<GeoJSON.Point>) => {
+          this.points = mapboxData;
+        });
+      }else {
+        this.showPoints();
+      }
+    }
+  }
+
   // points: GeoJSON.FeatureCollection<GeoJSON.Point>;
   selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null;
   cursorStyle: string;

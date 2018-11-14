@@ -11,20 +11,20 @@
   <mat-sidenav #drawer mode="side" opened role="navigation">
     <mat-nav-list>
       <mat-form-field color="warn" class="placeholder">
-        <mat-select placeholder="Student" [formControl]="decals" multiple>
-          <mat-option *ngFor="let decal of decalList" [value]="decal">{{decal}}</mat-option>
+        <mat-select placeholder="Student" [formControl]="decals" multiple >
+          <mat-option (click) = "updateSettings()" *ngFor="let decal of decalList" [value]="decal.value">{{decal.name}}</mat-option>
         </mat-select>
       </mat-form-field>
       <br>
       <mat-form-field color="warn" class="placeholder">
         <mat-select placeholder="Faculty & Staff" [formControl]="decals" multiple>
-          <mat-option *ngFor="let decal of decalList1" [value]="decal">{{decal}}</mat-option>
+          <mat-option *ngFor="let decal of decalList1" [value]="decal.value">{{decal.name}}</mat-option>
         </mat-select>
       </mat-form-field>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <router-outlet></router-outlet>
+    <app-map [permissions]='permissions'></app-map>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
