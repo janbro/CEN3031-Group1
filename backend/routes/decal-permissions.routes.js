@@ -8,7 +8,8 @@ var decals = require('../controllers/decal-permissions.controller.js'),
   Take note that it is possible for different controller functions to handle requests to the same route.
  */
 router.route('/')
-  .get(decals.list);
+  .get(decals.list)
+  .post(decals.permissionByDecals);
 
 /*
   The ':' specifies a URL parameter. 
@@ -18,6 +19,7 @@ router.route('/:decalName')
   // ADMIN ROUTES
   // .put(decals.update)
   // .delete(decals.delete);
+
 
 router.param('decalName', decals.decalByName);
 
