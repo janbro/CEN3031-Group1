@@ -1,6 +1,9 @@
 language: node_js
 before_install:
-  - cd backend
+  - cd parking-picker-ui
+  - npm install
+  - ng build
+  - cd ../backend
 node_js:
   - "10"
 deploy:
