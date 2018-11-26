@@ -10,7 +10,9 @@ Automated testing will occur for any branch pushed to the repository. Automatic 
 
 ## Frontend Deployment
 `cd parking-picker-ui`
+
 `npm install`
+
 `ng serve`
 
 ## Git Flow
