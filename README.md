@@ -9,7 +9,9 @@ Parking Picker
 Automated testing will occur for any branch pushed to the repository. Automatic deployment to the production server on Heroku occurs on changes to master. To deploy your changes, create a PR for your branch to master. After test scripts are run and passing, the site will be deployed once the changes are merged into master.
 
 ## Frontend Deployment
-TODO
+`cd parking-picker-ui`
+`npm install`
+`ng serve`
 
 ## Git Flow
 Create a branch for the feature you're working on from the master branch
