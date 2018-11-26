@@ -16,7 +16,7 @@ export class NavigationComponent implements OnInit {
 
   updateSettings()
   {
-    his.backendService.getFilteredDecalPermissions(this.decals.value).subscribe((permissions) => {
+    this.backendService.getFilteredDecalPermissions(this.decals.value).subscribe((permissions) => {
       this.permissions = permissions;
     });
   }
