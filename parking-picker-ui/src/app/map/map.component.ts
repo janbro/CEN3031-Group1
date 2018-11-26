@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-map',
-  templateUrl: './map.component.html',
   styleUrls: ['./map.component.css'],
   template: `
   <mgl-map
