@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, ChangeDetectorRef, Input, OnChanges } from '@angular/core';
 import { MapMouseEvent } from 'mapbox-gl';
 import { BackendService } from '../services/backend.service';
 import { HttpClient } from '@angular/common/http';
@@ -42,100 +42,45 @@ import { HttpClient } from '@angular/common/http';
   `
 })
 
-export class MapComponent  {
+export class MapComponent implements OnChanges {
+  selectedGarage: any;
   points: GeoJSON.FeatureCollection<GeoJSON.Point>;
-  // showBackEndService() {
-  //   this.backendService.getGaragesMapbox()
+  selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null;
+  cursorStyle: string;
   //     .subscribe((data: Backend) => this.backendService = {
-  //       mapboxConfigUrl: data['mapboxConfigUrl']
-  //     });
-  // }
-@Input() permissions;
+
+  @Input() permissions;
+
+  constructor(private changeDetectorRef: ChangeDetectorRef,
+    private http: HttpClient,
+    private backendService: BackendService) {
+    this.showPoints();
+  }
 
   showPoints() {
-    this.backendService.getGaragesMapbox().subscribe((mapboxData:GeoJSON.FeatureCollection<GeoJSON.Point>) => {
+    this.backendService.getGaragesMapbox().subscribe((mapboxData: GeoJSON.FeatureCollection<GeoJSON.Point>) => {
       this.points = mapboxData;
     });
   }
 
   ngOnChanges(changes) {
-    if(changes.permissions) {
-      if(changes.permissions.currentValue.length > 0) {
-        this.backendService.getFilteredGaragesMapbox(this.permissions).subscribe((mapboxData:GeoJSON.FeatureCollection<GeoJSON.Point>) => {
+    if (changes.permissions) {
+      if (changes.permissions.currentValue.length > 0) {
+        this.backendService.getFilteredGaragesMapbox(this.permissions).subscribe((mapboxData: GeoJSON.FeatureCollection<GeoJSON.Point>) => {
           this.points = mapboxData;
         });
-      }else {
+      } else {
         this.showPoints();
       }
     }
   }
 
-  // points: GeoJSON.FeatureCollection<GeoJSON.Point>;
-  selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null;
-  cursorStyle: string;
-  constructor(private ChangeDetectorRef: ChangeDetectorRef, private http: HttpClient, private backendService: BackendService ) {
-    this.showPoints();
-
-    
-    // this.points = backendService.getGaragesMapbox();
-    // console.log(backendService.getGaragesMapbox());
-    // points: GeoJSON.FeatureCollection<GeoJSON.Point>;
-  //   this.points = {
-  //           'type': 'FeatureCollection',
-  //           'features': [{
-  //             'type': 'Feature',
-  //             'geometry': {
-  //               'type': 'Point',
-  //               'coordinates': [-82.3512, 29.6419]
-  //             },
-  //             'properties': {
-  //               'name': "Gale Lemerand Garage",
-  //             }
-  //           }, {
-  //             'type': 'Feature',
-  //             'geometry': {
-  //               'type': 'Point',
-  //               'coordinates': [-82.3429, 29.6453]
-  //             },
-  //             'properties': {
-  //               'name':'Reitz Union Parking',
-  //             },
-  //           }, {
-  //             'type': 'Feature',
-  //             'geometry': {
-  //               'type': 'Point',
-  //               'coordinates': [-82.3375, 29.6455]
-  //             },
-  //             'properties': {
-  //               'name': 'Newell Garage',
-  //             }
-  //           }, {
-  //             'type': 'Feature',
-  //             'geometry': {
-  //               'type': 'Point',
-  //               'coordinates': [-82.3473, 29.6510]
-  //             },
-  //             'properties': {
-  //               'name':'Murphree Parking',
-  //             }
-  //           },
-  //           {
-  //             'type':'Feature',
-  //             'geometry' : {
-  //               'type':'Point',
-  //               'coordinates':[-82.355441, 29.644732]
-  //           },
-  //           'properties': {
-  //             'name':'Hume West'
-  //           }
-  //          }
-  //         ]
-  //         };
-   }
-
-   onClick(evt: MapMouseEvent) {
+  onClick(evt: MapMouseEvent) {
     this.selectedPoint = null;
-    this.ChangeDetectorRef.detectChanges();
+    this.changeDetectorRef.detectChanges();
     this.selectedPoint = (<any>evt).features[0];
+    this.backendService.getGarage(this.selectedPoint.properties.id).subscribe((garage: any) => {
+      this.selectedGarage = garage;
+    });
   }
 }
