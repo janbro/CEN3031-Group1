@@ -56,13 +56,14 @@ exports.getGeoJSONByDecals = function(req, res) {
         geoJson.features.push({
             "type": "Feature",
             "geometry": {
-                "type": "Point",
-                "coordinates": ele.coordinates.reverse()
+              "type": "Point",
+              "coordinates": ele.coordinates.reverse()
             },
             "properties": {
-                "name": ele.name,
-                "capacity": Math.floor(Math.random()*101),
-                "color": getRandomColor()
+              "id": ele.id,
+              "name": ele.name,
+              "capacity": Math.floor(Math.random()*101),
+              "color": getRandomColor()
             }
         });
     });
@@ -88,9 +89,10 @@ exports.listGeoJSON = function(req, res) {
                 "coordinates": ele.coordinates.reverse()
             },
             "properties": {
-                "name": ele.name,
-                "capacity": Math.floor(Math.random()*101),
-                "color": getRandomColor()
+              "id": ele.id,
+              "name": ele.name,
+              "capacity": Math.floor(Math.random()*101),
+              "color": getRandomColor()
             }
         });
     });
