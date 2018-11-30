@@ -3,15 +3,12 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 /* Create your schema */
-var decalPermission = new Schema(
-    // Schema here
-	{
-	"decal": String,
-	"access": [String]
-	}
-,{
-	collection: "DecalData"
-}
+var decalPermission = new Schema({
+    "decal": String,
+    "access": [String]
+	}, {
+    collection: "DecalData"
+  }
 );
 
 /* create a 'pre' function that adds the updated_at (and created_at if not already there) property */

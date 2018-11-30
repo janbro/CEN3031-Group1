@@ -5,7 +5,8 @@ var path = require('path'),
     bodyParser = require('body-parser'),
     config = require('./config'),
     garagesRouter = require('../routes/garages.routes'),
-    decalRouter = require('../routes/decal-permissions.routes');
+    decalRouter = require('../routes/decal-permissions.routes'),
+    occupancyRouter = require('../routes/occupancy.routes');
 const cors = require('cors');
 
 var __clientdir = './../parking-picker-ui/dist/parking-picker-ui/';
@@ -33,13 +34,11 @@ module.exports.init = function() {
     res.sendFile('/index.html');
   });
   
-  /**TODO 
-  Use the garage router for requests to the api */
   app.use('/api/garages', garagesRouter);
 
-/**TODO
-  Use the decal router for requests to the api*/
   app.use('/api/decals', decalRouter);
+
+  app.use('/api/occupancy', occupancyRouter);
 
   /**TODO 
   Go to homepage for all routes not specified */ 

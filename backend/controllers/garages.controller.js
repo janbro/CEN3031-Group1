@@ -1,7 +1,7 @@
-
 /* Dependencies */
 var mongoose = require('mongoose'), 
-    Garage = require('../models/garages.model.js');
+    Garage = require('../models/garages.model.js'),
+    Occupancy = require('../models/occupancy.model.js');
 
 exports.read = function(req, res) {
   /* send back the garages as json from the request */
@@ -53,26 +53,37 @@ exports.getGeoJSONByDecals = function(req, res) {
       features: []
     };
     filteredgarages.forEach((ele) => {
-        geoJson.features.push({
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": ele.coordinates.reverse()
-            },
-            "properties": {
-              "id": ele.id,
-              "name": ele.name,
-              "capacity": Math.floor(Math.random()*101),
-              "color": getRandomColor()
+      let currOcc = 0;
+      ele.decals.forEach((dec) => {
+        getOccupancy(ele.name, dec).then((res) => {
+          let occupancy = res[0].data.find((val, ind) => {
+            if(val.decal === dec.name) {
+              return true;
             }
+          });
+          currOcc += occupancy.currOccupancy;
         });
+      });
+      let capacity = currOcc / getCapacity(ele);
+      geoJson.features.push({
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": ele.coordinates.reverse()
+        },
+        "properties": {
+          "name": ele.name,
+          "capacity": capacity,
+          "color": getColor(capacity)
+        }
+      });
     });
     res.json(geoJson);
   });
 };
 
 exports.listGeoJSON = function(req, res) {
-  Garage.find({}).sort({}).exec((err, docs) =>{
+  Garage.find({}).sort({}).exec((err, docs) => {
     if(err) {
       console.log(err);
       res.status(400).send(err);
@@ -82,31 +93,48 @@ exports.listGeoJSON = function(req, res) {
       features: []
     };
     docs.forEach((ele) => {
-        geoJson.features.push({
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": ele.coordinates.reverse()
-            },
-            "properties": {
-              "id": ele.id,
-              "name": ele.name,
-              "capacity": Math.floor(Math.random()*101),
-              "color": getRandomColor()
+      let currOcc = 0;
+      ele.decals.forEach((dec) => {
+        getOccupancy(ele.name, dec).then((res) => {
+          let occupancy = res[0].data.find((val, ind) => {
+            if(val.decal === dec.name) {
+              return true;
             }
+          });
+          currOcc += occupancy.currOccupancy;
         });
+      });
+      let capacity = currOcc / getCapacity(ele);
+      geoJson.features.push({
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": ele.coordinates.reverse()
+        },
+        "properties": {
+          "name": ele.name,
+          "capacity": capacity,
+          "color": getColor(capacity)
+        }
+      });
     });
     res.json(geoJson);
   });
 }
 
-function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+function getColor(capacity) {
+  if(capacity < 60) {
+    // Green
+    return "#48af48";
   }
-  return color;
+  else if(capacity < 85) {
+    // Yellow
+    return '#cccc45';
+  }
+  else {
+    // Red
+    return '#a53a3a';
+  }
 }
 
 exports.garageByID = function(req, res, next, id) {
@@ -119,3 +147,18 @@ exports.garageByID = function(req, res, next, id) {
     }
   });
 };
+
+function getOccupancy(name, dec) {
+  let promise = Occupancy.find({"name": name}).exec();
+  return promise;
+}
+
+function getCapacity(ele, dec = []) {
+  let totalCapacity = 0;
+  ele.decals.forEach((val, ind) => {
+    if(dec.length === 0 || dec.includes(val.name)) {
+      totalCapacity += val.specCapacity;
+    }
+  });
+  return totalCapacity;
+}

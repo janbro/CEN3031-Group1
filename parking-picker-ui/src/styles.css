@@ -4,3 +4,7 @@
 body {
   margin: 0px;
 }
+.cdk-overlay-container {
+  background: rgba(10,10,10,.50) !important;
+  pointer-events: all !important;
+}
