@@ -72,6 +72,7 @@ exports.getGeoJSONByDecals = function(req, res) {
           "coordinates": ele.coordinates.reverse()
         },
         "properties": {
+          "id": ele.id,
           "name": ele.name,
           "capacity": capacity,
           "color": getColor(capacity)
@@ -112,6 +113,7 @@ exports.listGeoJSON = function(req, res) {
           "coordinates": ele.coordinates.reverse()
         },
         "properties": {
+          "id": ele.id,
           "name": ele.name,
           "capacity": capacity,
           "color": getColor(capacity)
