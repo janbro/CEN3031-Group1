@@ -52,34 +52,36 @@ exports.getGeoJSONByDecals = function(req, res) {
       type: "FeatureCollection",
       features: []
     };
-    filteredgarages.forEach((ele) => {
-      let currOcc = 0;
-      ele.decals.forEach((dec) => {
-        getOccupancy(ele.name, dec).then((res) => {
-          let occupancy = res[0].data.find((val, ind) => {
-            if(val.decal === dec.name) {
-              return true;
-            }
-          });
-          currOcc += occupancy.currOccupancy;
+    getOccupancy().then((occupancies) => {
+      filteredgarages.forEach((ele) => {
+        let currOcc = 0;
+        let occupancy = occupancies.find((occ) => {
+          if(occ.name === ele.name) {
+            return true;
+          }
+        });
+        occupancy.data.forEach((occ) => {
+          if(req.body.decals.includes(occ.decal)) {
+            currOcc += occ.currOccupancy;
+          }
+        });
+        let capacity = Math.ceil(currOcc / getCapacity(ele, req.body.decals) * 100);
+        geoJson.features.push({
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": ele.coordinates.reverse()
+          },
+          "properties": {
+            "id": ele.id,
+            "name": ele.name,
+            "capacity": capacity,
+            "color": getColor(capacity)
+          }
         });
       });
-      let capacity = currOcc / getCapacity(ele);
-      geoJson.features.push({
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": ele.coordinates.reverse()
-        },
-        "properties": {
-          "id": ele.id,
-          "name": ele.name,
-          "capacity": capacity,
-          "color": getColor(capacity)
-        }
-      });
+      res.json(geoJson);
     });
-    res.json(geoJson);
   });
 };
 
@@ -93,34 +95,34 @@ exports.listGeoJSON = function(req, res) {
       type: "FeatureCollection",
       features: []
     };
-    docs.forEach((ele) => {
-      let currOcc = 0;
-      ele.decals.forEach((dec) => {
-        getOccupancy(ele.name, dec).then((res) => {
-          let occupancy = res[0].data.find((val, ind) => {
-            if(val.decal === dec.name) {
-              return true;
-            }
-          });
-          currOcc += occupancy.currOccupancy;
+    getOccupancy().then((occupancies) => {
+      docs.forEach((ele) => {
+        let currOcc = 0;
+        let occupancy = occupancies.find((occ) => {
+          if(occ.name === ele.name) {
+            return true;
+          }
+        });
+        occupancy.data.forEach((occ) => {
+          currOcc += occ.currOccupancy;
+        });
+        let capacity = Math.ceil(currOcc / getCapacity(ele) * 100);
+        geoJson.features.push({
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": ele.coordinates.reverse()
+          },
+          "properties": {
+            "id": ele.id,
+            "name": ele.name,
+            "capacity": capacity,
+            "color": getColor(capacity)
+          }
         });
       });
-      let capacity = currOcc / getCapacity(ele);
-      geoJson.features.push({
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": ele.coordinates.reverse()
-        },
-        "properties": {
-          "id": ele.id,
-          "name": ele.name,
-          "capacity": capacity,
-          "color": getColor(capacity)
-        }
-      });
+      res.json(geoJson);
     });
-    res.json(geoJson);
   });
 }
 
@@ -150,8 +152,8 @@ exports.garageByID = function(req, res, next, id) {
   });
 };
 
-function getOccupancy(name, dec) {
-  let promise = Occupancy.find({"name": name}).exec();
+function getOccupancy() {
+  let promise = Occupancy.find().exec();
   return promise;
 }
 
