@@ -67,7 +67,6 @@ export class ParkDialogComponent implements OnChanges {
 
     // On click handler for park button
     onParkClick() {
-        console.log(this.decals);
         // Decal seletion required
         if (!this.decals) {
             this.errMsg = '*required';
