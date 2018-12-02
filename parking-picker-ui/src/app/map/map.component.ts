@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, Input, OnChanges } from '@angular/core';
+import { Component, ChangeDetectorRef, Input, OnChanges, EventEmitter, Output } from '@angular/core';
 import { MapMouseEvent } from 'mapbox-gl';
 import { BackendService } from '../services/backend.service';
 import { HttpClient } from '@angular/common/http';
@@ -19,6 +19,7 @@ export class MapComponent implements OnChanges {
   parkDialogRef: MatDialogRef<ParkDialogComponent>;
 
   @Input() permissions;
+  @Output() garageSelected = new EventEmitter<boolean>();
 
   constructor(private changeDetectorRef: ChangeDetectorRef,
     private http: HttpClient,
@@ -60,6 +61,7 @@ export class MapComponent implements OnChanges {
     this.selectedPoint = (<any>evt).features[0];
     this.backendService.getGarage(this.selectedPoint.properties.id).subscribe((garage: any) => {
       this.selectedGarage = garage;
+      this.garageSelected.emit(this.selectedGarage);
     });
   }
 }

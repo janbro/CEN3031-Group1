@@ -129,11 +129,11 @@ exports.listGeoJSON = function(req, res) {
 function getColor(capacity) {
   if(capacity < 60) {
     // Green
-    return "#48af48";
+    return '#48af48';
   }
   else if(capacity < 85) {
     // Yellow
-    return '#cccc45';
+    return '#fde627';
   }
   else {
     // Red

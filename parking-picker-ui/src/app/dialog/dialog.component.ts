@@ -1,6 +1,7 @@
 import { Component, Inject, OnChanges } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { BackendService } from '../services/backend.service';
 import { FormControl } from '@angular/forms';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-park-dialog',
@@ -25,13 +26,15 @@ export class ParkDialogComponent implements OnChanges {
             { name: 'Disabled', value: 'disabled' },
             { name: 'Carpool', value: 'carpool' },
             { name: 'Motorcycle/Scooter', value: 'scooter' },
-            { name: 'Orange/Blue', value: 'orangeBlue' }];
+            { name: 'Orange/Blue', value: 'orangeBlue' },
+            { name: 'Other', value: 'any' }];
     decalList = [];
-    decals = new FormControl();
+    decals = null;
+    errMsg = '';
 
-    constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-        console.log(data);
-
+    constructor(public dialogRef: MatDialogRef<ParkDialogComponent>,
+                    @Inject(MAT_DIALOG_DATA) public data: any,
+                    private backendService: BackendService) {
         if (data.garageDecals === undefined) {
             return;
         }
@@ -47,16 +50,29 @@ export class ParkDialogComponent implements OnChanges {
             }
         });
 
-        console.log(this.decalList);
+        this.decalList.sort(function(a, b) { return a.name < b.name ? -1 : a.name === b.name ? 0 : 1; });
     }
 
     ngOnChanges(changes) {
-        console.log(changes);
-
         if (changes.permissions) {
             if (changes.permissions.currentValue.length > 0) {
                 this.decalList = changes.permission;
+                this.decalList.sort(function(a, b) { return a.name < b.name ? -1 : a.name === b.name ? 0 : 1; });
             }
+        }
+    }
+
+    onParkClick() {
+        console.log(this.decals);
+        if (!this.decals) {
+            this.errMsg = '*required';
+            return false;
+        } else {
+            this.backendService.addOccupancy({name: this.data.garageDecals.name, decal: this.decals, park: true}).subscribe((res: any) => {
+                console.log(res);
+            });
+            this.dialogRef.close();
+            return true;
         }
     }
 }

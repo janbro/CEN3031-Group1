@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { ParkDialogComponent } from './dialog/dialog.component';
+import { TimePipe } from './pipes/time.pipe';
 import { MatRadioModule } from '@angular/material';
 
 const appRoutes: Routes = [
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavigationComponent,
     MapComponent,
-    ParkDialogComponent
+    ParkDialogComponent,
+    TimePipe
   ],
   entryComponents: [
     ParkDialogComponent
