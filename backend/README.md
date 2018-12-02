@@ -9,6 +9,22 @@ To run the server locally, clone the repository and run `npm install` and then `
 ## API
 GET `/api/garages` - returns all garages in db
 
+POST `/api/garages` - returns garages in db based on decals passed `{ decals: [] }`
+
 GET `/api/garages/:garageId` - returns requested garage
 
 GET `/api/garages/mapbox` - GeoJSON garage data
+
+POST `/api/garages/mapbox` - get GeoJSON data based on decals passed `{ decals: [] }`
+
+GET `/api/decals` - returns all decal permissions
+
+POST `/api/decals` - returns all permissions of decals passed `{ decals: [] }`
+
+GET `/api/decals/:decalName` - returns permission of decal based on single decal name
+
+GET `/api/occupancy` - returns all occupancy data of garages
+
+POST `/api/occupancy` - updates occupancy data of passed garage/decal `{ occupancy: { name: [garagename], decal: [decaltoupdate], park: [bool]} }`
+
+GET `/api/occupancy/:garageName` - returns occupancy data of passed garage name
