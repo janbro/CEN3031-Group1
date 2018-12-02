@@ -66,11 +66,14 @@ exports.update = function(req, res) {
           }
         });
         // Update occupancy object in database
-        occ.update({data: updatedOcc}, (err) => {
-          console.log(err);
-          res.status(400).send(err);
+        Occupancy.updateOne({name: newOccupancy.name}, {data: updatedOcc}, (err) => {
+          if(err) {
+            console.log(err);
+            res.status(400).send(err);
+          } else {
+            res.json(occ);
+          }
         });
-        res.json(occ);
       }
     });
   }

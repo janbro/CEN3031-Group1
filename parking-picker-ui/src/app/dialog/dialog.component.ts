@@ -74,7 +74,6 @@ export class ParkDialogComponent implements OnChanges {
         } else {
             // Create request to update occupancy data in backend
             this.backendService.addOccupancy({name: this.data.garageDecals.name, decal: this.decals, park: true}).subscribe((res: any) => {
-                console.log(res);
             });
             this.dialogRef.close();
             return true;
