@@ -34,10 +34,13 @@ module.exports.init = function() {
     res.sendFile('/index.html');
   });
   
+  // Garages endpoint
   app.use('/api/garages', garagesRouter);
 
+  // Decal permission endpoint
   app.use('/api/decals', decalRouter);
 
+  // Occupancy endpoint
   app.use('/api/occupancy', occupancyRouter);
 
   /**TODO 

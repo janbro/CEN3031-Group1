@@ -35,10 +35,12 @@ export class ParkDialogComponent implements OnChanges {
     constructor(public dialogRef: MatDialogRef<ParkDialogComponent>,
                     @Inject(MAT_DIALOG_DATA) public data: any,
                     private backendService: BackendService) {
+        // Don't open modal if no garage data
         if (data.garageDecals === undefined) {
             return;
         }
 
+        // Iterate through decals and retrieve user friendly names
         data.garageDecals.decals.forEach((ele, ind) => {
             if (data.permissions.length === 0 || data.permissions.includes(ele.name)) {
                 this.lut.some((d) => {
@@ -53,6 +55,7 @@ export class ParkDialogComponent implements OnChanges {
         this.decalList.sort(function(a, b) { return a.name < b.name ? -1 : a.name === b.name ? 0 : 1; });
     }
 
+    // Update decal list when user changes decal settings
     ngOnChanges(changes) {
         if (changes.permissions) {
             if (changes.permissions.currentValue.length > 0) {
@@ -62,12 +65,15 @@ export class ParkDialogComponent implements OnChanges {
         }
     }
 
+    // On click handler for park button
     onParkClick() {
         console.log(this.decals);
+        // Decal seletion required
         if (!this.decals) {
             this.errMsg = '*required';
             return false;
         } else {
+            // Create request to update occupancy data in backend
             this.backendService.addOccupancy({name: this.data.garageDecals.name, decal: this.decals, park: true}).subscribe((res: any) => {
                 console.log(res);
             });

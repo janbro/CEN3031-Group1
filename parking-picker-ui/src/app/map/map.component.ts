@@ -29,13 +29,16 @@ export class MapComponent implements OnChanges {
     this.showPoints();
   }
 
+  // Load in garage points
   showPoints() {
     this.backendService.getGaragesMapbox().subscribe((mapboxData: GeoJSON.FeatureCollection<GeoJSON.Point>) => {
       this.points = mapboxData;
     });
   }
 
+  // Called to open park dialog
   openAddFileDialog() {
+    // Make sure not to open more than one dialog at a time
     if (this.closed) {
       this.closed = false;
       this.parkDialogRef = this.dialog.open(ParkDialogComponent, {
@@ -45,13 +48,16 @@ export class MapComponent implements OnChanges {
         }
       });
       this.parkDialogRef.afterClosed().subscribe((event) => {
+        // Reset reentrancy var
         this.closed = true;
       });
     }
   }
 
+  // On user settings change update garage points on map
   ngOnChanges(changes) {
     if (changes.permissions) {
+      // If the user has decals selected
       if (changes.permissions.currentValue.length > 0) {
         this.backendService.getFilteredGaragesMapbox(this.permissions).subscribe((mapboxData: GeoJSON.FeatureCollection<GeoJSON.Point>) => {
           this.points = mapboxData;
@@ -62,10 +68,12 @@ export class MapComponent implements OnChanges {
     }
   }
 
+  // Set the selected garage when user clicks point
   onClick(evt: MapMouseEvent) {
     this.selectedPoint = null;
     this.changeDetectorRef.detectChanges();
     this.selectedPoint = (<any>evt).features[0];
+    // Get garage data from backend
     this.backendService.getGarage(this.selectedPoint.properties.id).subscribe((garage: any) => {
       this.selectedGarage = garage;
       this.garageSelected.emit(this.selectedGarage);

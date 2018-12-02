@@ -17,9 +17,6 @@ router.route('/')
  */
 router.route('/:garageName')
   .get(occupancy.read);
-  // ADMIN ROUTES
-  // .put(decals.update)
-  // .delete(decals.delete);
 
 router.param('garageName', occupancy.occupancyByName);
 

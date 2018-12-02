@@ -7,6 +7,7 @@ exports.read = function(req, res) {
   res.json(req.decal);
 };
 
+// Returns all decal permissions
 exports.list = function(req, res) {
  decal.find({}).sort({}).exec((err, docs) =>{
     if(err) {
@@ -17,12 +18,14 @@ exports.list = function(req, res) {
   });
 };
 
+// Returns all permission for passed decals
 exports.permissionByDecals = function(req, res) {
   decal.find({decal:{$in: req.body.decals}}).sort({}).exec((err, docs) =>{
     if(err) {
       console.log(err);
       res.status(400).send(err);
     }
+    // Use set to ignore repeat decals
     let decals = new Set();
     docs.forEach((ele) => {
       ele.access.forEach((decal) => {
@@ -33,6 +36,7 @@ exports.permissionByDecals = function(req, res) {
   });
 };
 
+// Returns passed decals permissions
 exports.decalByName = function(req, res, next, name) {
   decal.find({'decal': name}).exec(function(err, decal) {
     if(err) {

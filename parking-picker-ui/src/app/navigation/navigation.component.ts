@@ -51,12 +51,14 @@ export class NavigationComponent implements OnInit {
 
   constructor(private backendService: BackendService) { }
 
+  // Called when user clicks an input, update decal permissions
   updateSettings() {
     this.backendService.getFilteredDecalPermissions(this.decals.value).subscribe((permissions: any) => {
       this.permissions = permissions;
     });
   }
 
+  // Called to retrieve occupancy information of selected garage
   updateGarageInfo(garage) {
     this.garage = garage;
     garage.decals.forEach(decal => {
@@ -66,6 +68,7 @@ export class NavigationComponent implements OnInit {
     });
   }
 
+  // Retrieves the human readable decal name
   getDecalName(decalName) {
     const name = this.lut.find((ele) => {
       return ele['value'] === decalName;
@@ -73,6 +76,7 @@ export class NavigationComponent implements OnInit {
     return name ? name.name : decalName;
   }
 
+  // Retrieves the occupancy represented in percentage
   getOccupancy(decalName) {
     const occupancy = this.occupancies.find((ele) => {
       return ele.decal === decalName;
@@ -82,6 +86,7 @@ export class NavigationComponent implements OnInit {
     return Math.ceil(occupancy.currOccupancy / total * 100);
   }
 
+  // Retrieves the color for occupancy percentage
   getColor(capacity) {
     if (capacity < 60) {
       // Green

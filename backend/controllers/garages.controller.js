@@ -8,6 +8,7 @@ exports.read = function(req, res) {
   res.json(req.garage);
 };
 
+// Returns all garage data
 exports.list = function(req, res) {
   Garage.find({}).sort({}).exec((err, docs) =>{
     if(err) {
@@ -18,6 +19,7 @@ exports.list = function(req, res) {
   });
 };
 
+// Returns garage data of passed decal type
 exports.getGaragesByDecals = function(req, res) {
   Garage.find({}).sort({}).exec((err, docs) =>{
     if(err) {
@@ -35,12 +37,14 @@ exports.getGaragesByDecals = function(req, res) {
   });
 };
 
+// Returns geojson data of garages of passed decal type
 exports.getGeoJSONByDecals = function(req, res) {
   Garage.find({}).sort({}).exec((err, docs) =>{
     if(err) {
       console.log(err);
       res.status(400).send(err);
     }
+    // Retrieve only garages of passed decal type
     var filteredgarages = docs.filter((garage)=>{
       return garage.decals.some((decal)=> {
         if(req.body.decals.includes(decal.name)) {
@@ -52,6 +56,7 @@ exports.getGeoJSONByDecals = function(req, res) {
       type: "FeatureCollection",
       features: []
     };
+    // Get occupancy data to include in geojson properties
     getOccupancy().then((occupancies) => {
       filteredgarages.forEach((ele) => {
         let currOcc = 0;
@@ -60,12 +65,16 @@ exports.getGeoJSONByDecals = function(req, res) {
             return true;
           }
         });
+        // Calculate occupancy total
         occupancy.data.forEach((occ) => {
+          // Only calculate with decals user has permission for
           if(req.body.decals.includes(occ.decal)) {
             currOcc += occ.currOccupancy;
           }
         });
+        // Calculate occupancy percentage
         let capacity = Math.ceil(currOcc / getCapacity(ele, req.body.decals) * 100);
+        // Build geojson
         geoJson.features.push({
           "type": "Feature",
           "geometry": {
@@ -85,6 +94,7 @@ exports.getGeoJSONByDecals = function(req, res) {
   });
 };
 
+// Return geojson data of all garages
 exports.listGeoJSON = function(req, res) {
   Garage.find({}).sort({}).exec((err, docs) => {
     if(err) {
@@ -95,6 +105,7 @@ exports.listGeoJSON = function(req, res) {
       type: "FeatureCollection",
       features: []
     };
+    // Get occupancy data to include in geojson properties
     getOccupancy().then((occupancies) => {
       docs.forEach((ele) => {
         let currOcc = 0;
@@ -103,10 +114,13 @@ exports.listGeoJSON = function(req, res) {
             return true;
           }
         });
+        // Calculate occupancy total
         occupancy.data.forEach((occ) => {
           currOcc += occ.currOccupancy;
         });
+        // Calculate occupancy percentage
         let capacity = Math.ceil(currOcc / getCapacity(ele) * 100);
+        // Build geojson
         geoJson.features.push({
           "type": "Feature",
           "geometry": {
@@ -126,6 +140,7 @@ exports.listGeoJSON = function(req, res) {
   });
 }
 
+// Get status color for percentage
 function getColor(capacity) {
   if(capacity < 60) {
     // Green
@@ -141,6 +156,7 @@ function getColor(capacity) {
   }
 }
 
+// Returns garage data based on passed id
 exports.garageByID = function(req, res, next, id) {
   Garage.findById(id).exec(function(err, garage) {
     if(err) {
@@ -152,11 +168,13 @@ exports.garageByID = function(req, res, next, id) {
   });
 };
 
+// Returns mongo promise for occupancy data
 function getOccupancy() {
   let promise = Occupancy.find().exec();
   return promise;
 }
 
+// Retrieves the total capacity of a garage, can filter by decal
 function getCapacity(ele, dec = []) {
   let totalCapacity = 0;
   ele.decals.forEach((val, ind) => {
