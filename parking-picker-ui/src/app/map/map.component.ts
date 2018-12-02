@@ -12,6 +12,7 @@ import { ParkDialogComponent } from '../dialog/dialog.component';
 })
 
 export class MapComponent implements OnChanges {
+  closed = true;
   selectedGarage: any;
   points: GeoJSON.FeatureCollection<GeoJSON.Point>;
   selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null;
@@ -35,12 +36,18 @@ export class MapComponent implements OnChanges {
   }
 
   openAddFileDialog() {
-    this.parkDialogRef = this.dialog.open(ParkDialogComponent, {
-      data: {
-        garageDecals: this.selectedGarage,
-        permissions: this.permissions
-      }
-    });
+    if (this.closed) {
+      this.closed = false;
+      this.parkDialogRef = this.dialog.open(ParkDialogComponent, {
+        data: {
+          garageDecals: this.selectedGarage,
+          permissions: this.permissions
+        }
+      });
+      this.parkDialogRef.afterClosed().subscribe((event) => {
+        this.closed = true;
+      });
+    }
   }
 
   ngOnChanges(changes) {
