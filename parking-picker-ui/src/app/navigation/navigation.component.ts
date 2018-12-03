@@ -46,7 +46,11 @@ export class NavigationComponent implements OnInit {
         { name: 'Carpool', value: 'carpool' },
         { name: 'Motorcycle/Scooter', value: 'scooter' },
         { name: 'Orange/Blue', value: 'orangeBlue' },
-        { name: 'Other', value: 'any' }];
+        { name: 'Any', value: 'any' },
+        { name: 'Gated', value: 'gated' },
+        { name: 'Any (not PNR)', value: 'anyNotPNR' },
+        { name: 'Brown/Green', value: 'brownGreen' },
+        { name: 'Orange/Blue/Medical/Business', value: 'OMBO' }];
   occupancies = [];
 
   constructor(private backendService: BackendService) { }

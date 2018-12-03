@@ -27,7 +27,7 @@ export class ParkDialogComponent implements OnChanges {
             { name: 'Carpool', value: 'carpool' },
             { name: 'Motorcycle/Scooter', value: 'scooter' },
             { name: 'Orange/Blue', value: 'orangeBlue' },
-            { name: 'Other', value: 'any' }];
+            { name: 'Any', value: 'any' }];
     decalList = [];
     decals = null;
     errMsg = '';
