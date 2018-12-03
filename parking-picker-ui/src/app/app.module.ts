@@ -45,8 +45,7 @@ const appRoutes: Routes = [
       accessToken: 'pk.eyJ1IjoiY2hlbHNlYWNhbmRlbG9yYSIsImEiOiJjam5ieWVpMDcwOTRxM3BvbDlqZGx4YXltIn0.v0C5haf-TS-noMhWkdTTYQ'
     }),
     RouterModule.forRoot(
-      appRoutes,
-      { useHash: true } // <-- debugging purposes only
+      appRoutes
     ),
     CustomMaterialModule
   ],

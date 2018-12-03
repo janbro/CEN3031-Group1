@@ -162,8 +162,7 @@ var AppModule = /** @class */ (function () {
                 ngx_mapbox_gl__WEBPACK_IMPORTED_MODULE_9__["NgxMapboxGLModule"].withConfig({
                     accessToken: 'pk.eyJ1IjoiY2hlbHNlYWNhbmRlbG9yYSIsImEiOiJjam5ieWVpMDcwOTRxM3BvbDlqZGx4YXltIn0.v0C5haf-TS-noMhWkdTTYQ'
                 }),
-                _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forRoot(appRoutes, { useHash: true } // <-- debugging purposes only
-                ),
+                _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forRoot(appRoutes),
                 _core_material_module__WEBPACK_IMPORTED_MODULE_8__["CustomMaterialModule"]
             ],
             providers: [
@@ -333,7 +332,6 @@ var ParkDialogComponent = /** @class */ (function () {
         else {
             // Create request to update occupancy data in backend
             this.backendService.addOccupancy({ name: this.data.garageDecals.name, decal: this.decals, park: true }).subscribe(function (res) {
-                console.log(res);
             });
             this.dialogRef.close();
             return true;
