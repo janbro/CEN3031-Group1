@@ -16,8 +16,7 @@ export class NavigationComponent implements OnInit {
                         { name: 'Red 1', value: 'red1' },
                         { name: 'Red 3', value: 'red3' },
                         { name: 'Brown', value: 'brown' },
-                        { name: 'Disabled', value: 'handicap' },
-                        { name: 'Motorcycle/Scooter', value: 'scooter' }];
+                        { name: 'Disabled', value: 'handicap' }];
   decalList1: Object[] = [{name: 'Gold', value: 'gold' },
                         { name: 'Silver', value: 'silver' },
                         { name: 'Official Business', value: 'business' },
@@ -26,8 +25,7 @@ export class NavigationComponent implements OnInit {
                         { name: 'Medical Resident', value: 'medRes' },
                         { name: 'Staff Commuter', value: 'staffComm' },
                         { name: 'Disabled', value: 'handicap' },
-                        { name: 'Carpool', value: 'carpool' },
-                        { name: 'Motorcycle/Scooter', value: 'scooter' }];
+                        { name: 'Carpool', value: 'carpool' }];
   lut = [{name: 'Green', value: 'green' },
         { name: 'Park & Ride', value: 'parkNRide' },
         { name: 'Red 1', value: 'red1' },
@@ -82,12 +80,15 @@ export class NavigationComponent implements OnInit {
 
   // Retrieves the occupancy represented in percentage
   getOccupancy(decalName) {
-    const occupancy = this.occupancies.find((ele) => {
-      return ele.decal === decalName;
-    });
-    const total = this.garage['decals'].find((ele) => ele.name === decalName).specCapacity;
-    if (!occupancy) { return 0; }
-    return Math.ceil(occupancy.currOccupancy / total * 100);
+    if (this.occupancies) {
+      const occupancy = this.occupancies.find((ele) => {
+        return ele.decal === decalName;
+      });
+      const total = this.garage['decals'].find((ele) => ele.name === decalName).specCapacity;
+      if (!occupancy) { return 0; }
+      return Math.ceil(occupancy.currOccupancy / total * 100);
+    }
+    return 0;
   }
 
   // Retrieves the color for occupancy percentage

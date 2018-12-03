@@ -1,6 +1,7 @@
 /* Dependencies */
 var mongoose = require('mongoose'), 
-    Occupancy = require('../models/occupancy.model.js');
+    Occupancy = require('../models/occupancy.model.js'),
+    Garage = require('../models/garages.model.js');
 
 exports.read = function(req, res) {
   /* send back the decals as json from the request */
@@ -52,29 +53,40 @@ exports.create = function(req, res) {
 exports.update = function(req, res) {
   var newOccupancy = req.body.occupancy; // { name: [garagename], decal: [decaltoupdate], park: [bool]}
   if(newOccupancy) {
-    // Find occupancy to update
-    Occupancy.find({name: newOccupancy.name}).exec(function(err, occ) {
-      if(err) {
-        res.status(400).send(err);
-      } else {
-        let updatedOcc = occ[0].data;
-        // Modify decal data to increment passed decal occupancy
-        updatedOcc.some((ele) => {
-          if(ele.decal === newOccupancy.decal) {
-            if(newOccupancy.park) ++ele.currOccupancy;
-            else --ele.currOccupancy;
+    Garage.find({name: newOccupancy.name}).exec(function(err, garage) {
+      // Get upper occupancy limit
+      let decalOcc = garage.decals.find((val) => {
+        return val.name === newOccupancy.decal;
+      });
+      // Find occupancy to update
+      Occupancy.find({name: newOccupancy.name}).exec(function(err, occ) {
+        if(err) {
+          res.status(400).send(err);
+        } else {
+          let updatedOcc = occ[0].data;
+          // Modify decal data to increment passed decal occupancy
+          updatedOcc.some((ele) => {
+            if(ele.decal === newOccupancy.decal) {
+              if(newOccupancy.park) ++ele.currOccupancy;
+              else --ele.currOccupancy;
+              if(ele.currOccupancy > decalOcc.specCapacity) {
+                overflow = true;
+              }
+            }
+          });
+          if(!overflow) {
+            // Update occupancy object in database
+            Occupancy.updateOne({name: newOccupancy.name}, {data: updatedOcc}, (err) => {
+              if(err) {
+                console.log(err);
+                res.status(400).send(err);
+              } else {
+                res.json(occ);
+              }
+            });
           }
-        });
-        // Update occupancy object in database
-        Occupancy.updateOne({name: newOccupancy.name}, {data: updatedOcc}, (err) => {
-          if(err) {
-            console.log(err);
-            res.status(400).send(err);
-          } else {
-            res.json(occ);
-          }
-        });
-      }
+        }
+      });
     });
   }
   else {

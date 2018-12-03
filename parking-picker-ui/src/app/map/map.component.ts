@@ -40,17 +40,21 @@ export class MapComponent implements OnChanges {
   openAddFileDialog() {
     // Make sure not to open more than one dialog at a time
     if (this.closed) {
-      this.closed = false;
-      this.parkDialogRef = this.dialog.open(ParkDialogComponent, {
-        data: {
-          garageDecals: this.selectedGarage,
-          permissions: this.permissions
-        }
-      });
-      this.parkDialogRef.afterClosed().subscribe((event) => {
-        // Reset reentrancy var
-        this.closed = true;
-      });
+      if (this.selectedPoint.properties.capacity === 100) {
+        alert('Parking lot is full!');
+      } else {
+        this.closed = false;
+        this.parkDialogRef = this.dialog.open(ParkDialogComponent, {
+          data: {
+            garageDecals: this.selectedGarage,
+            permissions: this.permissions
+          }
+        });
+        this.parkDialogRef.afterClosed().subscribe((event) => {
+          // Reset reentrancy var
+          this.closed = true;
+        });
+      }
     }
   }
 

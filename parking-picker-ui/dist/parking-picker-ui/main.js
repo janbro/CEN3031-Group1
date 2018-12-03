@@ -426,17 +426,23 @@ var MapComponent = /** @class */ (function () {
         var _this = this;
         // Make sure not to open more than one dialog at a time
         if (this.closed) {
-            this.closed = false;
-            this.parkDialogRef = this.dialog.open(_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_4__["ParkDialogComponent"], {
-                data: {
-                    garageDecals: this.selectedGarage,
-                    permissions: this.permissions
-                }
-            });
-            this.parkDialogRef.afterClosed().subscribe(function (event) {
-                // Reset reentrancy var
-                _this.closed = true;
-            });
+            console.log(this.selectedPoint);
+            if (this.selectedPoint.properties.capacity === 100) {
+                alert('Parking lot is full!');
+            }
+            else {
+                this.closed = false;
+                this.parkDialogRef = this.dialog.open(_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_4__["ParkDialogComponent"], {
+                    data: {
+                        garageDecals: this.selectedGarage,
+                        permissions: this.permissions
+                    }
+                });
+                this.parkDialogRef.afterClosed().subscribe(function (event) {
+                    // Reset reentrancy var
+                    _this.closed = true;
+                });
+            }
         }
     };
     // On user settings change update garage points on map
@@ -550,8 +556,7 @@ var NavigationComponent = /** @class */ (function () {
             { name: 'Red 1', value: 'red1' },
             { name: 'Red 3', value: 'red3' },
             { name: 'Brown', value: 'brown' },
-            { name: 'Disabled', value: 'handicap' },
-            { name: 'Motorcycle/Scooter', value: 'scooter' }];
+            { name: 'Disabled', value: 'handicap' }];
         this.decalList1 = [{ name: 'Gold', value: 'gold' },
             { name: 'Silver', value: 'silver' },
             { name: 'Official Business', value: 'business' },
@@ -560,8 +565,7 @@ var NavigationComponent = /** @class */ (function () {
             { name: 'Medical Resident', value: 'medRes' },
             { name: 'Staff Commuter', value: 'staffComm' },
             { name: 'Disabled', value: 'handicap' },
-            { name: 'Carpool', value: 'carpool' },
-            { name: 'Motorcycle/Scooter', value: 'scooter' }];
+            { name: 'Carpool', value: 'carpool' }];
         this.lut = [{ name: 'Green', value: 'green' },
             { name: 'Park & Ride', value: 'parkNRide' },
             { name: 'Red 1', value: 'red1' },
@@ -613,14 +617,17 @@ var NavigationComponent = /** @class */ (function () {
     };
     // Retrieves the occupancy represented in percentage
     NavigationComponent.prototype.getOccupancy = function (decalName) {
-        var occupancy = this.occupancies.find(function (ele) {
-            return ele.decal === decalName;
-        });
-        var total = this.garage['decals'].find(function (ele) { return ele.name === decalName; }).specCapacity;
-        if (!occupancy) {
-            return 0;
+        if (this.occupancies) {
+            var occupancy = this.occupancies.find(function (ele) {
+                return ele.decal === decalName;
+            });
+            var total = this.garage['decals'].find(function (ele) { return ele.name === decalName; }).specCapacity;
+            if (!occupancy) {
+                return 0;
+            }
+            return Math.ceil(occupancy.currOccupancy / total * 100);
         }
-        return Math.ceil(occupancy.currOccupancy / total * 100);
+        return 0;
     };
     // Retrieves the color for occupancy percentage
     NavigationComponent.prototype.getColor = function (capacity) {
@@ -731,7 +738,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var BackendService = /** @class */ (function () {
     function BackendService(http) {
         this.http = http;
-        this.baseURI = 'https://parking-picker.herokuapp.com';
+        this.baseURI = 'http://localhost:8080'; // 'https://parking-picker.herokuapp.com';
         this.mapboxConfigUrl = this.baseURI + '/api/garages/mapbox';
         this.permissionsConfigUrl = this.baseURI + '/api/decals/';
         this.garagesConfigUrl = this.baseURI + '/api/garages/';
