@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class BackendService {
-    baseURI = 'http://parking-picker.herokuapp.com';
+    baseURI = 'https://parking-picker.herokuapp.com';
     mapboxConfigUrl = this.baseURI + '/api/garages/mapbox';
     permissionsConfigUrl = this.baseURI + '/api/decals/';
     garagesConfigUrl = this.baseURI + '/api/garages/';

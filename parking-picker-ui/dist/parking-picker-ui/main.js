@@ -727,7 +727,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var BackendService = /** @class */ (function () {
     function BackendService(http) {
         this.http = http;
-        this.baseURI = 'http://parking-picker.herokuapp.com';
+        this.baseURI = 'https://parking-picker.herokuapp.com';
         this.mapboxConfigUrl = this.baseURI + '/api/garages/mapbox';
         this.permissionsConfigUrl = this.baseURI + '/api/decals/';
         this.garagesConfigUrl = this.baseURI + '/api/garages/';
