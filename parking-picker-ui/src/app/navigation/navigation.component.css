@@ -16,6 +16,19 @@
   color: rgb(250, 70, 22);
 }
 
+.loginbutton
+{
+  color: rgb(247, 245, 244);
+  margin-right: 20px;
+  margin-left: 850px;
+}
+
+.registerbutton
+{
+  color: rgb(247, 245, 244);
+  margin-right: 20px;
+}
+
 .placeholder
 {
 color: rgb(0, 33, 165);

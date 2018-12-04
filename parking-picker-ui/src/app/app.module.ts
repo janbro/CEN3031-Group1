@@ -11,15 +11,22 @@ import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { MatSelectModule } from '@angular/material/select';
 import {HttpClientModule} from '@angular/common/http';
 import { BackendService } from './services/backend.service';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
 
 const appRoutes: Routes = [
-  { path: '', component: MapComponent, data: { title: 'Map Component' } },
+  { path: '', component: NavigationComponent, data: { title: 'Map Component' } },
+  { path: 'login', component: LoginComponent, data: { title: 'Login Component' } },
+  { path: 'register', component: RegisterComponent, data: { title: 'Register Component' } }
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    MapComponent
+    MapComponent,
+	LoginComponent,
+	RegisterComponent
   ],
   imports: [
     BrowserModule,
