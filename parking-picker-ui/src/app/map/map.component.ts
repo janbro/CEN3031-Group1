@@ -9,11 +9,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./map.component.css'],
   template: `
   <mgl-map
-    [style]="'mapbox://styles/mapbox/streets-v9'"
-    [zoom]="[13]"
-    [center]="[-82.3549, 29.6436]"
+    [style]="'mapbox://styles/chelseacandelora/cjp4ek7n13wq22ro23s7vf8fg'"
+    [zoom]="[13.6]"
+    [center]="[-82.3489, 29.6400]"
     [cursorStyle]="cursorStyle"
   >
+  <mgl-control
+      mglNavigation
+    ></mgl-control>
   <mgl-geojson-source
   id="points"
   [data]="points"
@@ -23,9 +26,10 @@ import { HttpClient } from '@angular/common/http';
       source="points"
       type="symbol"
       [layout]="{
-        'icon-image': 'circle-15',
+        'icon-image': 'marker-carsnew',
         'icon-allow-overlap': true
       }"
+      
       (click)="onClick($event)"
       (mouseEnter)="cursorStyle = 'pointer'"
       (mouseLeave)="cursorStyle = ''"
@@ -40,7 +44,7 @@ import { HttpClient } from '@angular/common/http';
     <span [innerHTML]="selectedPoint.properties.name"></span>
     </mgl-popup>
   </mgl-map>
-  `
+ `
 })
 
 export class MapComponent  {
@@ -51,6 +55,7 @@ export class MapComponent  {
   //       mapboxConfigUrl: data['mapboxConfigUrl']
   //     });
   // }
+
 @Input() permissions;
 
   showPoints() {
@@ -77,10 +82,9 @@ export class MapComponent  {
   constructor(private ChangeDetectorRef: ChangeDetectorRef, private http: HttpClient, private backendService: BackendService ) {
     this.showPoints();
 
-    
-    // this.points = backendService.getGaragesMapbox();
-    // console.log(backendService.getGaragesMapbox());
-    // points: GeoJSON.FeatureCollection<GeoJSON.Point>;
+  // this.points = backendService.getGaragesMapbox();
+  // console.log(backendService.getGaragesMapbox());
+  // points: GeoJSON.FeatureCollection<GeoJSON.Point>;
   //   this.points = {
   //           'type': 'FeatureCollection',
   //           'features': [{
