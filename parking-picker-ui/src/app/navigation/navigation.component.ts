@@ -58,6 +58,9 @@ export class NavigationComponent implements OnInit {
     this.backendService.getFilteredDecalPermissions(this.decals.value).subscribe((permissions: any) => {
       this.permissions = permissions;
     });
+	if (typeof(Storage) !== "undefined") {
+    localStorage.setItem("UserSettings", JSON.stringify(this.decals.value));
+	}
   }
 
   // Called to retrieve occupancy information of selected garage
@@ -106,6 +109,6 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit() {
+	  this.decals.setValue(JSON.parse(localStorage.getItem('UserSettings')));
   }
-
 }

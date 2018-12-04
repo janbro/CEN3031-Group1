@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">\n<app-navigation></app-navigation>\n"
+module.exports = "<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">\r\n<app-navigation></app-navigation>\r\n"
 
 /***/ }),
 
@@ -225,7 +225,7 @@ var CustomMaterialModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".park-option {\n    width: 100%;\n    padding-bottom: 3px;\n}"
+module.exports = ".park-option {\r\n    width: 100%;\r\n    padding-bottom: 3px;\r\n}"
 
 /***/ }),
 
@@ -236,7 +236,7 @@ module.exports = ".park-option {\n    width: 100%;\n    padding-bottom: 3px;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 style=\"margin-bottom:0px;\" mat-dialog-title>What space did you park in?</h2>\n<h5 class=\"mt-1\" *ngIf=\"errMsg\" style=\"color: red;font-size:medium;margin-bottom: 0px;\" mat-dialog-title> {{errMsg}} </h5>\n<mat-dialog-content>\n    <mat-radio-group class=\"example-radio-group\" [(ngModel)]=\"decals\" multiple required>\n        <mat-radio-button class=\"park-option\" *ngFor=\"let decal of decalList\" [value]=\"decal.value\" [checked]=\"decalList[0] == decal\">{{decal.name}}</mat-radio-button>\n    </mat-radio-group>\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-button mat-dialog-close>Cancel</button>\n  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->\n  <button mat-button (click)=\"onParkClick()\">Park</button>\n</mat-dialog-actions>"
+module.exports = "<h2 style=\"margin-bottom:0px;\" mat-dialog-title>What space did you park in?</h2>\r\n<h5 class=\"mt-1\" *ngIf=\"errMsg\" style=\"color: red;font-size:medium;margin-bottom: 0px;\" mat-dialog-title> {{errMsg}} </h5>\r\n<mat-dialog-content>\r\n    <mat-radio-group class=\"example-radio-group\" [(ngModel)]=\"decals\" multiple required>\r\n        <mat-radio-button class=\"park-option\" *ngFor=\"let decal of decalList\" [value]=\"decal.value\" [checked]=\"decalList[0] == decal\">{{decal.name}}</mat-radio-button>\r\n    </mat-radio-group>\r\n</mat-dialog-content>\r\n<mat-dialog-actions>\r\n  <button mat-button mat-dialog-close>Cancel</button>\r\n  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->\r\n  <button mat-button (click)=\"onParkClick()\">Park</button>\r\n</mat-dialog-actions>"
 
 /***/ }),
 
@@ -360,7 +360,7 @@ var ParkDialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* :host {\n  display: flex;\n  flex: 1;\n} */\nmgl-map {\n  height: 100vh;\n  width: 100vw;\n}\n.menu {\n  position: absolute;\n  padding: 8px;\n}\n.bigtext\n{\n  font-size:24px;\n  -webkit-text-stroke:1.5px;\n}\n.btn-primary {\n  background-color: rgb(0, 33, 165);\n  color: white;\n  border-radius: 5px;\n  width: 50%;\n  height: 30px;\n}"
+module.exports = "/* :host {\r\n  display: flex;\r\n  flex: 1;\r\n} */\r\nmgl-map {\r\n  height: 100vh;\r\n  width: 100vw;\r\n}\r\n.menu {\r\n  position: absolute;\r\n  padding: 8px;\r\n}\r\n.bigtext\r\n{\r\n  font-size:24px;\r\n  -webkit-text-stroke:1.5px;\r\n}\r\n.btn-primary {\r\n  background-color: rgb(0, 33, 165);\r\n  color: white;\r\n  border-radius: 5px;\r\n  width: 50%;\r\n  height: 30px;\r\n}"
 
 /***/ }),
 
@@ -371,7 +371,7 @@ module.exports = "/* :host {\n  display: flex;\n  flex: 1;\n} */\nmgl-map {\n  h
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mgl-map\n[style]=\"'mapbox://styles/mapbox/streets-v9'\"\n[zoom]=\"[13]\"\n[center]=\"[-82.3549, 29.6436]\"\n[cursorStyle]=\"cursorStyle\">\n<mgl-geojson-source\n  id=\"points\"\n  [data]=\"points\">\n</mgl-geojson-source>\n<mgl-layer\n  id=\"points\"\n  source=\"points\"\n  type=\"symbol\"\n  [layout]=\"{\n    'icon-image': 'circle-15',\n    'icon-allow-overlap': true\n  }\"\n  (click)=\"onClick($event)\"\n  (mouseEnter)=\"cursorStyle = 'pointer'\"\n  (mouseLeave)=\"cursorStyle = ''\">\n</mgl-layer>\n<mgl-popup\n  *ngIf=\"selectedPoint\"\n  [lngLat]=\"selectedPoint.geometry.coordinates\"\n  (close)=\"selectedPoint = null\" >\n  <div style=\"text-align:center;min-width:90px;\">\n    <span [innerHTML]=\"selectedPoint.properties.name\"></span>\n    <br>\n    <span [ngClass]=\"'bigtext'\" [style.color] = \"selectedPoint.properties.color\" [innerHTML]=\"selectedPoint.properties.capacity\" style=\"padding-left:10%;\">\n    </span>%\n    <br>\n    <button (click)=\"openAddFileDialog()\" class=\"btn btn-primary\" id=\"park-btn\" role=\"button\" aria-pressed=\"true\">Park</button>\n  </div>\n</mgl-popup>\n</mgl-map>"
+module.exports = "<mgl-map\r\n[style]=\"'mapbox://styles/mapbox/streets-v9'\"\r\n[zoom]=\"[13]\"\r\n[center]=\"[-82.3549, 29.6436]\"\r\n[cursorStyle]=\"cursorStyle\">\r\n<mgl-geojson-source\r\n  id=\"points\"\r\n  [data]=\"points\">\r\n</mgl-geojson-source>\r\n<mgl-layer\r\n  id=\"points\"\r\n  source=\"points\"\r\n  type=\"symbol\"\r\n  [layout]=\"{\r\n    'icon-image': 'circle-15',\r\n    'icon-allow-overlap': true\r\n  }\"\r\n  (click)=\"onClick($event)\"\r\n  (mouseEnter)=\"cursorStyle = 'pointer'\"\r\n  (mouseLeave)=\"cursorStyle = ''\">\r\n</mgl-layer>\r\n<mgl-popup\r\n  *ngIf=\"selectedPoint\"\r\n  [lngLat]=\"selectedPoint.geometry.coordinates\"\r\n  (close)=\"selectedPoint = null\" >\r\n  <div style=\"text-align:center;min-width:90px;\">\r\n    <span [innerHTML]=\"selectedPoint.properties.name\"></span>\r\n    <br>\r\n    <span [ngClass]=\"'bigtext'\" [style.color] = \"selectedPoint.properties.color\" [innerHTML]=\"selectedPoint.properties.capacity\" style=\"padding-left:10%;\">\r\n    </span>%\r\n    <br>\r\n    <button (click)=\"openAddFileDialog()\" class=\"btn btn-primary\" id=\"park-btn\" role=\"button\" aria-pressed=\"true\">Park</button>\r\n  </div>\r\n</mgl-popup>\r\n</mgl-map>"
 
 /***/ }),
 
@@ -504,7 +504,7 @@ var MapComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".example-container {\n  height: 100%;\n}\n.mat-sidenav {\n  padding: 30px;\n  width: 240px;\n}\n.blue\n{\n  background-color: rgb(0, 33, 165);\n}\n.orange\n{\n  color: rgb(250, 70, 22);\n}\n.placeholder\n{\ncolor: rgb(0, 33, 165);\n}\n"
+module.exports = ".example-container {\r\n  height: 100%;\r\n}\r\n.mat-sidenav {\r\n  padding: 30px;\r\n  width: 240px;\r\n}\r\n.blue\r\n{\r\n  background-color: rgb(0, 33, 165);\r\n}\r\n.orange\r\n{\r\n  color: rgb(250, 70, 22);\r\n}\r\n.placeholder\r\n{\r\ncolor: rgb(0, 33, 165);\r\n}\r\n"
 
 /***/ }),
 
@@ -515,7 +515,7 @@ module.exports = ".example-container {\n  height: 100%;\n}\n.mat-sidenav {\n  pa
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\" class=\"blue\">\n  <mat-toolbar-row>\n    <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\" color=\"warn\" class=\"orange\">\n      <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\n    </button>\n    <span>Parking Picker</span>\n    <!-- <span><img src=\"./assets/parkingpicker.png\"></span> -->\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-sidenav-container class=\"example-container\">\n  <mat-sidenav #drawer mode=\"side\" opened role=\"navigation\" style=\"width: 275px;\">\n    <mat-nav-list>\n      <mat-form-field color=\"warn\" class=\"placeholder\">\n        <mat-select placeholder=\"Student\" [formControl]=\"decals\" multiple >\n          <mat-option (click) = \"updateSettings()\" *ngFor=\"let decal of decalList\" [value]=\"decal.value\">{{decal.name}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <br>\n      <mat-form-field color=\"warn\" class=\"placeholder\">\n        <mat-select placeholder=\"Faculty & Staff\" [formControl]=\"decals\" multiple>\n          <mat-option (click) = \"updateSettings()\" *ngFor=\"let decal of decalList1\" [value]=\"decal.value\">{{decal.name}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <br>\n      <h3 class=\"mat-headline-1\" style=\"text-align: center;\">{{garage.name}}</h3>\n      <div class=\"box flex\" style=\"justify-content: center; display: flex; padding-left: 20px;\">\n        <img class=\"fas\" style=\"height: 20px; padding-right:20px;\" src=\"assets/parking-meter.svg\" *ngIf=\"garage.meter\">\n        <i class=\"fas fa-car\" style=\"padding-right:20px;\" *ngIf=\"garage.name\"></i>\n        <i class=\"fas fa-motorcycle\" style=\"padding-right:20px;\" *ngIf=\"garage.scooter\"></i>\n        <img class=\"fas\" style=\"height: 14px; padding-right:20px;\" src=\"assets/battery.svg\" *ngIf=\"garage.electric\">\n      </div>\n      <mat-list>\n        <mat-list-item style=\"pointer-events: none; text-align: center;\" *ngFor=\"let decal of garage.decals\">\n          <a matLine><b>{{getDecalName(decal.name)}}</b> - <a [style.color]=\"getColor(getOccupancy(decal.name))\">{{getOccupancy(decal.name)}}%</a></a>\n          <mat-divider></mat-divider>\n          <a matLine>Mon - <a *ngIf=\"decal.restrictions.weekend\">Sun</a><a *ngIf=\"!decal.restrictions.weekend\">Fri</a></a>\n          <a matLine *ngIf=\"!decal.restrictions.allDay\">{{decal.restrictions.startTime | time}} - {{decal.restrictions.endTime | time}}</a>\n          <a matLine *ngIf=\"decal.restrictions.allDay\">ALL DAY</a>\n        </mat-list-item>\n      </mat-list>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content style=\"max-height: 92vh;\">\n    <app-map [permissions]='permissions' (garageSelected)=\"updateGarageInfo($event)\"></app-map>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
+module.exports = "<mat-toolbar color=\"primary\" class=\"blue\">\r\n  <mat-toolbar-row>\r\n    <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\" color=\"warn\" class=\"orange\">\r\n      <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n    </button>\r\n    <span>Parking Picker</span>\r\n    <!-- <span><img src=\"./assets/parkingpicker.png\"></span> -->\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n<mat-sidenav-container class=\"example-container\">\r\n  <mat-sidenav #drawer mode=\"side\" opened role=\"navigation\" style=\"width: 275px;\">\r\n    <mat-nav-list>\r\n      <mat-form-field color=\"warn\" class=\"placeholder\">\r\n        <mat-select placeholder=\"Student\" [formControl]=\"decals\" multiple >\r\n          <mat-option (click) = \"updateSettings()\" *ngFor=\"let decal of decalList\" [value]=\"decal.value\">{{decal.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n      <br>\r\n      <mat-form-field color=\"warn\" class=\"placeholder\">\r\n        <mat-select placeholder=\"Faculty & Staff\" [formControl]=\"decals\" multiple>\r\n          <mat-option (click) = \"updateSettings()\" *ngFor=\"let decal of decalList1\" [value]=\"decal.value\">{{decal.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n      <br>\r\n      <h3 class=\"mat-headline-1\" style=\"text-align: center;\">{{garage.name}}</h3>\r\n      <div class=\"box flex\" style=\"justify-content: center; display: flex; padding-left: 20px;\">\r\n        <img class=\"fas\" style=\"height: 20px; padding-right:20px;\" src=\"assets/parking-meter.svg\" *ngIf=\"garage.meter\">\r\n        <i class=\"fas fa-car\" style=\"padding-right:20px;\" *ngIf=\"garage.name\"></i>\r\n        <i class=\"fas fa-motorcycle\" style=\"padding-right:20px;\" *ngIf=\"garage.scooter\"></i>\r\n        <img class=\"fas\" style=\"height: 14px; padding-right:20px;\" src=\"assets/battery.svg\" *ngIf=\"garage.electric\">\r\n      </div>\r\n      <mat-list>\r\n        <mat-list-item style=\"pointer-events: none; text-align: center;\" *ngFor=\"let decal of garage.decals\">\r\n          <a matLine><b>{{getDecalName(decal.name)}}</b> - <a [style.color]=\"getColor(getOccupancy(decal.name))\">{{getOccupancy(decal.name)}}%</a></a>\r\n          <mat-divider></mat-divider>\r\n          <a matLine>Mon - <a *ngIf=\"decal.restrictions.weekend\">Sun</a><a *ngIf=\"!decal.restrictions.weekend\">Fri</a></a>\r\n          <a matLine *ngIf=\"!decal.restrictions.allDay\">{{decal.restrictions.startTime | time}} - {{decal.restrictions.endTime | time}}</a>\r\n          <a matLine *ngIf=\"decal.restrictions.allDay\">ALL DAY</a>\r\n        </mat-list-item>\r\n      </mat-list>\r\n    </mat-nav-list>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content style=\"max-height: 92vh;\">\r\n    <app-map [permissions]='permissions' (garageSelected)=\"updateGarageInfo($event)\"></app-map>\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n"
 
 /***/ }),
 
@@ -596,6 +596,9 @@ var NavigationComponent = /** @class */ (function () {
         this.backendService.getFilteredDecalPermissions(this.decals.value).subscribe(function (permissions) {
             _this.permissions = permissions;
         });
+        if (typeof (Storage) !== "undefined") {
+            localStorage.setItem("UserSettings", JSON.stringify(this.decals.value));
+        }
     };
     // Called to retrieve occupancy information of selected garage
     NavigationComponent.prototype.updateGarageInfo = function (garage) {
@@ -644,6 +647,7 @@ var NavigationComponent = /** @class */ (function () {
         }
     };
     NavigationComponent.prototype.ngOnInit = function () {
+        this.decals.setValue(JSON.parse(localStorage.getItem('UserSettings')));
     };
     NavigationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -851,7 +855,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/alejandro/Documents/School/2018 Fall/CEN 3031/Parking Picker/CEN3031-Group1/parking-picker-ui/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Gateway\CEN3031-Group1\parking-picker-ui\src\main.ts */"./src/main.ts");
 
 
 /***/ })
