@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html'
 })
 export class LoginComponent {
-  credentials: TokenPayload = {
+  credentials: {
     email: '',
     password: ''
   };
-
+}
   /*constructor(private auth: AuthenticationService, private router: Router) {}
 
   login() {

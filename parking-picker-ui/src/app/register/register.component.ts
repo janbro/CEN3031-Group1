@@ -6,12 +6,12 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html'
 })
 export class RegisterComponent {
-  credentials: TokenPayload = {
+  credentials: {
     email: '',
     name: '',
     password: ''
   };
-
+}
  /* constructor(private auth: AuthenticationService, private router: Router) {}
 
   register() {
