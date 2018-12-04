@@ -107,12 +107,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./dialog/dialog.component */ "./src/app/dialog/dialog.component.ts");
 /* harmony import */ var _pipes_time_pipe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pipes/time.pipe */ "./src/app/pipes/time.pipe.ts");
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/tooltip */ "./node_modules/@angular/material/esm5/tooltip.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -160,6 +162,7 @@ var AppModule = /** @class */ (function () {
                 _angular_material_select__WEBPACK_IMPORTED_MODULE_10__["MatSelectModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_13__["MatDialogModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_13__["MatSnackBarModule"],
+                _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_16__["MatTooltipModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_13__["MatRadioModule"],
                 ngx_mapbox_gl__WEBPACK_IMPORTED_MODULE_9__["NgxMapboxGLModule"].withConfig({
                     accessToken: 'pk.eyJ1IjoiY2hlbHNlYWNhbmRlbG9yYSIsImEiOiJjam5ieWVpMDcwOTRxM3BvbDlqZGx4YXltIn0.v0C5haf-TS-noMhWkdTTYQ'
@@ -468,6 +471,7 @@ var MapComponent = /** @class */ (function () {
     MapComponent.prototype.ngOnChanges = function (changes) {
         var _this = this;
         if (changes.permissions) {
+            this.selectedPoint = null;
             // If the user has decals selected
             if (changes.permissions.currentValue.length > 0) {
                 this.backendService.getFilteredGaragesMapbox(this.permissions).subscribe(function (mapboxData) {
@@ -543,7 +547,7 @@ module.exports = "\n.example-container {\n  height: 100%;\n}\n.mat-sidenav {\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\" class=\"blue\" class = \"center\">\n  <mat-toolbar-row>\n    <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\" color=\"warn\" class=\"orange\">\n      <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\n    </button>\n    <!-- <span>Parking Picker</span> -->\n    <!-- <span><img src=\"./assets/UF-parkingpicker.png\"></span> -->\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-toolbar color=\"primary\" class=\"orangeline\"></mat-toolbar>\n\n<mat-sidenav-container class=\"example-container\" (click)=\"updateParked()\">\n  <mat-sidenav #drawer mode=\"side\" opened role=\"navigation\" style=\"width: 275px; z-index: 3;\">\n    <mat-nav-list>\n      <mat-form-field color=\"warn\" class=\"placeholder\">\n        <mat-select placeholder=\"Student\" [formControl]=\"decals\" multiple >\n          <mat-option (click) = \"updateSettings()\" *ngFor=\"let decal of decalList\" [value]=\"decal.value\">{{decal.name}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <br>\n      <mat-form-field color=\"warn\" class=\"placeholder\">\n        <mat-select placeholder=\"Faculty & Staff\" [formControl]=\"decals\" multiple>\n          <mat-option (click) = \"updateSettings()\" *ngFor=\"let decal of decalList1\" [value]=\"decal.value\">{{decal.name}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <br>\n      <h3 class=\"mat-headline-1\" style=\"text-align: center;\">{{garage.name}}</h3>\n      <div class=\"box flex\" style=\"justify-content: center; display: flex; padding-left: 20px;\">\n        <img class=\"fas\" style=\"height: 20px; padding-right:20px;\" src=\"assets/parking-meter.svg\" *ngIf=\"garage.meter\">\n        <i class=\"fas fa-car\" style=\"padding-right:20px;\" *ngIf=\"garage.name\"></i>\n        <i class=\"fas fa-motorcycle\" style=\"padding-right:20px;\" *ngIf=\"garage.scooter\"></i>\n        <img class=\"fas\" style=\"height: 14px; padding-right:20px;\" src=\"assets/battery.svg\" *ngIf=\"garage.electric\">\n      </div>\n      <mat-list>\n        <mat-list-item style=\"pointer-events: none; text-align: center;\" *ngFor=\"let decal of garage.decals\">\n          <a matLine><b>{{getDecalName(decal.name)}}</b> - <a [style.color]=\"getColor(getOccupancy(decal.name))\">{{getOccupancy(decal.name)}}%</a></a>\n          <mat-divider></mat-divider>\n          <a matLine>Mon - <a *ngIf=\"decal.restrictions.weekend\">Sun</a><a *ngIf=\"!decal.restrictions.weekend\">Fri</a></a>\n          <a matLine *ngIf=\"!decal.restrictions.allDay\">{{decal.restrictions.startTime | time}} - {{decal.restrictions.endTime | time}}</a>\n          <a matLine *ngIf=\"decal.restrictions.allDay\">ALL DAY</a>\n        </mat-list-item>\n      </mat-list>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content style=\"max-height: 92vh;\">\n    <div class=\"box flex btn-container\" style=\"justify-content: center; display: flex;\">\n        <button class=\"btn btn-warn btn-float pulse-red\" (click)=\"onUnparkClick()\" type=\"button\" *ngIf=\"parked\">Unpark</button>\n    </div>\n    <app-map [permissions]=\"permissions\" [parked]=\"parked\" (garageSelected)=\"updateGarageInfo($event)\" (dialogClosed)=\"updateParked($event)\"></app-map>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
+module.exports = "<mat-toolbar color=\"primary\" class=\"blue\" class = \"center\">\n  <mat-toolbar-row>\n    <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\" color=\"warn\" class=\"orange\">\n      <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\n    </button>\n    <!-- <span>Parking Picker</span> -->\n    <!-- <span><img src=\"./assets/UF-parkingpicker.png\"></span> -->\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-toolbar color=\"primary\" class=\"orangeline\"></mat-toolbar>\n\n<mat-sidenav-container class=\"example-container\" (click)=\"updateParked()\">\n  <mat-sidenav #drawer mode=\"side\" opened role=\"navigation\" style=\"width: 275px; z-index: 3;\">\n    <mat-form-field color=\"warn\" class=\"placeholder\">\n      <mat-select placeholder=\"Student\" [formControl]=\"decals\" multiple >\n        <mat-option (click) = \"updateSettings()\" *ngFor=\"let decal of decalList\" [value]=\"decal.value\">{{decal.name}}</mat-option>\n      </mat-select>\n    </mat-form-field>\n    <br>\n    <mat-form-field color=\"warn\" class=\"placeholder\">\n      <mat-select placeholder=\"Faculty & Staff\" [formControl]=\"decals\" multiple>\n        <mat-option (click) = \"updateSettings()\" *ngFor=\"let decal of decalList1\" [value]=\"decal.value\">{{decal.name}}</mat-option>\n      </mat-select>\n    </mat-form-field>\n    <br>\n    <h3 class=\"mat-headline-1\" style=\"text-align: center;\">{{garage.name}}</h3>\n    <div class=\"box flex\" style=\"justify-content: center; display: flex; padding-left: 20px;\">\n      <img class=\"fas\" style=\"height: 20px; padding-right:20px;\" src=\"assets/parking-meter.svg\" *ngIf=\"garage.meter\">\n      <i class=\"fas fa-car\" style=\"padding-right:20px;\" *ngIf=\"garage.name\"></i>\n      <i class=\"fas fa-motorcycle\" style=\"padding-right:20px;\" *ngIf=\"garage.scooter\"></i>\n      <img class=\"fas\" style=\"height: 14px; padding-right:20px;\" src=\"assets/battery.svg\" *ngIf=\"garage.electric\">\n    </div>\n    <mat-list role=\"list\">\n      <mat-list-item role=\"listitem\" style=\"pointer-events: all; text-align: center;\" *ngFor=\"let decal of garage.decals\">\n        <a matLine title=\"{{getDecalName(decal.name)}}\"><b>{{getDecalName(decal.name)}}</b> - <a [style.color]=\"getColor(getOccupancy(decal.name))\">{{getOccupancy(decal.name)}}%</a></a>\n        <mat-divider></mat-divider>\n        <a matLine>Mon - <a *ngIf=\"decal.restrictions.weekend\">Sun</a><a *ngIf=\"!decal.restrictions.weekend\">Fri</a></a>\n        <a matLine *ngIf=\"!decal.restrictions.allDay\">{{decal.restrictions.startTime | time}} - {{decal.restrictions.endTime | time}}</a>\n        <a matLine *ngIf=\"decal.restrictions.allDay\">ALL DAY</a>\n      </mat-list-item>\n    </mat-list>\n  </mat-sidenav>\n  <mat-sidenav-content style=\"max-height: 92vh;\">\n    <div class=\"box flex btn-container\" style=\"justify-content: center; display: flex;\">\n        <button class=\"btn btn-warn btn-float pulse-red\" (click)=\"onUnparkClick()\" type=\"button\" *ngIf=\"parked\">Unpark</button>\n    </div>\n    <app-map [permissions]=\"permissions\" [parked]=\"parked\" (garageSelected)=\"updateGarageInfo($event)\" (dialogClosed)=\"updateParked($event)\"></app-map>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
 
 /***/ }),
 
@@ -618,7 +622,8 @@ var NavigationComponent = /** @class */ (function () {
             { name: 'Gated', value: 'gated' },
             { name: 'Any (not PNR)', value: 'anyNotPNR' },
             { name: 'Brown/Green', value: 'brownGreen' },
-            { name: 'Orange/Blue/Medical/Business', value: 'OMBO' }];
+            { name: 'Orange/Blue/Medical/Business', value: 'OBMO' },
+            { name: 'Red/Green', value: 'redGreen' }];
         this.occupancies = [];
         this.parked = false;
     }

@@ -65,6 +65,7 @@ export class MapComponent implements OnChanges {
   // On user settings change update garage points on map
   ngOnChanges(changes) {
     if (changes.permissions) {
+      this.selectedPoint = null;
       // If the user has decals selected
       if (changes.permissions.currentValue.length > 0) {
         this.backendService.getFilteredGaragesMapbox(this.permissions).subscribe((mapboxData: GeoJSON.FeatureCollection<GeoJSON.Point>) => {

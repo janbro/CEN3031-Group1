@@ -49,7 +49,8 @@ export class NavigationComponent implements OnInit {
         { name: 'Gated', value: 'gated' },
         { name: 'Any (not PNR)', value: 'anyNotPNR' },
         { name: 'Brown/Green', value: 'brownGreen' },
-        { name: 'Orange/Blue/Medical/Business', value: 'OMBO' }];
+        { name: 'Orange/Blue/Medical/Business', value: 'OBMO' },
+        { name: 'Red/Green', value: 'redGreen' }];
   occupancies = [];
 
   constructor(private backendService: BackendService, public snackBar: MatSnackBar) { }
