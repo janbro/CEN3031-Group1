@@ -54,10 +54,15 @@ exports.update = function(req, res) {
   var newOccupancy = req.body.occupancy; // { name: [garagename], decal: [decaltoupdate], park: [bool]}
   if(newOccupancy) {
     Garage.find({name: newOccupancy.name}).exec(function(err, garage) {
-      // Get upper occupancy limit
-      let decalOcc = garage.decals.find((val) => {
-        return val.name === newOccupancy.decal;
-      });
+      let decalOcc = {
+        specCapacity: 0
+      }
+      if(garage.decals) {
+        // Get upper occupancy limit
+        decalOcc = garage.decals.find((val) => {
+          return val.name === newOccupancy.decal;
+        });
+      }
       // Find occupancy to update
       Occupancy.find({name: newOccupancy.name}).exec(function(err, occ) {
         if(err) {
