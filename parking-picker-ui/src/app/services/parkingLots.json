@@ -1,16 +1,668 @@
 {
-    "_id": {
-        "$oid": "5bc9fb87fb6fc06027499038"
-    },
     "parkingLots": [
         {
+            "name": "Animal Research Facility",
+            "coordinates": [
+                29.640557,
+                -82.373886
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "green": {
+                    "specCapacity": 31,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 1,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Bat House",
+            "coordinates": [
+                29.643261,
+                -82.363831
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 16,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "anyNotPNR": {
+                    "specCapacity": 37,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 2,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Black Hall",
+            "coordinates": [
+                29.641629,
+                -82.346937
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 68,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 10,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "carpool": {
+                    "specCapacity": 1,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Bledsoe Drive",
+            "coordinates": [
+                29.639598,
+                -82.369476
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "any": {
+                    "specCapacity": 199,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 2,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Corry Village",
+            "coordinates": [
+                29.645164,
+                -82.361222
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "brown": {
+                    "specCapacity": 173,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": false
+                    }
+                },
+                "green": {
+                    "specCapacity": 27,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "brownGreen": {
+                    "specCapacity": 66,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 5,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Criser Hall",
+            "coordinates": [
+                29.650022,
+                -82.341334
+            ],
+            "electric": false,
+            "meter": true,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "gated": {
+                    "specCapacity": 52,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 13,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Cultural Plaza",
+            "coordinates": [
+                29.636424,
+                -82.369287
+            ],
+            "electric": true,
+            "meter": true,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "any": {
+                    "specCapacity": 440,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 19,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "carpool": {
+                    "specCapacity": 1,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "orange": {
+                    "specCapacity": 33,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Cypress Hall",
+            "coordinates": [
+                29.645248,
+                -82.339563
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 65,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 6,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Dental- Disabled",
+            "coordinates": [
+                29.638806,
+                -82.345949
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "disabled": {
+                    "specCapacity": 45,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Diamond Village",
+            "coordinates": [
+                29.64344,
+                -82.339678
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "brown": {
+                    "specCapacity": 228,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 1,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Division of Housing",
+            "coordinates": [
+                29.64367,
+                -82.339805
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "red1": {
+                    "specCapacity": 135,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "orange": {
+                    "specCapacity": 41,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 4,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "East Campus",
+            "coordinates": [
+                29.671186,
+                -82.299274
+            ],
+            "electric": true,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "any": {
+                    "specCapacity": 439,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 14,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "East Hall",
+            "coordinates": [
+                29.64721,
+                -82.349879
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 83,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "carpool": {
+                    "specCapacity": 4,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "New Engineering Building",
+            "coordinates": [
+                29.64464,
+                -82.348178
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 332,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 6,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Entomology & Nematology",
+            "coordinates": [
+                29.634942,
+                -82.367213
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "any": {
+                    "specCapacity": 100,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "orange": {
+                    "specCapacity": 30,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 3,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Fifield Hall",
+            "coordinates": [
+                29.637891,
+                -82.362075
+            ],
+            "electric": false,
+            "meter": true,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 117,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "green": {
+                    "specCapacity": 129,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 6,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Frazier-Rogers Hall",
+            "coordinates": [
+                29.644687,
+                -82.346028
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 175,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "carpool": {
+                    "specCapacity": 16,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 6,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Fraternity Row",
+            "coordinates": [
+                29.64514,
+                -82.356523
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "anyNotPNR": {
+                    "specCapacity": 371,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "red3": {
+                    "specCapacity": 226,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "red1": {
+                    "specCapacity": 21,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 3,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
             "name": "Garage 1",
-            "coordinates": {
-                "latitude": 29.641064,
-                "longitude": -82.342439
-            },
-            "genCapacity": 443,
-            "currOccupancy": 0,
+            "coordinates": [
+                29.641064,
+                -82.342439
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -38,12 +690,10 @@
         },
         {
             "name": "Garage 2",
-            "coordinates": {
-                "latitude": 29.638819,
-                "longitude": -82.3464
-            },
-            "genCapacity": 917,
-            "currOccupancy": 0,
+            "coordinates": [
+                29.638819,
+                -82.3464
+            ],
             "electric": true,
             "meter": false,
             "scooter": true,
@@ -80,12 +730,10 @@
         },
         {
             "name": "Garage 3",
-            "coordinates": {
-                "latitude": 29.638651,
-                "longitude": -82.34761
-            },
-            "genCapacity": 918,
-            "currOccupancy": 0,
+            "coordinates": [
+                29.638651,
+                -82.34761
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -130,13 +778,251 @@
             }
         },
         {
+            "name": "Garage 4",
+            "coordinates": [
+                29.645429,
+                -82.343324
+            ],
+            "electric": true,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 652,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 1,
+                    "restrictions": {
+                        "startTime": "00:00",
+                        "endTime": "00:00",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Garage 5",
+            "coordinates": [
+                29.642861,
+                -82.350854
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "red3": {
+                    "specCapacity": 1096,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "red1": {
+                    "specCapacity": 37,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "redGreen": {
+                    "specCapacity": 181,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 1,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Garage 6",
+            "coordinates": [
+                29.637184,
+                -82.342313
+            ],
+            "electric": false,
+            "meter": true,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "gated": {
+                    "specCapacity": 332,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "blue": {
+                    "specCapacity": 87,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "carpool": {
+                    "specCapacity": 41,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 10,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Garage 7",
+            "coordinates": [
+                29.650608,
+                -82.351537
+            ],
+            "electric": true,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "green": {
+                    "specCapacity": 607,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Garage 8",
+            "coordinates": [
+                29.645504,
+                -82.337539
+            ],
+            "electric": true,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "red1": {
+                    "specCapacity": 119,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "red3": {
+                    "specCapacity": 82,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "orange": {
+                    "specCapacity": 229,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 10,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Garage 9",
+            "coordinates": [
+                29.636313,
+                -82.349063
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "blue": {
+                    "specCapacity": 1268,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "green": {
+                    "specCapacity": 135,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 15,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
             "name": "Garage 10",
-            "coordinates": {
-                "latitude": 29.640601,
-                "longitude": -82.342009
-            },
-            "genCapacity": 801,
-            "currOccupancy": 0,
+            "coordinates": [
+                29.640688,
+                -82.341687
+            ],
             "electric": false,
             "meter": false,
             "scooter": true,
@@ -156,6 +1042,1631 @@
                     "restrictions": {
                         "startTime": "00:00",
                         "endTime": "00:00",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Garage 11",
+            "coordinates": [
+                29.636318,
+                -82.368438
+            ],
+            "electric": true,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "any": {
+                    "specCapacity": 542,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 14,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Garage 12",
+            "coordinates": [
+                29.645384,
+                -82.348224
+            ],
+            "electric": true,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "gated": {
+                    "specCapacity": 67,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "any": {
+                    "specCapacity": 118,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 8,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Garage 13",
+            "coordinates": [
+                29.640438,
+                -82.349938
+            ],
+            "electric": true,
+            "meter": true,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 140,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "OBMO": {
+                    "specCapacity": 633,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 24,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "carpool": {
+                    "specCapacity": 16,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "gated": {
+                    "specCapacity": 54,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Human Resource Services",
+            "coordinates": [
+                29.651746,
+                -82.334306
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orangeBlue": {
+                    "specCapacity": 148,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "carpool": {
+                    "specCapacity": 3,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 4,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Graham Area",
+            "coordinates": [
+                29.645294,
+                -82.35174
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "red3": {
+                    "specCapacity": 333,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "red1": {
+                    "specCapacity": 78,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 2,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Hume East",
+            "coordinates": [
+                29.644282,
+                -82.350616
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "red1": {
+                    "specCapacity": 46,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 3,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Hume West",
+            "coordinates": [
+                29.644732,
+                -82.355441
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "green": {
+                    "specCapacity": 42,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 2,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "IFAS Area",
+            "coordinates": [
+                29.638471,
+                -82.356302
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 123,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 7,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "green": {
+                    "specCapacity": 6,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "IFAS Conferences",
+            "coordinates": [
+                29.638489,
+                -82.357718
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "green": {
+                    "specCapacity": 90,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "any": {
+                    "specCapacity": 12,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 1,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "orange": {
+                    "specCapacity": 7,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "IFAS Facilities",
+            "coordinates": [
+                29.638089,
+                -82.355952
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "green": {
+                    "specCapacity": 47,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 2,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Infirmary",
+            "coordinates": [
+                29.648995,
+                -82.346163
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "gated": {
+                    "specCapacity": 28,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 6,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Inner Road",
+            "coordinates": [
+                29.647344,
+                -82.342342
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "gated": {
+                    "specCapacity": 67,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 12,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "orange": {
+                    "specCapacity": 19,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "carpool": {
+                    "specCapacity": 8,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Jennings Hall",
+            "coordinates": [
+                29.643434,
+                -82.342461
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "red1": {
+                    "specCapacity": 78,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Keys Residential Complex",
+            "coordinates": [
+                29.647475,
+                -82.355003
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "red1": {
+                    "specCapacity": 190,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 7,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Lacrosse Stadium",
+            "coordinates": [
+                29.637476,
+                -82.365217
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "any": {
+                    "specCapacity": 150,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "orange": {
+                    "specCapacity": 15,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 6,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Lakeside Residential Complex",
+            "coordinates": [
+                29.642104,
+                -82.365426
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "red1": {
+                    "specCapacity": 231,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 12,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Large Commuter Lot",
+            "coordinates": [
+                29.642133,
+                -82.350693
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "green": {
+                    "specCapacity": 1072,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Levin College of Law",
+            "coordinates": [
+                29.647932,
+                -82.359095
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "green": {
+                    "specCapacity": 403,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "orange": {
+                    "specCapacity": 116,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 11,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Livestock Pavilion",
+            "coordinates": [
+                29.634121,
+                -82.351433
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "green": {
+                    "specCapacity": 122,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "any": {
+                    "specCapacity": 84,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "blue": {
+                    "specCapacity": 5,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 1,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Maguire Village",
+            "coordinates": [
+                29.642101,
+                -82.370489
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "brown": {
+                    "specCapacity": 266,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": false
+                    }
+                },
+                "red3": {
+                    "specCapacity": 26,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 6,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "McCarty Drive",
+            "coordinates": [
+                29.645969,
+                -82.344613
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 128,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "carpool": {
+                    "specCapacity": 9,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 6,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Meats Lab",
+            "coordinates": [
+                29.630623,
+                -82.351001
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 131,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "green": {
+                    "specCapacity": 21,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "any": {
+                    "specCapacity": 160,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 5,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "carpool": {
+                    "specCapacity": 2,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Medical Plaza",
+            "coordinates": [
+                29.638473,
+                -82.349228
+            ],
+            "electric": false,
+            "meter": true,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "disabled": {
+                    "specCapacity": 45,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "blue": {
+                    "specCapacity": 16,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Microbiology",
+            "coordinates": [
+                29.640504,
+                -82.362498
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 72,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 4,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+      {
+        "name": "Murphree Area",
+        "coordinates": [
+          29.65185,
+          -82.346388
+        ],
+        "electric": false,
+        "meter": false,
+        "scooter": true,
+        "lastUpdate": "00:00",
+        "decals": {
+          "red1": {
+            "specCapacity": 117,
+            "restrictions": {
+              "startTime": "07:30",
+              "endTime": "16:30",
+              "weekend": true,
+              "allDay": true
+            }
+          },
+          "orange": {
+            "specCapacity": 49,
+            "restrictions": {
+              "startTime": "07:30",
+              "endTime": "16:30",
+              "weekend": true,
+              "allDay": true
+            }
+          },
+          "disabled": {
+            "specCapacity": 19,
+            "restrictions": {
+              "startTime": "07:30",
+              "endTime": "16:30",
+              "weekend": true,
+              "allDay": true
+            }
+          },
+          "gated": {
+            "specCapacity": 57,
+            "restrictions": {
+              "startTime": "07:30",
+              "endTime": "16:30",
+              "weekend": true,
+              "allDay": true
+            }
+          }
+        }
+      },
+        {
+            "name": "O'Connell Center",
+            "coordinates": [
+                29.650914,
+                -82.35
+            ],
+            "electric": false,
+            "meter": true,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 851,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 31,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Park-and-Ride 2",
+            "coordinates": [
+                29.637126,
+                -82.3767
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "any": {
+                    "specCapacity": 138,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Physical Plant",
+            "coordinates": [
+                29.643217,
+                -82.368491
+            ],
+            "electric": false,
+            "meter": true,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "green": {
+                    "specCapacity": 329,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "orange": {
+                    "specCapacity": 161,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 9,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "any": {
+                    "specCapacity": 14,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Pony Field",
+            "coordinates": [
+                29.639019,
+                -82.351527
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "medRes": {
+                    "specCapacity": 22,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "gated": {
+                    "specCapacity": 37,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "green": {
+                    "specCapacity": 42,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Rhines Hall",
+            "coordinates": [
+                29.647867,
+                -82.34871
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 63,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 8,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Sorority Row",
+            "coordinates": [
+                29.643835,
+                -82.337177
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "red1": {
+                    "specCapacity": 154,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "red3": {
+                    "specCapacity": 30,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 3,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "SW Recreation Center",
+            "coordinates": [
+                29.637904,
+                -82.368061
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "anyNotPNR": {
+                    "specCapacity": 85,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 6,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Sports Medicine",
+            "coordinates": [
+                29.637931,
+                -82.374686
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orangeBlue": {
+                    "specCapacity": 179,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "any": {
+                    "specCapacity": 321,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 26,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Springs Residential Complex",
+            "coordinates": [
+                29.648745,
+                -82.356309
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "red1": {
+                    "specCapacity": 58,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 4,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Surge Area",
+            "coordinates": [
+                29.631479,
+                -82.367672
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "any": {
+                    "specCapacity": 68,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 2,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "SW 13th Street",
+            "coordinates": [
+                29.651306,
+                -82.338698
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "carpool": {
+                    "specCapacity": 28,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Little Hall",
+            "coordinates": [
+                29.649383,
+                -82.340378
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "gated": {
+                    "specCapacity": 118,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 4,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Percy Beard Track",
+            "coordinates": [
+                29.648787,
+                -82.355536
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "red3": {
+                    "specCapacity": 148,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 4,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Archer Triangle",
+            "coordinates": [
+                29.635837,
+                -82.351628
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "blue": {
+                    "specCapacity": 170,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "any": {
+                    "specCapacity": 76,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "University Village",
+            "coordinates": [
+                29.638002,
+                -82.370604
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "brown": {
+                    "specCapacity": 196,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 5,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "University Police",
+            "coordinates": [
+                29.644612,
+                -82.342674
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": false,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orange": {
+                    "specCapacity": 45,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 3,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "any": {
+                    "specCapacity": 7,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Vet Med",
+            "coordinates": [
+                29.634253,
+                -82.348629
+            ],
+            "electric": true,
+            "meter": true,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "green": {
+                    "specCapacity": 214,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "blue": {
+                    "specCapacity": 171,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "any": {
+                    "specCapacity": 94,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 26,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                },
+                "gated": {
+                    "specCapacity": 7,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "carpool": {
+                    "specCapacity": 4,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "Vet Med- North",
+            "coordinates": [
+                29.63757,
+                -82.353474
+            ],
+            "electric": true,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "orangeBlue": {
+                    "specCapacity": 133,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "gated": {
+                    "specCapacity": 24,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 7,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": true,
+                        "allDay": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "Woodlawn Drive",
+            "coordinates": [
+                29.646037,
+                -82.355313
+            ],
+            "electric": false,
+            "meter": false,
+            "scooter": true,
+            "lastUpdate": "00:00",
+            "decals": {
+                "red3": {
+                    "specCapacity": 83,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
+                        "weekend": false,
+                        "allDay": false
+                    }
+                },
+                "disabled": {
+                    "specCapacity": 1,
+                    "restrictions": {
+                        "startTime": "07:30",
+                        "endTime": "16:30",
                         "weekend": true,
                         "allDay": true
                     }

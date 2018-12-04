@@ -1,2 +1,36 @@
-
-
+<mgl-map
+[style]="'mapbox://styles/mapbox/streets-v9'"
+[zoom]="[13]"
+[center]="[-82.3549, 29.6436]"
+[cursorStyle]="cursorStyle">
+<mgl-geojson-source
+  id="points"
+  [data]="points">
+</mgl-geojson-source>
+<mgl-layer
+  id="points"
+  source="points"
+  type="symbol"
+  [layout]="{
+    'icon-image': 'circle-15',
+    'icon-allow-overlap': true
+  }"
+  (click)="onClick($event)"
+  (mouseEnter)="cursorStyle = 'pointer'"
+  (mouseLeave)="cursorStyle = ''">
+</mgl-layer>
+<mgl-popup
+  *ngIf="selectedPoint"
+  [lngLat]="selectedPoint.geometry.coordinates"
+  (close)="selectedPoint = null" >
+  <div style="text-align:center;min-width:90px;">
+    <span [innerHTML]="selectedPoint.properties.name"></span>
+    <br>
+    <span [ngClass]="'bigtext'" [style.color] = "selectedPoint.properties.color" [innerHTML]="selectedPoint.properties.capacity" style="padding-left:10%;">
+    </span>%
+    <br>
+    <button (click)="openAddFileDialog()" class="btn btn-primary" id="park-btn" role="button" aria-pressed="true" *ngIf="!parked">Park</button>
+    <button class="btn btn-secondary disabled" id="park-btn" role="button" *ngIf="parked"><s>Parked</s></button>
+  </div>
+</mgl-popup>
+</mgl-map>

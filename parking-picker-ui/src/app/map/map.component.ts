@@ -1,146 +1,90 @@
-import { Component, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, ChangeDetectorRef, Input, OnChanges, EventEmitter, Output } from '@angular/core';
 import { MapMouseEvent } from 'mapbox-gl';
 import { BackendService } from '../services/backend.service';
 import { HttpClient } from '@angular/common/http';
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { ParkDialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-map',
-  templateUrl: './map.component.html',
   styleUrls: ['./map.component.css'],
-  template: `
-  <mgl-map
-    [style]="'mapbox://styles/chelseacandelora/cjp4ek7n13wq22ro23s7vf8fg'"
-    [zoom]="[13.6]"
-    [center]="[-82.3489, 29.6400]"
-    [cursorStyle]="cursorStyle"
-  >
-  <mgl-control
-      mglNavigation
-    ></mgl-control>
-  <mgl-geojson-source
-  id="points"
-  [data]="points"
-></mgl-geojson-source>
-<mgl-layer
-      id="points"
-      source="points"
-      type="symbol"
-      [layout]="{
-        'icon-image': 'marker-carsnew',
-        'icon-allow-overlap': true
-      }"
-      
-      (click)="onClick($event)"
-      (mouseEnter)="cursorStyle = 'pointer'"
-      (mouseLeave)="cursorStyle = ''"
-    ></mgl-layer>
-        <mgl-popup
-      *ngIf="selectedPoint"
-      [lngLat]="selectedPoint.geometry.coordinates"
-      (close)="selectedPoint = null"
-    >
-    <span [ngClass]="'bigtext'" [style.color] = "selectedPoint.properties.color" [innerHTML]="selectedPoint.properties.capacity"></span>
-    <br>
-    <span [innerHTML]="selectedPoint.properties.name"></span>
-    </mgl-popup>
-  </mgl-map>
- `
+  templateUrl: './map.component.html'
 })
 
-export class MapComponent  {
+export class MapComponent implements OnChanges {
+  closed = true;
+  selectedGarage: any;
   points: GeoJSON.FeatureCollection<GeoJSON.Point>;
-  // showBackEndService() {
-  //   this.backendService.getGaragesMapbox()
-  //     .subscribe((data: Backend) => this.backendService = {
-  //       mapboxConfigUrl: data['mapboxConfigUrl']
-  //     });
-  // }
+  selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null;
+  cursorStyle: string;
+  parkDialogRef: MatDialogRef<ParkDialogComponent>;
 
-@Input() permissions;
+  @Input() parked;
+  @Input() permissions;
+  @Output() garageSelected = new EventEmitter<boolean>();
+  @Output() dialogClosed = new EventEmitter<boolean>();
 
+  constructor(private changeDetectorRef: ChangeDetectorRef,
+    private http: HttpClient,
+    private backendService: BackendService,
+    private dialog: MatDialog) {
+    this.showPoints();
+  }
+
+  // Load in garage points
   showPoints() {
-    this.backendService.getGaragesMapbox().subscribe((mapboxData:GeoJSON.FeatureCollection<GeoJSON.Point>) => {
+    this.backendService.getGaragesMapbox().subscribe((mapboxData: GeoJSON.FeatureCollection<GeoJSON.Point>) => {
       this.points = mapboxData;
     });
   }
 
+  // Called to open park dialog
+  openAddFileDialog() {
+    // Make sure not to open more than one dialog at a time
+    if (this.closed) {
+      if (this.selectedPoint.properties.capacity === 100) {
+        alert('Parking lot is full!');
+      } else {
+        this.closed = false;
+        this.parkDialogRef = this.dialog.open(ParkDialogComponent, {
+          data: {
+            garageDecals: this.selectedGarage,
+            permissions: this.permissions
+          }
+        });
+        this.parkDialogRef.afterClosed().subscribe((event) => {
+          // Reset reentrancy var
+          this.closed = true;
+          this.dialogClosed.emit();
+          this.garageSelected.emit(this.selectedGarage);
+        });
+      }
+    }
+  }
+
+  // On user settings change update garage points on map
   ngOnChanges(changes) {
-    if(changes.permissions) {
-      if(changes.permissions.currentValue.length > 0) {
-        this.backendService.getFilteredGaragesMapbox(this.permissions).subscribe((mapboxData:GeoJSON.FeatureCollection<GeoJSON.Point>) => {
+    if (changes.permissions) {
+      // If the user has decals selected
+      if (changes.permissions.currentValue.length > 0) {
+        this.backendService.getFilteredGaragesMapbox(this.permissions).subscribe((mapboxData: GeoJSON.FeatureCollection<GeoJSON.Point>) => {
           this.points = mapboxData;
         });
-      }else {
+      } else {
         this.showPoints();
       }
     }
   }
 
-  // points: GeoJSON.FeatureCollection<GeoJSON.Point>;
-  selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null;
-  cursorStyle: string;
-  constructor(private ChangeDetectorRef: ChangeDetectorRef, private http: HttpClient, private backendService: BackendService ) {
-    this.showPoints();
-
-  // this.points = backendService.getGaragesMapbox();
-  // console.log(backendService.getGaragesMapbox());
-  // points: GeoJSON.FeatureCollection<GeoJSON.Point>;
-  //   this.points = {
-  //           'type': 'FeatureCollection',
-  //           'features': [{
-  //             'type': 'Feature',
-  //             'geometry': {
-  //               'type': 'Point',
-  //               'coordinates': [-82.3512, 29.6419]
-  //             },
-  //             'properties': {
-  //               'name': "Gale Lemerand Garage",
-  //             }
-  //           }, {
-  //             'type': 'Feature',
-  //             'geometry': {
-  //               'type': 'Point',
-  //               'coordinates': [-82.3429, 29.6453]
-  //             },
-  //             'properties': {
-  //               'name':'Reitz Union Parking',
-  //             },
-  //           }, {
-  //             'type': 'Feature',
-  //             'geometry': {
-  //               'type': 'Point',
-  //               'coordinates': [-82.3375, 29.6455]
-  //             },
-  //             'properties': {
-  //               'name': 'Newell Garage',
-  //             }
-  //           }, {
-  //             'type': 'Feature',
-  //             'geometry': {
-  //               'type': 'Point',
-  //               'coordinates': [-82.3473, 29.6510]
-  //             },
-  //             'properties': {
-  //               'name':'Murphree Parking',
-  //             }
-  //           },
-  //           {
-  //             'type':'Feature',
-  //             'geometry' : {
-  //               'type':'Point',
-  //               'coordinates':[-82.355441, 29.644732]
-  //           },
-  //           'properties': {
-  //             'name':'Hume West'
-  //           }
-  //          }
-  //         ]
-  //         };
-   }
-
-   onClick(evt: MapMouseEvent) {
+  // Set the selected garage when user clicks point
+  onClick(evt: MapMouseEvent) {
     this.selectedPoint = null;
-    this.ChangeDetectorRef.detectChanges();
+    this.changeDetectorRef.detectChanges();
     this.selectedPoint = (<any>evt).features[0];
+    // Get garage data from backend
+    this.backendService.getGarage(this.selectedPoint.properties.id).subscribe((garage: any) => {
+      this.selectedGarage = garage;
+      this.garageSelected.emit(this.selectedGarage);
+    });
   }
 }

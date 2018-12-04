@@ -1,0 +1,557 @@
+{
+    "currOccupancies": [
+        {
+            "name": "Animal Research Facility",
+            "data": {
+                "green": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Bat House",
+            "data": {
+                "orange": 0,
+                "anyNotPNR": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Black Hall",
+            "data": {
+                "orange": 0,
+                "disabled": 0,
+                "carpool": 0
+            }
+        },
+        {
+            "name": "Bledsoe Drive",
+            "data": {
+                "any": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Corry Village",
+            "data": {
+                "brown": 0,
+                "green": 0,
+                "brownGreen": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Criser Hall",
+            "data": {
+                "gated": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Cultural Plaza",
+            "data": {
+                "any": 0,
+                "disabled": 0,
+                "carpool": 0,
+                "orange": 0
+            }
+        },
+        {
+            "name": "Cypress Hall",
+            "data": {
+                "orange": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Dental- Disabled",
+            "data": {
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Diamond Village",
+            "data": {
+                "brown": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Division of Housing",
+            "data": {
+                "red1": 0,
+                "orange": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "East Campus",
+            "data": {
+                "any": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "East Hall",
+            "data": {
+                "orange": 0,
+                "carpool": 0
+            }
+        },
+        {
+            "name": "New Engineering Building",
+            "data": {
+                "orange": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Entomology & Nematology",
+            "data": {
+                "any": 0,
+                "orange": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Fifield Hall",
+            "data": {
+                "orange": 0,
+                "green": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Frazier-Rogers Hall",
+            "data": {
+                "orange": 0,
+                "carpool": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Fraternity Row",
+            "data": {
+                "anyNotPNR": 0,
+                "red3": 0,
+                "red1": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Garage 1",
+            "data": {
+                "disabled": 0,
+                "gated": 0
+            }
+        },
+        {
+            "name": "Garage 2",
+            "data": {
+                "disabled": 0,
+                "gated": 0,
+                "any": 0
+            }
+        },
+        {
+            "name": "Garage 3",
+            "data": {
+                "medRes": 0,
+                "any": 0,
+                "gated": 0,
+                "carpool": 0
+            }
+        },
+        {
+            "name": "Garage 4",
+            "data": {
+                "orange": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Garage 5",
+            "data": {
+                "red3": 0,
+                "red1": 0,
+                "redGreen": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Garage 6",
+            "data": {
+                "gated": 0,
+                "blue": 0,
+                "carpool": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Garage 7",
+            "data": {
+                "green": 0
+            }
+        },
+        {
+            "name": "Garage 8",
+            "data": {
+                "red1": 0,
+                "red3": 0,
+                "orange": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Garage 9",
+            "data": {
+                "blue": 0,
+                "green": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Garage 10",
+            "data": {
+                "disabled": 0,
+                "any": 0
+            }
+        },
+        {
+            "name": "Garage 11",
+            "data": {
+                "any": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Garage 12",
+            "data": {
+                "gated": 0,
+                "any": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Garage 13",
+            "data": {
+                "orange": 0,
+                "OBMO": 0,
+                "disabled": 0,
+                "carpool": 0,
+                "gated": 0
+            }
+        },
+        {
+            "name": "Human Resource Services",
+            "data": {
+                "orangeBlue": 0,
+                "carpool": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Graham Area",
+            "data": {
+                "red3": 0,
+                "red1": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Hume East",
+            "data": {
+                "red1": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Hume West",
+            "data": {
+                "green": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "IFAS Area",
+            "data": {
+                "orange": 0,
+                "disabled": 0,
+                "green": 0
+            }
+        },
+        {
+            "name": "IFAS Conferences",
+            "data": {
+                "green": 0,
+                "any": 0,
+                "disabled": 0,
+                "orange": 0
+            }
+        },
+        {
+            "name": "IFAS Facilities",
+            "data": {
+                "green": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Infirmary",
+            "data": {
+                "gated": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Inner Road",
+            "data": {
+                "gated": 0,
+                "disabled": 0,
+                "orange": 0,
+                "carpool": 0
+            }
+        },
+        {
+            "name": "Jennings Hall",
+            "data": {
+                "red1": 0
+            }
+        },
+        {
+            "name": "Keys Residential Complex",
+            "data": {
+                "red1": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Lacrosse Stadium",
+            "data": {
+                "any": 0,
+                "orange": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Lakeside Residential Complex",
+            "data": {
+                "red1": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Large Commuter Lot",
+            "data": {
+                "green": 0
+            }
+        },
+        {
+            "name": "Levin College of Law",
+            "data": {
+                "green": 0,
+                "orange": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Livestock Pavilion",
+            "data": {
+                "green": 0,
+                "any": 0,
+                "blue": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Maguire Village",
+            "data": {
+                "brown": 0,
+                "red3": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "McCarty Drive",
+            "data": {
+                "orange": 0,
+                "carpool": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Meats Lab",
+            "data": {
+                "orange": 0,
+                "green": 0,
+                "any": 0,
+                "disabled": 0,
+                "carpool": 0
+            }
+        },
+        {
+            "name": "Medical Plaza",
+            "data": {
+                "disabled": 0,
+                "blue": 0
+            }
+        },
+        {
+            "name": "Microbiology",
+            "data": {
+                "orange": 0,
+                "disabled": 0
+            }
+        },
+      {
+        "name": "Murphree Area",
+        "data": {
+          "red1": 0,
+          "orange": 0,
+          "disabled": 0,
+          "gated": 0
+        }
+      },
+        {
+            "name": "O'Connell Center",
+            "data": {
+                "orange": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Park-and-Ride 2",
+            "data": {
+                "any": 0
+            }
+        },
+        {
+            "name": "Physical Plant",
+            "data": {
+                "green": 0,
+                "orange": 0,
+                "disabled": 0,
+                "any": 0
+            }
+        },
+        {
+            "name": "Pony Field",
+            "data": {
+                "medRes": 0,
+                "gated": 0,
+                "green": 0
+            }
+        },
+        {
+            "name": "Rhines Hall",
+            "data": {
+                "orange": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Sorority Row",
+            "data": {
+                "red1": 0,
+                "red3": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "SW Recreation Center",
+            "data": {
+                "anyNotPNR": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Sports Medicine",
+            "data": {
+                "orangeBlue": 0,
+                "any": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Springs Residential Complex",
+            "data": {
+                "red1": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Surge Area",
+            "data": {
+                "any": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "SW 13th Street",
+            "data": {
+                "carpool": 0
+            }
+        },
+        {
+            "name": "Little Hall",
+            "data": {
+                "gated": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Percy Beard Track",
+            "data": {
+                "red3": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Archer Triangle",
+            "data": {
+                "blue": 0,
+                "any": 0
+            }
+        },
+        {
+            "name": "University Village",
+            "data": {
+                "brown": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "University Police",
+            "data": {
+                "orange": 0,
+                "disabled": 0,
+                "any": 0
+            }
+        },
+        {
+            "name": "Vet Med",
+            "data": {
+                "green": 0,
+                "blue": 0,
+                "any": 0,
+                "disabled": 0,
+                "gated": 0,
+                "carpool": 0
+            }
+        },
+        {
+            "name": "Vet Med- North",
+            "data": {
+                "orangeBlue": 0,
+                "gated": 0,
+                "disabled": 0
+            }
+        },
+        {
+            "name": "Woodlawn Drive",
+            "data": {
+                "red3": 0,
+                "disabled": 0
+            }
+        }
+    ]
+}
