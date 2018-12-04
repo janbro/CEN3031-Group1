@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1280px" height="65px" viewBox="0 0 1280 65" enable-background="new 0 0 1280 65" xml:space="preserve">
+<rect fill="#00529B" width="1280" height="65.002"/>
+<polygon fill="none" points="498.987,58.58 132.935,58.656 132.926,21.628 498.975,21.546 "/>
+<rect x="133.631" y="20.637" fill="none" width="326.078" height="39.618"/>
+<text transform="matrix(1 0 0 1 154.1279 41.0723)" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" font-family="'Canaro-LightDEMO'" font-size="26.0136" letter-spacing="2">PARKING PICKER</text>
+<polygon fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.2" stroke-miterlimit="10" points="106.804,17.634 106.804,45.98 
+	104.041,45.98 104.041,53.243 117.436,53.243 117.436,46.166 114.853,46.166 114.853,35.114 124.884,35.114 124.884,27.962 
+	114.909,27.962 114.909,17.634 125.843,17.634 125.843,21.542 133.107,21.542 133.107,10.49 104.041,10.49 104.041,17.634 "/>
+<polygon fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.2" stroke-miterlimit="10" points="65.965,10.49 65.965,17.634 
+	68.67,17.634 79.479,17.634 79.479,10.49 "/>
+<polygon fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.2" stroke-miterlimit="10" points="86.083,10.49 86.083,17.634 
+	88.789,17.634 99.598,17.634 99.598,10.49 "/>
+<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.2" stroke-miterlimit="10" d="M68.67,17.634v19.294
+	c0,0-2.062,17.453,13.957,16.816c0,0,13.885,1.877,14.228-14.234V17.634h-8.062v15.855v1.199c0,0,0.836,10.451-5.169,10.451
+	c0,0-6.604,1.678-6.846-7.811V17.634H68.67z"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="95.295" y1="65.128" x2="412" y2="65.128"/>
+<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="142" y1="10.49" x2="142" y2="54"/>
+</svg>
