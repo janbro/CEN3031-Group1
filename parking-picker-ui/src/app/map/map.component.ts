@@ -19,8 +19,10 @@ export class MapComponent implements OnChanges {
   cursorStyle: string;
   parkDialogRef: MatDialogRef<ParkDialogComponent>;
 
+  @Input() parked;
   @Input() permissions;
   @Output() garageSelected = new EventEmitter<boolean>();
+  @Output() dialogClosed = new EventEmitter<boolean>();
 
   constructor(private changeDetectorRef: ChangeDetectorRef,
     private http: HttpClient,
@@ -53,6 +55,8 @@ export class MapComponent implements OnChanges {
         this.parkDialogRef.afterClosed().subscribe((event) => {
           // Reset reentrancy var
           this.closed = true;
+          this.dialogClosed.emit();
+          this.garageSelected.emit(this.selectedGarage);
         });
       }
     }

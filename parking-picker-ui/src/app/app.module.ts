@@ -17,6 +17,7 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { ParkDialogComponent } from './dialog/dialog.component';
 import { TimePipe } from './pipes/time.pipe';
 import { MatRadioModule } from '@angular/material';
+import { MatSnackBarModule } from '@angular/material';
 
 const appRoutes: Routes = [
   { path: '', component: MapComponent, data: { title: 'Map Component' } },
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     MatSelectModule,
     MatDialogModule,
+    MatSnackBarModule,
     MatRadioModule,
     NgxMapboxGLModule.withConfig({
       accessToken: 'pk.eyJ1IjoiY2hlbHNlYWNhbmRlbG9yYSIsImEiOiJjam5ieWVpMDcwOTRxM3BvbDlqZGx4YXltIn0.v0C5haf-TS-noMhWkdTTYQ'

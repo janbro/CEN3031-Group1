@@ -25,3 +25,15 @@ mgl-map {
   width: 50%;
   height: 30px;
 }
+
+.btn-secondary {
+  background-color: rgb(110, 135, 231);
+  color: white;
+  border-radius: 5px;
+  width: 75%;
+  height: 30px;
+}
+
+.disabled {
+  pointer-events: none;
+}

@@ -7,8 +7,8 @@
     <!-- <span><img src="./assets/parkingpicker.png"></span> -->
   </mat-toolbar-row>
 </mat-toolbar>
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #drawer mode="side" opened role="navigation" style="width: 275px;">
+<mat-sidenav-container class="example-container" (click)="updateParked()">
+  <mat-sidenav #drawer mode="side" opened role="navigation" style="width: 275px; z-index: 3;">
     <mat-nav-list>
       <mat-form-field color="warn" class="placeholder">
         <mat-select placeholder="Student" [formControl]="decals" multiple >
@@ -41,6 +41,9 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content style="max-height: 92vh;">
-    <app-map [permissions]='permissions' (garageSelected)="updateGarageInfo($event)"></app-map>
+    <div class="box flex btn-container" style="justify-content: center; display: flex;">
+        <button class="btn btn-warn btn-float pulse-red" (click)="onUnparkClick()" type="button" *ngIf="parked">Unpark</button>
+    </div>
+    <app-map [permissions]="permissions" [parked]="parked" (garageSelected)="updateGarageInfo($event)" (dialogClosed)="updateParked($event)"></app-map>
   </mat-sidenav-content>
 </mat-sidenav-container>

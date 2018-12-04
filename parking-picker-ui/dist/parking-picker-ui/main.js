@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">\r\n<app-navigation></app-navigation>\r\n"
+module.exports = "<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">\n<app-navigation></app-navigation>\n"
 
 /***/ }),
 
@@ -132,6 +132,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var appRoutes = [
     { path: '', component: _map_map_component__WEBPACK_IMPORTED_MODULE_6__["MapComponent"], data: { title: 'Map Component' } },
 ];
@@ -158,6 +159,7 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
                 _angular_material_select__WEBPACK_IMPORTED_MODULE_10__["MatSelectModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_13__["MatDialogModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_13__["MatSnackBarModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_13__["MatRadioModule"],
                 ngx_mapbox_gl__WEBPACK_IMPORTED_MODULE_9__["NgxMapboxGLModule"].withConfig({
                     accessToken: 'pk.eyJ1IjoiY2hlbHNlYWNhbmRlbG9yYSIsImEiOiJjam5ieWVpMDcwOTRxM3BvbDlqZGx4YXltIn0.v0C5haf-TS-noMhWkdTTYQ'
@@ -225,7 +227,7 @@ var CustomMaterialModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".park-option {\r\n    width: 100%;\r\n    padding-bottom: 3px;\r\n}"
+module.exports = ".park-option {\n    width: 100%;\n    padding-bottom: 3px;\n}"
 
 /***/ }),
 
@@ -236,7 +238,7 @@ module.exports = ".park-option {\r\n    width: 100%;\r\n    padding-bottom: 3px;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 style=\"margin-bottom:0px;\" mat-dialog-title>What space did you park in?</h2>\r\n<h5 class=\"mt-1\" *ngIf=\"errMsg\" style=\"color: red;font-size:medium;margin-bottom: 0px;\" mat-dialog-title> {{errMsg}} </h5>\r\n<mat-dialog-content>\r\n    <mat-radio-group class=\"example-radio-group\" [(ngModel)]=\"decals\" multiple required>\r\n        <mat-radio-button class=\"park-option\" *ngFor=\"let decal of decalList\" [value]=\"decal.value\" [checked]=\"decalList[0] == decal\">{{decal.name}}</mat-radio-button>\r\n    </mat-radio-group>\r\n</mat-dialog-content>\r\n<mat-dialog-actions>\r\n  <button mat-button mat-dialog-close>Cancel</button>\r\n  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->\r\n  <button mat-button (click)=\"onParkClick()\">Park</button>\r\n</mat-dialog-actions>"
+module.exports = "<h2 style=\"margin-bottom:0px;\" mat-dialog-title>What space did you park in?</h2>\n<h5 class=\"mt-1\" *ngIf=\"errMsg\" style=\"color: red;font-size:medium;margin-bottom: 0px;\" mat-dialog-title> {{errMsg}} </h5>\n<mat-dialog-content>\n    <mat-radio-group class=\"example-radio-group\" [(ngModel)]=\"decals\" multiple required>\n        <mat-radio-button class=\"park-option\" *ngFor=\"let decal of decalList\" [value]=\"decal.value\" [checked]=\"decalList[0] == decal\">{{decal.name}}</mat-radio-button>\n    </mat-radio-group>\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-button mat-dialog-close>Cancel</button>\n  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->\n  <button mat-button (click)=\"onParkClick()\">Park</button>\n</mat-dialog-actions>"
 
 /***/ }),
 
@@ -268,12 +270,14 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
+
 var ParkDialogComponent = /** @class */ (function () {
-    function ParkDialogComponent(dialogRef, data, backendService) {
+    function ParkDialogComponent(dialogRef, data, backendService, snackBar) {
         var _this = this;
         this.dialogRef = dialogRef;
         this.data = data;
         this.backendService = backendService;
+        this.snackBar = snackBar;
         this.lut = [{ name: 'Green', value: 'green' },
             { name: 'Park & Ride', value: 'parkNRide' },
             { name: 'Red 1', value: 'red1' },
@@ -300,6 +304,7 @@ var ParkDialogComponent = /** @class */ (function () {
         if (data.garageDecals === undefined) {
             return;
         }
+        this.selectedGarage = data.garageDecals;
         // Iterate through decals and retrieve user friendly names
         data.garageDecals.decals.forEach(function (ele, ind) {
             if (data.permissions.length === 0 || data.permissions.includes(ele.name)) {
@@ -324,6 +329,7 @@ var ParkDialogComponent = /** @class */ (function () {
     };
     // On click handler for park button
     ParkDialogComponent.prototype.onParkClick = function () {
+        var _this = this;
         // Decal seletion required
         if (!this.decals) {
             this.errMsg = '*required';
@@ -332,6 +338,16 @@ var ParkDialogComponent = /** @class */ (function () {
         else {
             // Create request to update occupancy data in backend
             this.backendService.addOccupancy({ name: this.data.garageDecals.name, decal: this.decals, park: true }).subscribe(function (res) {
+                if (typeof (Storage) !== 'undefined') {
+                    localStorage.setItem('parked', JSON.stringify({
+                        'garage': _this.selectedGarage,
+                        'decal': { name: _this.data.garageDecals.name, decal: _this.decals, park: false },
+                        'parked': false
+                    }));
+                    _this.snackBar.open('You have successfully parked!', '', {
+                        duration: 2000,
+                    });
+                }
             });
             this.dialogRef.close();
             return true;
@@ -344,7 +360,8 @@ var ParkDialogComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./dialog.component.html */ "./src/app/dialog/dialog.component.html"),
         }),
         __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object, _services_backend_service__WEBPACK_IMPORTED_MODULE_1__["BackendService"]])
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object, _services_backend_service__WEBPACK_IMPORTED_MODULE_1__["BackendService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"]])
     ], ParkDialogComponent);
     return ParkDialogComponent;
 }());
@@ -360,7 +377,7 @@ var ParkDialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* :host {\r\n  display: flex;\r\n  flex: 1;\r\n} */\r\nmgl-map {\r\n  height: 100vh;\r\n  width: 100vw;\r\n}\r\n.menu {\r\n  position: absolute;\r\n  padding: 8px;\r\n}\r\n.bigtext\r\n{\r\n  font-size:24px;\r\n  -webkit-text-stroke:1.5px;\r\n}\r\n.btn-primary {\r\n  background-color: rgb(0, 33, 165);\r\n  color: white;\r\n  border-radius: 5px;\r\n  width: 50%;\r\n  height: 30px;\r\n}"
+module.exports = "/* :host {\n  display: flex;\n  flex: 1;\n} */\nmgl-map {\n  height: 100vh;\n  width: 100vw;\n}\n.menu {\n  position: absolute;\n  padding: 8px;\n}\n.bigtext\n{\n  font-size:24px;\n  -webkit-text-stroke:1.5px;\n}\n.btn-primary {\n  background-color: rgb(0, 33, 165);\n  color: white;\n  border-radius: 5px;\n  width: 50%;\n  height: 30px;\n}\n.btn-secondary {\n  background-color: rgb(110, 135, 231);\n  color: white;\n  border-radius: 5px;\n  width: 75%;\n  height: 30px;\n}\n.disabled {\n  pointer-events: none;\n}"
 
 /***/ }),
 
@@ -371,7 +388,7 @@ module.exports = "/* :host {\r\n  display: flex;\r\n  flex: 1;\r\n} */\r\nmgl-ma
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mgl-map\r\n[style]=\"'mapbox://styles/mapbox/streets-v9'\"\r\n[zoom]=\"[13]\"\r\n[center]=\"[-82.3549, 29.6436]\"\r\n[cursorStyle]=\"cursorStyle\">\r\n<mgl-geojson-source\r\n  id=\"points\"\r\n  [data]=\"points\">\r\n</mgl-geojson-source>\r\n<mgl-layer\r\n  id=\"points\"\r\n  source=\"points\"\r\n  type=\"symbol\"\r\n  [layout]=\"{\r\n    'icon-image': 'circle-15',\r\n    'icon-allow-overlap': true\r\n  }\"\r\n  (click)=\"onClick($event)\"\r\n  (mouseEnter)=\"cursorStyle = 'pointer'\"\r\n  (mouseLeave)=\"cursorStyle = ''\">\r\n</mgl-layer>\r\n<mgl-popup\r\n  *ngIf=\"selectedPoint\"\r\n  [lngLat]=\"selectedPoint.geometry.coordinates\"\r\n  (close)=\"selectedPoint = null\" >\r\n  <div style=\"text-align:center;min-width:90px;\">\r\n    <span [innerHTML]=\"selectedPoint.properties.name\"></span>\r\n    <br>\r\n    <span [ngClass]=\"'bigtext'\" [style.color] = \"selectedPoint.properties.color\" [innerHTML]=\"selectedPoint.properties.capacity\" style=\"padding-left:10%;\">\r\n    </span>%\r\n    <br>\r\n    <button (click)=\"openAddFileDialog()\" class=\"btn btn-primary\" id=\"park-btn\" role=\"button\" aria-pressed=\"true\">Park</button>\r\n  </div>\r\n</mgl-popup>\r\n</mgl-map>"
+module.exports = "<mgl-map\n[style]=\"'mapbox://styles/mapbox/streets-v9'\"\n[zoom]=\"[13]\"\n[center]=\"[-82.3549, 29.6436]\"\n[cursorStyle]=\"cursorStyle\">\n<mgl-geojson-source\n  id=\"points\"\n  [data]=\"points\">\n</mgl-geojson-source>\n<mgl-layer\n  id=\"points\"\n  source=\"points\"\n  type=\"symbol\"\n  [layout]=\"{\n    'icon-image': 'circle-15',\n    'icon-allow-overlap': true\n  }\"\n  (click)=\"onClick($event)\"\n  (mouseEnter)=\"cursorStyle = 'pointer'\"\n  (mouseLeave)=\"cursorStyle = ''\">\n</mgl-layer>\n<mgl-popup\n  *ngIf=\"selectedPoint\"\n  [lngLat]=\"selectedPoint.geometry.coordinates\"\n  (close)=\"selectedPoint = null\" >\n  <div style=\"text-align:center;min-width:90px;\">\n    <span [innerHTML]=\"selectedPoint.properties.name\"></span>\n    <br>\n    <span [ngClass]=\"'bigtext'\" [style.color] = \"selectedPoint.properties.color\" [innerHTML]=\"selectedPoint.properties.capacity\" style=\"padding-left:10%;\">\n    </span>%\n    <br>\n    <button (click)=\"openAddFileDialog()\" class=\"btn btn-primary\" id=\"park-btn\" role=\"button\" aria-pressed=\"true\" *ngIf=\"!parked\">Park</button>\n    <button class=\"btn btn-secondary disabled\" id=\"park-btn\" role=\"button\" *ngIf=\"parked\"><s>Parked</s></button>\n  </div>\n</mgl-popup>\n</mgl-map>"
 
 /***/ }),
 
@@ -412,6 +429,7 @@ var MapComponent = /** @class */ (function () {
         this.dialog = dialog;
         this.closed = true;
         this.garageSelected = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.dialogClosed = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.showPoints();
     }
     // Load in garage points
@@ -440,6 +458,8 @@ var MapComponent = /** @class */ (function () {
                 this.parkDialogRef.afterClosed().subscribe(function (event) {
                     // Reset reentrancy var
                     _this.closed = true;
+                    _this.dialogClosed.emit();
+                    _this.garageSelected.emit(_this.selectedGarage);
                 });
             }
         }
@@ -474,11 +494,19 @@ var MapComponent = /** @class */ (function () {
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", Object)
+    ], MapComponent.prototype, "parked", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
     ], MapComponent.prototype, "permissions", void 0);
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
         __metadata("design:type", Object)
     ], MapComponent.prototype, "garageSelected", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], MapComponent.prototype, "dialogClosed", void 0);
     MapComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-map',
@@ -504,7 +532,7 @@ var MapComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".example-container {\r\n  height: 100%;\r\n}\r\n.mat-sidenav {\r\n  padding: 30px;\r\n  width: 240px;\r\n}\r\n.blue\r\n{\r\n  background-color: rgb(0, 33, 165);\r\n}\r\n.orange\r\n{\r\n  color: rgb(250, 70, 22);\r\n}\r\n.placeholder\r\n{\r\ncolor: rgb(0, 33, 165);\r\n}\r\n"
+module.exports = ".example-container {\n  height: 100%;\n}\n.mat-sidenav {\n  padding: 30px;\n  width: 240px;\n}\n.blue\n{\n  background-color: rgb(0, 33, 165);\n}\n.orange\n{\n  color: rgb(250, 70, 22);\n}\n.placeholder\n{\ncolor: rgb(0, 33, 165);\n}\n.btn-warn {\n  background-color: rgb(185, 44, 44);\n  border-color: rgb(185, 44, 44);\n  color: white;\n  height: 200px;\n  border-radius: 15px;\n  padding-left: 40px;\n  padding-right: 40px;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  pointer-events: all;\n  cursor: pointer;\n}\n.btn-float {\n  position: absolute;\n  height: 100px;\n  width: 200px;\n  font-size: 30px;\n  bottom: 13%;\n}\n.btn-container {\n  pointer-events: none;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 2;\n}\n@-webkit-keyframes glowing {\n  0% { box-shadow: 0 0 -10px #c40000; }\n  40% { box-shadow: 0 0 50px #c40000; }\n  60% { box-shadow: 0 0 50px #c40000; }\n  100% { box-shadow: 0 0 -10px #c40000; }\n}\n@keyframes glowing {\n  0% { box-shadow: 0 0 -10px #c40000; }\n  40% { box-shadow: 0 0 50px #c40000; }\n  60% { box-shadow: 0 0 50px #c40000; }\n  100% { box-shadow: 0 0 -10px #c40000; }\n}\n.pulse-red {\n  -webkit-animation: glowing 3000ms infinite;\n          animation: glowing 3000ms infinite;\n}"
 
 /***/ }),
 
@@ -515,7 +543,7 @@ module.exports = ".example-container {\r\n  height: 100%;\r\n}\r\n.mat-sidenav {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\" class=\"blue\">\r\n  <mat-toolbar-row>\r\n    <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\" color=\"warn\" class=\"orange\">\r\n      <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n    </button>\r\n    <span>Parking Picker</span>\r\n    <!-- <span><img src=\"./assets/parkingpicker.png\"></span> -->\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n<mat-sidenav-container class=\"example-container\">\r\n  <mat-sidenav #drawer mode=\"side\" opened role=\"navigation\" style=\"width: 275px;\">\r\n    <mat-nav-list>\r\n      <mat-form-field color=\"warn\" class=\"placeholder\">\r\n        <mat-select placeholder=\"Student\" [formControl]=\"decals\" multiple >\r\n          <mat-option (click) = \"updateSettings()\" *ngFor=\"let decal of decalList\" [value]=\"decal.value\">{{decal.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n      <br>\r\n      <mat-form-field color=\"warn\" class=\"placeholder\">\r\n        <mat-select placeholder=\"Faculty & Staff\" [formControl]=\"decals\" multiple>\r\n          <mat-option (click) = \"updateSettings()\" *ngFor=\"let decal of decalList1\" [value]=\"decal.value\">{{decal.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n      <br>\r\n      <h3 class=\"mat-headline-1\" style=\"text-align: center;\">{{garage.name}}</h3>\r\n      <div class=\"box flex\" style=\"justify-content: center; display: flex; padding-left: 20px;\">\r\n        <img class=\"fas\" style=\"height: 20px; padding-right:20px;\" src=\"assets/parking-meter.svg\" *ngIf=\"garage.meter\">\r\n        <i class=\"fas fa-car\" style=\"padding-right:20px;\" *ngIf=\"garage.name\"></i>\r\n        <i class=\"fas fa-motorcycle\" style=\"padding-right:20px;\" *ngIf=\"garage.scooter\"></i>\r\n        <img class=\"fas\" style=\"height: 14px; padding-right:20px;\" src=\"assets/battery.svg\" *ngIf=\"garage.electric\">\r\n      </div>\r\n      <mat-list>\r\n        <mat-list-item style=\"pointer-events: none; text-align: center;\" *ngFor=\"let decal of garage.decals\">\r\n          <a matLine><b>{{getDecalName(decal.name)}}</b> - <a [style.color]=\"getColor(getOccupancy(decal.name))\">{{getOccupancy(decal.name)}}%</a></a>\r\n          <mat-divider></mat-divider>\r\n          <a matLine>Mon - <a *ngIf=\"decal.restrictions.weekend\">Sun</a><a *ngIf=\"!decal.restrictions.weekend\">Fri</a></a>\r\n          <a matLine *ngIf=\"!decal.restrictions.allDay\">{{decal.restrictions.startTime | time}} - {{decal.restrictions.endTime | time}}</a>\r\n          <a matLine *ngIf=\"decal.restrictions.allDay\">ALL DAY</a>\r\n        </mat-list-item>\r\n      </mat-list>\r\n    </mat-nav-list>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content style=\"max-height: 92vh;\">\r\n    <app-map [permissions]='permissions' (garageSelected)=\"updateGarageInfo($event)\"></app-map>\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n"
+module.exports = "<mat-toolbar color=\"primary\" class=\"blue\">\n  <mat-toolbar-row>\n    <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\" color=\"warn\" class=\"orange\">\n      <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\n    </button>\n    <span>Parking Picker</span>\n    <!-- <span><img src=\"./assets/parkingpicker.png\"></span> -->\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-sidenav-container class=\"example-container\" (click)=\"updateParked()\">\n  <mat-sidenav #drawer mode=\"side\" opened role=\"navigation\" style=\"width: 275px; z-index: 3;\">\n    <mat-nav-list>\n      <mat-form-field color=\"warn\" class=\"placeholder\">\n        <mat-select placeholder=\"Student\" [formControl]=\"decals\" multiple >\n          <mat-option (click) = \"updateSettings()\" *ngFor=\"let decal of decalList\" [value]=\"decal.value\">{{decal.name}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <br>\n      <mat-form-field color=\"warn\" class=\"placeholder\">\n        <mat-select placeholder=\"Faculty & Staff\" [formControl]=\"decals\" multiple>\n          <mat-option (click) = \"updateSettings()\" *ngFor=\"let decal of decalList1\" [value]=\"decal.value\">{{decal.name}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <br>\n      <h3 class=\"mat-headline-1\" style=\"text-align: center;\">{{garage.name}}</h3>\n      <div class=\"box flex\" style=\"justify-content: center; display: flex; padding-left: 20px;\">\n        <img class=\"fas\" style=\"height: 20px; padding-right:20px;\" src=\"assets/parking-meter.svg\" *ngIf=\"garage.meter\">\n        <i class=\"fas fa-car\" style=\"padding-right:20px;\" *ngIf=\"garage.name\"></i>\n        <i class=\"fas fa-motorcycle\" style=\"padding-right:20px;\" *ngIf=\"garage.scooter\"></i>\n        <img class=\"fas\" style=\"height: 14px; padding-right:20px;\" src=\"assets/battery.svg\" *ngIf=\"garage.electric\">\n      </div>\n      <mat-list>\n        <mat-list-item style=\"pointer-events: none; text-align: center;\" *ngFor=\"let decal of garage.decals\">\n          <a matLine><b>{{getDecalName(decal.name)}}</b> - <a [style.color]=\"getColor(getOccupancy(decal.name))\">{{getOccupancy(decal.name)}}%</a></a>\n          <mat-divider></mat-divider>\n          <a matLine>Mon - <a *ngIf=\"decal.restrictions.weekend\">Sun</a><a *ngIf=\"!decal.restrictions.weekend\">Fri</a></a>\n          <a matLine *ngIf=\"!decal.restrictions.allDay\">{{decal.restrictions.startTime | time}} - {{decal.restrictions.endTime | time}}</a>\n          <a matLine *ngIf=\"decal.restrictions.allDay\">ALL DAY</a>\n        </mat-list-item>\n      </mat-list>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content style=\"max-height: 92vh;\">\n    <div class=\"box flex btn-container\" style=\"justify-content: center; display: flex;\">\n        <button class=\"btn btn-warn btn-float pulse-red\" (click)=\"onUnparkClick()\" type=\"button\" *ngIf=\"parked\">Unpark</button>\n    </div>\n    <app-map [permissions]=\"permissions\" [parked]=\"parked\" (garageSelected)=\"updateGarageInfo($event)\" (dialogClosed)=\"updateParked($event)\"></app-map>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
 
 /***/ }),
 
@@ -532,6 +560,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _services_backend_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/backend.service */ "./src/app/services/backend.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -544,9 +573,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var NavigationComponent = /** @class */ (function () {
-    function NavigationComponent(backendService) {
+    function NavigationComponent(backendService, snackBar) {
         this.backendService = backendService;
+        this.snackBar = snackBar;
         this.decals = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]();
         this.permissions = [];
         this.garage = {};
@@ -589,6 +620,7 @@ var NavigationComponent = /** @class */ (function () {
             { name: 'Brown/Green', value: 'brownGreen' },
             { name: 'Orange/Blue/Medical/Business', value: 'OMBO' }];
         this.occupancies = [];
+        this.parked = false;
     }
     // Called when user clicks an input, update decal permissions
     NavigationComponent.prototype.updateSettings = function () {
@@ -596,19 +628,22 @@ var NavigationComponent = /** @class */ (function () {
         this.backendService.getFilteredDecalPermissions(this.decals.value).subscribe(function (permissions) {
             _this.permissions = permissions;
         });
-        if (typeof (Storage) !== "undefined") {
-            localStorage.setItem("UserSettings", JSON.stringify(this.decals.value));
+        if (typeof (Storage) !== 'undefined') {
+            localStorage.setItem('UserSettings', JSON.stringify(this.decals.value));
         }
+        this.updateGarageInfo();
     };
     // Called to retrieve occupancy information of selected garage
     NavigationComponent.prototype.updateGarageInfo = function (garage) {
         var _this = this;
-        this.garage = garage;
-        garage.decals.forEach(function (decal) {
-            _this.backendService.getOccupanciesByName(garage.name).subscribe(function (res) {
+        if (garage) {
+            this.garage = garage;
+        }
+        if (this.garage) {
+            this.backendService.getOccupanciesByName(this.garage['name']).subscribe(function (res) {
                 _this.occupancies = res.data;
             });
-        });
+        }
     };
     // Retrieves the human readable decal name
     NavigationComponent.prototype.getDecalName = function (decalName) {
@@ -646,8 +681,26 @@ var NavigationComponent = /** @class */ (function () {
             return '#a53a3a';
         }
     };
+    NavigationComponent.prototype.updateParked = function () {
+        this.parked = JSON.parse(localStorage.getItem('parked')) ? true : false;
+    };
+    NavigationComponent.prototype.onUnparkClick = function () {
+        var _this = this;
+        var parked = JSON.parse(localStorage.getItem('parked'));
+        this.backendService.addOccupancy(parked.decal).subscribe(function (res) {
+            localStorage.removeItem('parked');
+            _this.parked = false;
+            _this.updateGarageInfo();
+            _this.snackBar.open('Thank you for parking!', '', {
+                duration: 2000
+            });
+        });
+    };
     NavigationComponent.prototype.ngOnInit = function () {
         this.decals.setValue(JSON.parse(localStorage.getItem('UserSettings')));
+        if (JSON.parse(localStorage.getItem('parked'))) {
+            this.parked = true;
+        }
     };
     NavigationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -655,7 +708,7 @@ var NavigationComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./navigation.component.html */ "./src/app/navigation/navigation.component.html"),
             styles: [__webpack_require__(/*! ./navigation.component.css */ "./src/app/navigation/navigation.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_backend_service__WEBPACK_IMPORTED_MODULE_2__["BackendService"]])
+        __metadata("design:paramtypes", [_services_backend_service__WEBPACK_IMPORTED_MODULE_2__["BackendService"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"]])
     ], NavigationComponent);
     return NavigationComponent;
 }());
@@ -855,7 +908,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gateway\CEN3031-Group1\parking-picker-ui\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/alejandro/Documents/School/2018 Fall/CEN 3031/Parking Picker/CEN3031-Group1/parking-picker-ui/src/main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Optional } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { BackendService } from '../services/backend.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-navigation',
@@ -51,26 +52,31 @@ export class NavigationComponent implements OnInit {
         { name: 'Orange/Blue/Medical/Business', value: 'OMBO' }];
   occupancies = [];
 
-  constructor(private backendService: BackendService) { }
+  constructor(private backendService: BackendService, public snackBar: MatSnackBar) { }
+
+  parked = false;
 
   // Called when user clicks an input, update decal permissions
   updateSettings() {
     this.backendService.getFilteredDecalPermissions(this.decals.value).subscribe((permissions: any) => {
       this.permissions = permissions;
     });
-	if (typeof(Storage) !== "undefined") {
-    localStorage.setItem("UserSettings", JSON.stringify(this.decals.value));
-	}
+    if (typeof(Storage) !== 'undefined') {
+      localStorage.setItem('UserSettings', JSON.stringify(this.decals.value));
+    }
+    this.updateGarageInfo();
   }
 
   // Called to retrieve occupancy information of selected garage
-  updateGarageInfo(garage) {
-    this.garage = garage;
-    garage.decals.forEach(decal => {
-      this.backendService.getOccupanciesByName(garage.name).subscribe((res: any) => {
+  updateGarageInfo(garage?) {
+    if (garage) {
+      this.garage = garage;
+    }
+    if (this.garage) {
+      this.backendService.getOccupanciesByName(this.garage['name']).subscribe((res: any) => {
         this.occupancies = res.data;
       });
-    });
+    }
   }
 
   // Retrieves the human readable decal name
@@ -108,7 +114,26 @@ export class NavigationComponent implements OnInit {
     }
   }
 
+  updateParked() {
+    this.parked = JSON.parse(localStorage.getItem('parked')) ? true : false;
+  }
+
+  onUnparkClick() {
+    const parked = JSON.parse(localStorage.getItem('parked'));
+    this.backendService.addOccupancy(parked.decal).subscribe((res: any) => {
+      localStorage.removeItem('parked');
+      this.parked = false;
+      this.updateGarageInfo();
+      this.snackBar.open('Thank you for parking!', '', {
+        duration: 2000
+      });
+    });
+  }
+
   ngOnInit() {
-	  this.decals.setValue(JSON.parse(localStorage.getItem('UserSettings')));
+    this.decals.setValue(JSON.parse(localStorage.getItem('UserSettings')));
+    if (JSON.parse(localStorage.getItem('parked'))) {
+      this.parked = true;
+    }
   }
 }

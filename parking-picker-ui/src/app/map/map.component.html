@@ -29,7 +29,8 @@
     <span [ngClass]="'bigtext'" [style.color] = "selectedPoint.properties.color" [innerHTML]="selectedPoint.properties.capacity" style="padding-left:10%;">
     </span>%
     <br>
-    <button (click)="openAddFileDialog()" class="btn btn-primary" id="park-btn" role="button" aria-pressed="true">Park</button>
+    <button (click)="openAddFileDialog()" class="btn btn-primary" id="park-btn" role="button" aria-pressed="true" *ngIf="!parked">Park</button>
+    <button class="btn btn-secondary disabled" id="park-btn" role="button" *ngIf="parked"><s>Parked</s></button>
   </div>
 </mgl-popup>
 </mgl-map>

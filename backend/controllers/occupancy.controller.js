@@ -53,21 +53,26 @@ exports.create = function(req, res) {
 exports.update = function(req, res) {
   var newOccupancy = req.body.occupancy; // { name: [garagename], decal: [decaltoupdate], park: [bool]}
   if(newOccupancy) {
-    Garage.find({name: newOccupancy.name}).exec(function(err, garage) {
+    Garage.findOne({name: newOccupancy.name}).exec(function(err, garage) {
       let decalOcc = {
         specCapacity: 0
-      }
-      if(garage.decals) {
-        // Get upper occupancy limit
-        decalOcc = garage.decals.find((val) => {
-          return val.name === newOccupancy.decal;
-        });
+      };
+      if(err) {
+        res.status(400).send(err);
+      } else {
+        if(garage.decals) {
+          // Get upper occupancy limit
+          decalOcc = garage.decals.find((val) => {
+            return val.name === newOccupancy.decal;
+          });
+        }
       }
       // Find occupancy to update
       Occupancy.find({name: newOccupancy.name}).exec(function(err, occ) {
         if(err) {
           res.status(400).send(err);
         } else {
+          let overflow = false;
           let updatedOcc = occ[0].data;
           // Modify decal data to increment passed decal occupancy
           updatedOcc.some((ele) => {
@@ -89,6 +94,8 @@ exports.update = function(req, res) {
                 res.json(occ);
               }
             });
+          } else {
+            res.status(400).send("err");
           }
         }
       });

@@ -1,7 +1,7 @@
 import { Component, Inject, OnChanges } from '@angular/core';
 import { BackendService } from '../services/backend.service';
-import { FormControl } from '@angular/forms';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-park-dialog',
@@ -31,14 +31,18 @@ export class ParkDialogComponent implements OnChanges {
     decalList = [];
     decals = null;
     errMsg = '';
+    selectedGarage;
 
     constructor(public dialogRef: MatDialogRef<ParkDialogComponent>,
                     @Inject(MAT_DIALOG_DATA) public data: any,
-                    private backendService: BackendService) {
+                    private backendService: BackendService,
+                    public snackBar: MatSnackBar) {
         // Don't open modal if no garage data
         if (data.garageDecals === undefined) {
             return;
         }
+
+        this.selectedGarage = data.garageDecals;
 
         // Iterate through decals and retrieve user friendly names
         data.garageDecals.decals.forEach((ele, ind) => {
@@ -74,6 +78,16 @@ export class ParkDialogComponent implements OnChanges {
         } else {
             // Create request to update occupancy data in backend
             this.backendService.addOccupancy({name: this.data.garageDecals.name, decal: this.decals, park: true}).subscribe((res: any) => {
+                if (typeof(Storage) !== 'undefined') {
+                    localStorage.setItem('parked', JSON.stringify({
+                        'garage': this.selectedGarage,
+                        'decal': { name: this.data.garageDecals.name, decal: this.decals, park: false },
+                        'parked': false
+                    }));
+                    this.snackBar.open('You have successfully parked!', '', {
+                        duration: 2000,
+                    });
+                }
             });
             this.dialogRef.close();
             return true;
