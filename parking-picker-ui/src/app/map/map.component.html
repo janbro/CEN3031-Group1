@@ -1,8 +1,9 @@
 <mgl-map
-[style]="'mapbox://styles/mapbox/streets-v9'"
-[zoom]="[13]"
-[center]="[-82.3549, 29.6436]"
+[style]="'mapbox://styles/chelseacandelora/cjp4ek7n13wq22ro23s7vf8fg'"
+[zoom]="[13.6]"
+[center]="[-82.3489, 29.6400]"
 [cursorStyle]="cursorStyle">
+<mgl-control mglNavigation></mgl-control>
 <mgl-geojson-source
   id="points"
   [data]="points">
@@ -12,7 +13,7 @@
   source="points"
   type="symbol"
   [layout]="{
-    'icon-image': 'circle-15',
+    'icon-image': 'marker-carsnew',
     'icon-allow-overlap': true
   }"
   (click)="onClick($event)"
