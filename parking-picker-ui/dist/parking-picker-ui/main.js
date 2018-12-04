@@ -426,7 +426,6 @@ var MapComponent = /** @class */ (function () {
         var _this = this;
         // Make sure not to open more than one dialog at a time
         if (this.closed) {
-            console.log(this.selectedPoint);
             if (this.selectedPoint.properties.capacity === 100) {
                 alert('Parking lot is full!');
             }
@@ -738,7 +737,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var BackendService = /** @class */ (function () {
     function BackendService(http) {
         this.http = http;
-        this.baseURI = 'http://localhost:8080'; // 'https://parking-picker.herokuapp.com';
+        this.baseURI = 'https://parking-picker.herokuapp.com';
         this.mapboxConfigUrl = this.baseURI + '/api/garages/mapbox';
         this.permissionsConfigUrl = this.baseURI + '/api/decals/';
         this.garagesConfigUrl = this.baseURI + '/api/garages/';
