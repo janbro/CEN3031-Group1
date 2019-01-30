@@ -9,8 +9,6 @@ node_js:
   - "10"
 deploy:
   provider: heroku
-  api_key:
-    secure: "QaD1Bhy+hUTXAetBXSAMq+qrXLY5cV/7hJCDl4+/8TUQlt1CL+oDg034PgP2IGG6XRsERQHPz5wvMdNvbtUHiToTYocfHTiIWoOMghnSYCcuHU0gaFqReqrqA218rYq0I2aNMfiPekE9t+mdlPhIBidraRh4hGx4OrUFB1fFYDAot7oUm2sNANqURyKeVVzG4IyHvEGRLd43V7PyqHEeJqRH5QHh1rGm8uH8DZ6xlC6ugAtpT+DSDh0UzetlLNzwu4jd3HHRGi10n/+JJBjHChQJMTpA/kT7D/H8RKkT+GE6glVQH0RtGi2XciAbC4jzw+WXy7cIziCfdo6lLpn01OM0QkBEmFEc1/wTmZ0SHcHMtLKpRye9kvhj92eCHyUOQTIPTC+xICx8u7QayjtMhbJizW7/OsfU3amtHgmrJqYniaA0xbvXsbrPQrdqiFwvxk5U13xMGi289HcA60f0QsDLp7RjNPs+l29KNhUKTpyn+gUxo/f4sonmmDjRUI+83f253tP4ddbJwInh5x6LJG3mj2aMKHqHkcx5XBmNMBpSOWnZ8hA0Qa4B968uw++LdJluPq72fVo5WdRs/6IfVaS4KLdJ4kdtvruDZq5i+ZNzQsKHF+cs5oftP+rZeQpq0Z92BxPgzMjAEucKKaJQNAIxGF0l0jaxbnWLakzX7+s="
   app: parking-picker
   on:
     repo: janbro/CEN3031-Group1

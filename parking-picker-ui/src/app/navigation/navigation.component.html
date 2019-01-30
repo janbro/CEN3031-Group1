@@ -1,4 +1,5 @@
-<mat-toolbar color="primary" class="blue" class = "center">
+<mat-toolbar color="primary" class="blue" class="center">
+  <img src="assets/uf-parking.svg" style="display:none;">
   <mat-toolbar-row>
     <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" color="warn" class="orange">
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
@@ -32,7 +33,7 @@
     </div>
     <mat-list role="list">
       <mat-list-item role="listitem" style="pointer-events: all; text-align: center;" *ngFor="let decal of garage.decals">
-        <a matLine title="{{getDecalName(decal.name)}}"><b>{{getDecalName(decal.name)}}</b> - <a [style.color]="getColor(getOccupancy(decal.name))">{{getOccupancy(decal.name)}}%</a></a>
+        <a matLine title="{{getDecalName(decal.name)}} - {{getOccupancy(decal.name)}}%"><b>{{getDecalName(decal.name)}}</b> - <a [style.color]="getColor(getOccupancy(decal.name))">{{getOccupancy(decal.name)}}%</a></a>
         <mat-divider></mat-divider>
         <a matLine>Mon - <a *ngIf="decal.restrictions.weekend">Sun</a><a *ngIf="!decal.restrictions.weekend">Fri</a></a>
         <a matLine *ngIf="!decal.restrictions.allDay">{{decal.restrictions.startTime | time}} - {{decal.restrictions.endTime | time}}</a>
